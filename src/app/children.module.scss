@@ -1,0 +1,21 @@
+.main{
+    width: 1920px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: #ECF4F4;
+    // margin-bottom: 80px;
+    display: block;
+    .zalo{
+        display: flex;
+        width: 46px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 16px;
+        background: #FFF;
+        position: fixed;
+        left: 1800px;
+        bottom: 58px;
+    }
+}

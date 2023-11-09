@@ -1,0 +1,79 @@
+
+.hot{
+    width: 100%;
+    border-radius: 12px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: #ECF4F4;
+    display: flex;
+    position: relative;
+    margin-bottom: 80px;
+    
+    .hot-list{
+        width: 1475px;
+        height: 389px;
+        flex-shrink: 0;
+        // display: block;
+        gap: 18px;
+        background: #4A90E2;
+        border-radius: 12px;
+        .title{
+            color: var(--text-main, #ffffff);
+
+            /* medium 28 */
+            font-family: Andika;
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 36px; /* 128.571% */
+            margin-bottom: 18px;
+            margin-left: 20px;
+            margin-top: 8px;
+            display: block;
+        }
+        .list{
+            width: 1475px;
+            height: 218px;
+            flex-shrink: 0;
+            display: flex;
+            gap: 46.3px;
+            margin-bottom: 18px;
+            margin-left: 35px;
+            .product{
+                display: flex;
+                width: 134.882px;
+                height: 200px;
+                padding: 9px 0px;
+                flex-direction: column;
+                align-items: center;
+                gap: 3px;
+                flex-shrink: 0;
+                border-radius: 10px;
+                background: var(--background-white, #FFF);
+            }
+        }
+        .more{
+            display: flex;
+            width: 90%;
+            padding: 12px 683px 11px 732px;
+            justify-content: flex-end;
+            align-items: center;
+            border-radius: 10px;
+            background: #FFF;
+            margin-left: 30px;
+            margin-right: 20px;
+            .more-text{
+                color: #000;
+
+                /* medium 18 */
+                font-family: Andika;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+    }
+}

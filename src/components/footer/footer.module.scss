@@ -1,0 +1,162 @@
+
+
+.footer{
+    width: 1920px;
+    height: 450px;
+    flex-shrink: 0;
+    position: relative;
+    background: var(--button-gradient-20, linear-gradient(270deg, rgba(77, 94, 246, 0.20) 0%, rgba(246, 77, 77, 0.20) 100%));
+    .div1{
+        display: flex;
+        width: 188px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        position: absolute;
+        top: 60px;
+        left: 185px;
+        .footer-title{
+            color: var(--text-main, #1E1E1E);
+            font-family: Nuckle;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 653;
+            line-height: normal;
+            letter-spacing: 0.32px;
+        }
+        .footer-text{
+            color: var(--text-main, #1E1E1E);
+            font-family: Andika;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.16px;
+        }
+    }
+    .div2{
+        display: flex;
+        width: 188px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        position: absolute;
+        top: 60px;
+        left: 393px;
+        .footer-title{
+            color: var(--text-main, #1E1E1E);
+            font-family: Nuckle;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 653;
+            line-height: normal;
+            letter-spacing: 0.32px;
+        }
+        .footer-text{
+            color: var(--text-main, #1E1E1E);
+            font-family: Andika;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.16px;
+        }
+    }
+    .div3{
+        display: flex;
+        width: 188px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        position: absolute;
+        top: 60px;
+        left: 602px;
+        .footer-title{
+            color: var(--text-main, #1E1E1E);
+            font-family: Nuckle;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 653;
+            line-height: normal;
+            letter-spacing: 0.32px;
+        }
+        .footer-text{
+            color: var(--text-main, #1E1E1E);
+            font-family: Andika;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.16px;
+        }
+    }
+    .div4{
+        display: flex;
+        width: 380px;
+        height: 198px;
+        flex-direction: column;;
+        align-items: flex-start;
+        gap: 20px;
+        position: absolute;
+        top: 60px;
+        right: 318px;
+        .footer-title{
+            color: var(--text-main, #1E1E1E);
+            font-family: Nuckle;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 653;
+            line-height: normal;
+            letter-spacing: 0.32px;
+        }
+        .footer-text{
+            color: var(--text-main, #1E1E1E);
+            font-family: Andika;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.16px;
+        }
+    }
+    .social{
+        width: 246px;
+        height: 42px;
+        flex-shrink: 0;
+        position: absolute;
+        bottom: 154px;
+        right: 455px;
+    }
+    .line{
+        width: 1530.001px;
+        height: 1px;
+        background: linear-gradient(270deg, #4D5EF6 0%, #F64D4D 100%);
+        position: absolute;
+        bottom: 96px;
+        right: 202px;
+    }
+    .footer-text2{
+        color: var(--text-main, #1E1E1E);
+        font-family: Andika;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.16px;
+        position: absolute;
+        bottom: 32px;
+        left: 185px;
+    }
+    .footer-text3{
+        color: var(--text-main, #1E1E1E);
+        font-family: Andika;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.16px;
+        position: absolute;
+        bottom: 32px;
+        right: 203px;
+    }
+}
