@@ -1,25 +1,54 @@
+import React from 'react';
 import styles from './slider1.module.scss'
+import { Carousel } from 'antd';
 
+const Slider1: React.FC = () => {
 
-export default function Slider1() {
+    const contentStyle: React.CSSProperties = {
+        height: '380px',
+        color: '#fff',
+        lineHeight: '160px',
+        textAlign: 'center',
+        // background: '#3C96FE',
+        width: '1466.189px',
+    };
     return (
-        <div className={styles['slider1']}>
-            <div className={styles['arrow-left']}>
-                <img src="./image/arrow_left.png" alt="" />
+
+        <>
+            <div>
+                <img src="./image/poster.png" alt="" />
             </div>
-            <div className={styles['slider']}>
-                <img src="./image/slider.png" alt="" />
+
+            <div className={styles['slider1']}>
+
+
+                <Carousel className={styles['slider']} autoplay autoplaySpeed={3000}>
+                    <div>
+                        <div style={contentStyle}>
+                            <img src="./image/slider/slider.png" alt="" />
+                        </div>
+                    </div>
+                    <div>
+                        <div style={contentStyle}>
+                            <img src="./image/slider/slider.png" alt="" />
+                        </div>
+                    </div>
+                    <div>
+                        <div style={contentStyle}>
+                            <img src="./image/slider/slider.png" alt="" />
+                        </div>
+                    </div>
+                    <div>
+                        <div style={contentStyle}>
+                            <img src="./image/slider/slider.png" alt="" />
+                        </div>
+                    </div>
+                </Carousel>
+
             </div>
-            <div className={styles['arrow-right']}>
-                <img src="./image/arrow_right.png" alt="" />
-            </div>
-            <div className={styles['bacham']}>
-                <div className={styles['black-radius']}></div>
-                <div className={styles['white-radius']}></div>
-                <div className={styles['white-radius']}></div>
-                <div className={styles['white-radius']}></div>
-                <div className={styles['white-radius']}></div>
-            </div>
-        </div>
+        </>
+
     )
 }
+
+export default Slider1;

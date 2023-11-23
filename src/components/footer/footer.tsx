@@ -4,43 +4,120 @@ import styles from './footer.module.scss';
 export default function Footer() {
     return (
         <div className={styles['footer']}>
-            <div className={styles['div1']}>
-                <div className={styles['footer-title']}>Hujjatlar</div>
-                <div className={styles['footer-text']}>Umumiy shartlar</div>
-                <div className={styles['footer-text']}>Ofertalar arxivi</div>
-                <div className={styles['footer-text']}>Nizom</div>
-                <div className={styles['footer-text']}>Guvohnoma</div>
+            <div className={styles['footer1']}>
+                <div className={styles['image']}>
+                    <img src="../image/footerimage.png" alt="" />
+                </div>
+                <div className={styles['background']}>
+                    <div className={styles['content']}>
+                        <div className={styles['about']}>
+                            <div className={styles['aboutContent']}>
+                                <div className={styles['aboutTitle']}>
+                                    <div className={styles['Title']}>About Us</div>
+                                    <div className={styles['line']}></div>
+                                </div>
+                                <div className={styles['textDiv']}>
+                                    <div className={styles['text']}>Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit, sed do eiusmod tempor
+                                        incididunt.</div>
+                                </div>
+                                <div className={styles['textDiv']}>
+                                    <div className={styles['text']}>Lorem Ipsum is simply dummy text of
+                                        the printing and typesetting industry...</div>
+                                </div>
+                                <div className={styles['list']}>
+                                    <img src="../image/List.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles['link']}>
+                            <div className={styles['linkDiv']}>
+                                <div className={styles['header']}>
+                                    <div className={styles['headerText']}>Quick Links</div>
+                                    <div className={styles['psaudo']}></div>
+                                </div>
+                                <div className={styles['linkList']}>
+                                    <div className={styles['item']}>
+                                        <div className={styles['linkLine']}></div>
+                                        <div className={styles['linkText']}>Home</div>
+                                    </div>
+                                    <div className={styles['item']}>
+                                        <div className={styles['linkLine']}></div>
+                                        <div className={styles['linkText']}>Hotels</div>
+                                    </div>
+                                    <div className={styles['item']}>
+                                        <div className={styles['linkLine']}></div>
+                                        <div className={styles['linkText']}>Flights</div>
+                                    </div>
+                                    <div className={styles['item']}>
+                                        <div className={styles['linkLine']}></div>
+                                        <div className={styles['linkText']}>Cruise</div>
+                                    </div>
+                                    <div className={styles['item']}>
+                                        <div className={styles['linkLine']}></div>
+                                        <div className={styles['linkText']}>Blog</div>
+                                    </div>
+                                    <div className={styles['item']}>
+                                        <div className={styles['linkLine']}></div>
+                                        <div className={styles['linkText']}>404</div>
+                                    </div>
+                                    <div className={styles['item']}>
+                                        <div className={styles['linkLine']}></div>
+                                        <div className={styles['linkText']}>Contact Us</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles['insta']}>
+                            <div className={styles['instaDiv']}>
+                                <div className={styles['instaHeading']}>
+                                    <div className={styles['headingText']}>Instagram</div>
+                                    <div className={styles['instaLine']}></div>
+                                </div>
+                                <div className={styles['instaImg']}>
+                                    <img src="../image/gr.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles['new']}>
+                            <div className={styles['newDiv']}>
+                                <div className={styles['newHeading']}>
+                                    <div className={styles['newTitle']}>Newsletter</div>
+                                    <div className={styles['newLine']}></div>
+                                </div>
+                                <div className={styles['newContent']}>
+                                    <div className={styles['newText']}>
+                                        <div className={styles['text']}>Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit, sed do eiusmod tempor
+                                            incididunt.</div>
+                                    </div>
+                                    <div className={styles['newForm']}>
+                                        <div className={styles['input']}>
+                                            <div className={styles['inputDiv']}>
+                                                <div className={styles['inputText']}>
+                                                    Email I'd
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className={styles['button']}>
+                                            <div className={styles['buttonText']}>
+                                                Subscribe
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles['background2']}>
+                    <div className={styles['info']}>
+                        <div className={styles['infoText']}>
+                            © 2023 Nextstore.com | Powered by Diepton
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className={styles['div2']}>
-                <div className={styles['footer-title']}>Servis</div>
-                <div className={styles['footer-text']}>Do’konlar</div>
-                <div className={styles['footer-text']}>Do’konlar</div>
-                <div className={styles['footer-text']}>Hamkorlik uchun</div>
-                <div className={styles['footer-text']}>Qaytarish</div>
-                <div className={styles['footer-text']}>Promokodlar</div>
-            </div>
-            <div className={styles['div3']}>
-                <div className={styles['footer-title']}>Mahsulotlar katalogi</div>
-                <div className={styles['footer-text']}>Katalog 1</div>
-                <div className={styles['footer-text']}>Katalog 2</div>
-                <div className={styles['footer-text']}>Katalog 3</div>
-                <div className={styles['footer-text']}>Katalog 4</div>
-                <div className={styles['footer-text']}>Katalog 5</div>
-                <div className={styles['footer-text']}>Katalog 6</div>
-            </div>
-            <div className={styles['div4']}>
-                <div className={styles['footer-title']}>Axbarot xizmati</div>
-                <div className={styles['footer-text']}>contact.@nextstore.uz</div>
-                <div className={styles['footer-text']}>+998 97 712 96 96 <br />
-                    +998 95 503 09 09</div>
-                <div className={styles['footer-text']}>Sag’bon 186, Olmazor tumani, Toshkent, <br />O'zbekiston</div>
-            </div>
-            <div className={styles['social']}>
-                <img src="./image/Group18.png" alt="" />
-            </div>
-            <div className={styles['line']}></div>
-            <div className={styles['footer-text2']}>2022  Nextstore.com</div>
-            <div className={styles['footer-text3']}>Powered by </div>
         </div >
     )
 }

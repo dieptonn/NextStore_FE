@@ -1,0 +1,17 @@
+
+
+
+.config{
+    display: flex;
+    width: 1230px;
+    height: 981px;
+    padding: 40px 19px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid var(--stroke-primary, #E4E7EE);
+    background: var(--background-white, #FFF);
+    margin-bottom: 40px;
+}

@@ -11,9 +11,9 @@
         width: 1475px;
         height: 969px;
         flex-shrink: 0;
-        display: block;
+        // display: block;
         gap: 18px;
-        background: #4A90E2;
+        background: #3C96FE;
         border-radius: 12px;
         .title{
             color: var(--text-main, #ffffff);
@@ -49,27 +49,31 @@
         }
         .more{
             display: flex;
-            width: 90%;
+            // width: 90%;
+            // width: 300px;
             padding: 12px 683px 11px 732px;
-            justify-content: flex-end;
+            height: 52px;
+            justify-content: center;
             align-items: center;
+            
             border-radius: 10px;
             background: #ffffff;
-            display: block;
+            // display: block;
             position: relative;
             top: 595px;
-            margin-left: 30px;
+            margin-left: 20px;
             margin-right: 20px;
 
             .more-text{
                 color: #000;
-
+                text-align: center;
                 /* medium 18 */
                 font-family: Andika;
                 font-size: 18px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
+                margin-right: 56px;
             }
         }
     }

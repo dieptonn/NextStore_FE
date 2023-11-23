@@ -1,0 +1,17 @@
+
+
+
+.url{
+    width: 965px;
+    height: 23px;
+    flex-shrink: 0;
+    margin-top: 20px;
+    .url-text{
+        color: var(--text-main, #1E1E1E);
+        font-family: Andika;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
