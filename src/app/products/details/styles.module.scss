@@ -6,7 +6,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    background: #ECF4F4;
+    background: #ffffff;
     // margin-bottom: 80px;
     // display: block;
     .zalo{
@@ -19,6 +19,12 @@
         position: fixed;
         left: 1800px;
         bottom: 58px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        // border: 0.025px solid #333333;
+        &:hover{
+            transition: transform 0.2s ease-in-out;
+            transform: scale(1.5);
+        }
     }
     
 }

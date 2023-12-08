@@ -6,26 +6,26 @@
     align-items: center;
     display: flex;
     display: block;
-    background: #3C96FE;
+    // background: #3C96FE;
     transition: background 0.3s ease; /* Thêm transition cho background */
     display: flex;
     position: relative;
     // border-top: 0.5px solid #ecf4f4;
-    margin-bottom: 400px;
-    margin-top: -50px;
+    margin-bottom: 50px;
+    margin-top: -120px;
     .slider{
         display: flex;
-        width: 1466.189px;
-        height: 300px;
+        width: 1009px;
+        height: 294px;
         // padding: 0px 73.906px 36px 73.905px;
         justify-content: center;
         align-items: center;
         flex-shrink: 0;
         position: relative;
         top: 48px;   
-        position: absolute;
+        // position: absolute;
         top: 0; /* Điều chỉnh vị trí đè lên theo ý muốn của bạn */
-        left: 227px; /* Điều chỉnh vị trí đè lên theo ý muốn của bạn */
+        // left: 363px; /* Điều chỉnh vị trí đè lên theo ý muốn của bạn */
         // background: linear-gradient(to bottom, #3C96FE, #3C96FE 50%, #ecf4f4 50%, #ecf4f4); /* Màu xanh cho nửa trên và màu trắng cho nửa dưới */
         z-index: 1; /* Đảm bảo khối đè lên được hiển thị trên khối chứa ảnh */
     }

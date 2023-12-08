@@ -26,6 +26,7 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
             .img{
                 display: flex;
                 width: 400px;
@@ -83,6 +84,7 @@
                 flex-shrink: 0;
                 border-radius: 4px;
                 background: var(--background-white, #FFF);
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
                 &:hover{
                     // background: var(--background-secondary, #ECF4FF);
                     border: 1px solid var(--background-main-color, #3B83D6);
@@ -146,7 +148,7 @@
                 width: 46px;
                 height: 46px;
                 border-radius: 8px;
-                background-color: #1a6cde;
+                background-color: #7c7c7c;
             }
         }
         .type{
@@ -183,6 +185,7 @@
                 flex-shrink: 0;
                 border-radius: 8px;
                 background: var(--background-white, #FFF);
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
                 .configDetails{
                     width: 52px;
                     height: 52px;
@@ -204,6 +207,7 @@
                 background: #FFF;
                 width: 158px;
                 justify-content: center;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
                 &:hover{
                     background-color: #3B83D6;
                 }
@@ -230,9 +234,10 @@
                 justify-content: center;
                 align-items: center;
                 border-radius: 10px;
-                background: var(--background-main-color, #07b60a);
+                background: var(--background-main-color, #FF8C00);
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
                 &:hover{
-                    background-color: #1A6CDE;
+                    background-color: #333333;
                 }
                 .buyText{
                     color: var(--background-white, #FFF);
@@ -252,9 +257,11 @@
                 justify-content: center;
                 align-items: center;
                 border-radius: 10px;
-                background: var(--background-main-color, #07b60a);
+                gap: 10px;
+                background: var(--background-main-color, #FF8C00);
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
                 &:hover{
-                    background-color: #1A6CDE;
+                    background-color: #333333;
                 }
                 .addText{
                     color: var(--background-white, #FFF);

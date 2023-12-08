@@ -1,15 +1,53 @@
+'use client'
 import styles from './products.module.scss'
 import Link from 'next/link'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
+interface Product {
+    _id: string;
+    product_img: string;
+    name: string;
+    price_old: number;
+    rating_number: number;
+    // ... các trường khác
+}
 
 export default function Products() {
+    const [data, setData] = useState<Product[]>([]);
+
+    const formatNumber = (number?: number | null) => {
+        if (number || number === 0) {
+            return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+        return "0";
+    };
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get<{ data: Product[] }>('http://127.0.0.1:8000/api/v1/televisions/showProduct');
+                console.log({
+                    Response: response.data.data,
+                });
+                setData(response.data.data);
+            } catch (error) {
+                console.error('Error:', error);
+                // Handle errors
+            }
+        };
+
+        fetchData();
+    }, []);
+
     return (
         <div className={styles['content']}>
             <div className={styles['filters']}>
                 <div className={styles['filter']}>
                     <div className={styles['filter1']}>
                         <div className={styles['filter1-content']}>
-                            <div className={styles['filter1-katalog']}>Katalog</div>
+                            <div className={styles['filter1-katalog']}>____ Filter ____</div>
                             <div className={styles['filter1-list']}>
                                 <div className={styles['filter1-category']}>
                                     <div className={styles['filter-arrow']}>
@@ -173,79 +211,26 @@ export default function Products() {
                     </div>
                 </div>
             </div>
-            <Link href="/products/details" className={styles['product']}>
-                <img src="./image/sale/product2.png" alt="" />
-                <div className={styles['heart']}>
-                    <img src="./image/sale/Sevimli.png" alt="" />
-                </div>
-                <div className={styles['price']}>299 000 so’m</div>
-                <div className={styles['detail']}>Apple Airpods Pro <br />
-                    simsiz quloqchin , Oq rangda   </div>
-                <div className={styles['quantity']}>1230 ta buyurtma</div>
-
-                <div className={styles['cart-button']}>
-                    <div className={styles['cart-text']}>Sotib olish</div>
-                </div>
-                <div className={styles['shopping-cart']}>
-                    <img src="./image/sale/shopping_cart.png" alt="" />
-                </div>
-
-            </Link>
-            <div className={styles['product']}>
-                <img src="./image/sale/product2.png" alt="" />
-                <div className={styles['heart']}>
-                    <img src="./image/sale/Sevimli.png" alt="" />
-                </div>
-                <div className={styles['price']}>299 000 so’m</div>
-                <div className={styles['detail']}>Apple Airpods Pro <br />
-                    simsiz quloqchin , Oq rangda   </div>
-                <div className={styles['quantity']}>1230 ta buyurtma</div>
-
-                <div className={styles['cart-button']}>
-                    <div className={styles['cart-text']}>Sotib olish</div>
-                </div>
-                <div className={styles['shopping-cart']}>
-                    <img src="./image/sale/shopping_cart.png" alt="" />
-                </div>
-
+            <div className={styles['list']}>
+                {data.map((product) => (
+                    <Link key={product._id} href="/products/details" className={styles['product']}>
+                        <img src={product.product_img} alt={product.name} />
+                        <div className={styles['heart']}>
+                            <img src="./image/sale/Sevimli.png" alt="" />
+                        </div>
+                        <div className={styles['price']}>{formatNumber(product.price_old)} VND</div>
+                        <div className={styles['detail']}>{product.name}</div>
+                        <div className={styles['quantity']}>{formatNumber(product.rating_number)} Lượt đánh giá</div>
+                        <div className={styles['cart-button']}>
+                            <div className={styles['cart-text']}>Sotib olish</div>
+                        </div>
+                        <div className={styles['shopping-cart']}>
+                            <img src="./image/sale/shopping_cart.png" alt="" />
+                        </div>
+                    </Link>
+                ))}
             </div>
 
-            <div className={styles['product']}>
-                <img src="./image/sale/product2.png" alt="" />
-                <div className={styles['heart']}>
-                    <img src="./image/sale/Sevimli.png" alt="" />
-                </div>
-                <div className={styles['price']}>299 000 so’m</div>
-                <div className={styles['detail']}>Apple Airpods Pro <br />
-                    simsiz quloqchin , Oq rangda   </div>
-                <div className={styles['quantity']}>1230 ta buyurtma</div>
-
-                <div className={styles['cart-button']}>
-                    <div className={styles['cart-text']}>Sotib olish</div>
-                </div>
-                <div className={styles['shopping-cart']}>
-                    <img src="./image/sale/shopping_cart.png" alt="" />
-                </div>
-
-            </div>
-            <div className={styles['product']}>
-                <img src="./image/sale/product2.png" alt="" />
-                <div className={styles['heart']}>
-                    <img src="./image/sale/Sevimli.png" alt="" />
-                </div>
-                <div className={styles['price']}>299 000 so’m</div>
-                <div className={styles['detail']}>Apple Airpods Pro <br />
-                    simsiz quloqchin , Oq rangda   </div>
-                <div className={styles['quantity']}>1230 ta buyurtma</div>
-
-                <div className={styles['cart-button']}>
-                    <div className={styles['cart-text']}>Sotib olish</div>
-                </div>
-                <div className={styles['shopping-cart']}>
-                    <img src="./image/sale/shopping_cart.png" alt="" />
-                </div>
-
-            </div>
         </div>
     )
 }

@@ -1,0 +1,176 @@
+
+.content{
+    width: 1920px;
+    height: 444px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    .rDiv{
+        // width: 1446px;
+        height: 444px;
+        // flex-shrink: 0;
+        display: flex;
+        flex-direction: row;
+        // justify-content: center;
+        align-items: center;
+        .arrowLeft{
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            margin-right: 10px;
+        }
+        .rs{
+            width: 1230px;
+            height: 444px;
+            // flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            .title{
+                display: inline-flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 40px;
+                .titleText{
+                    color: var(--text-main, #1E1E1E);
+
+                    /* medium 28 */
+                    font-family: Andika;
+                    font-size: 28px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 36px; /* 128.571% */
+                }
+            }
+            .slider{
+                display: flex;
+                width: 1230px;
+                height: 390px;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 20px;
+                // flex-shrink: 0;
+                display: flex;
+                flex-direction: row;
+                
+            }
+        }
+        .arrowRight{
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            margin-left: 10px;
+        }
+    }
+}
+.product{
+    position: relative;
+    display: flex;
+    // width: 228.297px;
+    width: 230px;
+    height: 390px;
+    // padding: 10px;
+    // align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: var(--background-white, #FFF);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    .productImg{
+        width: 180px;
+        height: 180px;
+        flex-shrink: 0;
+        position: absolute;
+        left: 25px;
+        
+
+    }
+    .heart{
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        position: absolute;
+        left: 190px;
+        top: 10px;
+
+    }
+    .price{
+        color: var(--background-main-color, #FF8C00);
+
+        /* medium 18 */
+        font-family: Andika;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        position: absolute;
+        left: 20px;
+        top: 200px;
+    }
+    .detail{
+        color: var(--text-main, #1E1E1E);
+        font-family: Andika;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        position: absolute;
+        left: 20px;
+        top: 230px;
+    }
+    .quantity{
+        color: var(--text-secondary, #6C757D);
+        font-family: Andika;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        position: absolute;
+        left: 20px;
+        top: 280px;
+    }
+    .cart-button{
+        display: flex;
+        width: 130px;
+        height: 40px;
+        padding: 10px 0px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        background: var(--background-main-color, #FF8C00); 
+        position: absolute;
+        left: 20px;
+        top: 330px;
+        &:hover{
+            background-color: #333333;
+        }
+        .cart-text{
+            color: var(--background-white, #FFF);
+            font-family: Andika;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.16px;
+        }
+        
+    }
+    .shopping-cart{
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            position: absolute;
+            right: 20px;
+            top: 330px;
+        }
+}
+.product:hover, .product:hover .child {
+    transform: scale(1.05);
+  }

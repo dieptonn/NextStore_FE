@@ -4,17 +4,20 @@
     height: auto;
     justify-content: center;
     align-items: center;
-    background: #ECF4F4;
+    background: #ffffff;
     display: flex;
     position: relative;
+    margin-top: 50px;
+    
     .sale-list{
         width: 1475px;
         height: 969px;
         flex-shrink: 0;
         // display: block;
         gap: 18px;
-        background: #3C96FE;
+        background: #494949;
         border-radius: 12px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
         .title{
             color: var(--text-main, #ffffff);
 
@@ -63,7 +66,7 @@
             top: 595px;
             margin-left: 20px;
             margin-right: 20px;
-
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
             .more-text{
                 color: #000;
                 text-align: center;
@@ -90,15 +93,19 @@
     flex-shrink: 0;
     border-radius: 10px;
     background: var(--background-white, #FFF);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     .heart{
         width: 24px;
         height: 24px;
         flex-shrink: 0;
         position: relative;
         right: 35px;
+        transition: transform 0.2s ease-in-out;
     }
     .price{
-        color: var(--background-main-color, #000);
+        color: var(--background-main-color, #FF8C00);
 
         /* medium 18 */
         font-family: Andika;
@@ -109,6 +116,7 @@
         position: absolute;
         left: 20px;
         top: 200px;
+        transition: transform 0.2s ease-in-out;
     }
     .detail{
         color: var(--text-main, #1E1E1E);
@@ -120,6 +128,7 @@
         position: absolute;
         left: 20px;
         top: 230px;
+        transition: transform 0.2s ease-in-out;
     }
     .quantity{
         color: var(--text-secondary, #6C757D);
@@ -131,6 +140,7 @@
         position: absolute;
         left: 20px;
         top: 280px;
+        transition: transform 0.2s ease-in-out;
     }
     .cart-button{
         display: flex;
@@ -142,10 +152,14 @@
         gap: 10px;
         flex-shrink: 0;
         border-radius: 8px;
-        background: var(--background-main-color, #000); 
+        background: var(--background-main-color, #FF8C00); 
         position: absolute;
         left: 20px;
         top: 330px;
+        transition: transform 0.2s ease-in-out;
+        &:hover{
+            background-color: #333333;
+        }
         .cart-text{
             color: var(--background-white, #FFF);
             font-family: Andika;
@@ -154,6 +168,7 @@
             font-weight: 400;
             line-height: normal;
             letter-spacing: 0.16px;
+            transition: transform 0.2s ease-in-out;
         }
         
     }
@@ -164,5 +179,10 @@
             position: absolute;
             right: 20px;
             top: 330px;
+            transition: transform 0.2s ease-in-out;
         }
 }
+.product:hover, .product:hover .child {
+    transform: scale(1.05);
+  }
+  

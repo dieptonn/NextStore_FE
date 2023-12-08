@@ -13,11 +13,11 @@
         justify-content: flex-end;
         align-items: center;
         // gap: 20px;
-        background: #3B83D6;
+        background: #333333;
         .image{
             width: 1920px;
             height: 239.626px;
-            background: #3B83D6;
+            background: #333333 ;
         }
         .background{
             display: flex;
@@ -275,10 +275,10 @@
                                     padding: 12px 40.63px 13.19px 41px;
                                     align-items: flex-start;
                                     border-radius: 50px;
-                                    border: 1px solid #01B7F2;
+                                    border: 1px solid #333333;
                                     background: #FFF;
                                     .buttonText{
-                                        color: #01B7F2;
+                                        color: #333333;
                                         text-align: center;
                                         font-family: Roboto;
                                         font-size: 14px;
@@ -303,7 +303,7 @@
             align-items: center;
             flex-shrink: 0;
             border-top: 1px solid rgba(255, 255, 255, 0.10);
-            background: #3B83D6;
+            background: #333333;
             .info{
                 display: flex;
                 width: 1110px;

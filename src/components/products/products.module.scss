@@ -9,11 +9,13 @@
         margin-top: 20px;
         display: flex;
         width: 230px;
+        height: 1035px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         border-radius: 10px;
         background: var(--background-white, #FFF);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
         .filter{
             display: flex;
             width: 230px;
@@ -32,15 +34,19 @@
                     display: flex;
                     width: 210px;
                     flex-direction: column;
-                    align-items: flex-start;
+                    align-items: center;
+                    justify-content: center;
                     gap: 20px;
                     .filter1-katalog{
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 10px;
                         align-self: stretch;
-                        color: var(--text-main, #1E1E1E);
+                        color: var(--text-main, #FF8C00);
 
                         /* medium 18 */
-                        font-family: Andika;
-                        font-size: 18px;
+                        font-family: Forte;
+                        font-size: 28px;
                         font-style: normal;
                         font-weight: 400;
                         line-height: normal;
@@ -90,7 +96,7 @@
                         width: 9px;
                         height: 1px;
                         flex-shrink: 0;
-                        fill: var(--text-main, #1E1E1E);
+                        fill: var(--text-main, #FF8C00);
                     }
                     .to{
                         display: flex;
@@ -157,7 +163,7 @@
                             }
                             .qty{
                                 color: var(--text-secondary, #6C757D);
-                                font-family: Andika;
+                                font-family: Open Sans;
                                 font-size: 14px;
                                 font-style: normal;
                                 font-weight: 400;
@@ -218,99 +224,114 @@
             }
         }
     }
-    .product{
-        position: relative;
+    .list{
         display: flex;
-        width: 228.297px;
-        height: 390px;
-        padding: 10px;
-        align-items: flex-start;
-        gap: 10px;
-        flex-shrink: 0;
-        border-radius: 10px;
-        background: var(--background-white, #FFF);
-        margin: 20px;
-        .heart{
-            width: 24px;
-            height: 24px;
-            flex-shrink: 0;
+        width: 1075px;
+        flex-wrap: wrap;
+        // justify-content: space-between;
+        .product{
+            flex-basis: calc(25% - 40px); /* 20px là khoảng cách giữa các sản phẩm và 20px là margin bên trái và bên phải của mỗi sản phẩm */
+            box-sizing: border-box;
             position: relative;
-            right: 35px;
-        }
-        .price{
-            color: var(--background-main-color, #000);
-    
-            /* medium 18 */
-            font-family: Andika;
-            font-size: 18px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            position: absolute;
-            left: 20px;
-            top: 200px;
-        }
-        .detail{
-            color: var(--text-main, #1E1E1E);
-            font-family: Andika;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            position: absolute;
-            left: 20px;
-            top: 230px;
-        }
-        .quantity{
-            color: var(--text-secondary, #6C757D);
-            font-family: Andika;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            position: absolute;
-            left: 20px;
-            top: 280px;
-        }
-        .cart-button{
             display: flex;
-            width: 130px;
-            height: 40px;
-            padding: 10px 0px;
-            justify-content: center;
-            align-items: center;
+            width: 228.297px;
+            height: 390px;
+            padding: 10px;
+            align-items: flex-start;
             gap: 10px;
             flex-shrink: 0;
-            border-radius: 8px;
-            background: var(--background-main-color, #000); 
-            position: absolute;
-            left: 20px;
-            top: 330px;
-            .cart-text{
-                color: var(--background-white, #FFF);
-                font-family: Andika;
-                font-size: 16px;
+            border-radius: 10px;
+            background: var(--background-white, #FFF);
+            margin: 20px;
+            
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            .heart{
+                width: 24px;
+                height: 24px;
+                flex-shrink: 0;
+                position: relative;
+                right: 35px;
+            }
+            .price{
+                color: var(--background-main-color, #FF8C00);
+        
+                /* medium 18 */
+                font-family: Open Sans;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                position: absolute;
+                left: 20px;
+                top: 200px;
+            }
+            .detail{
+                color: var(--text-main, #1E1E1E);
+                font-family: Open Sans;
+                font-size: 14px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
-                letter-spacing: 0.16px;
-            }
-            
-        }
-        .shopping-cart{
-                width: 40px;
-                height: 40px;
-                flex-shrink: 0;
                 position: absolute;
-                right: 20px;
-                top: 330px;
+                left: 20px;
+                top: 230px;
             }
+            .quantity{
+                color: var(--text-secondary, #6C757D);
+                font-family: Open Sans;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                position: absolute;
+                left: 20px;
+                top: 280px;
+            }
+            .cart-button{
+                display: flex;
+                width: 130px;
+                height: 40px;
+                padding: 10px 0px;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                flex-shrink: 0;
+                border-radius: 8px;
+                background: var(--background-main-color, #FF8C00); 
+                position: absolute;
+                left: 20px;
+                top: 330px;
+                &:hover{
+                    background-color: #333333;
+                }
+                .cart-text{
+                    color: var(--background-white, #FFF);
+                    font-family: Open Sans;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    letter-spacing: 0.16px;
+                }
+                
+            }
+            .shopping-cart{
+                    width: 40px;
+                    height: 40px;
+                    flex-shrink: 0;
+                    position: absolute;
+                    right: 20px;
+                    top: 330px;
+                }
+        }
     }
 }
 
 .filter-text{
     color: var(--text-main, #1E1E1E);
-    font-family: Andika;
+    font-family: Open Sans;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -321,3 +342,6 @@
     width: 24px;
     height: 24px;
 }
+.product:hover, .product:hover .child {
+    transform: scale(1.05);
+  }

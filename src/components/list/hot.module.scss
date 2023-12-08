@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    background: #ECF4F4;
+    background: #ffffff;
     display: flex;
     position: relative;
     margin-bottom: 80px;
@@ -17,8 +17,9 @@
         flex-shrink: 0;
         // display: block;
         gap: 18px;
-        background: #3C96FE;
+        background: #494949;
         border-radius: 12px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
         .title{
             color: var(--text-main, #ffffff);
 
@@ -42,6 +43,7 @@
             margin-bottom: 18px;
             margin-left: 35px;
             .product{
+                position: relative;
                 display: flex;
                 width: 134.882px;
                 height: 200px;
@@ -52,6 +54,12 @@
                 flex-shrink: 0;
                 border-radius: 10px;
                 background: var(--background-white, #FFF);
+                overflow: hidden;
+                transition: transform 0.2s ease-in-out;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+                &:hover{
+                    transform: scale(1.1);
+                  }
             }
         }
         .more{
@@ -64,6 +72,7 @@
             background: #FFF;
             margin-left: 30px;
             margin-right: 20px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
             .more-text{
                 color: #000;
 

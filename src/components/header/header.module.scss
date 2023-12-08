@@ -1,15 +1,22 @@
 
 
+.headerZ{
+    position: relative;
+    width: 100%;
+    height: 670px;
+
+
 .header{
+    position: relative;
+    z-index: 2;
     display: flex;
     width: 1920px;
     padding: 13px 189px 19px 188px;
     flex-direction: column;
     align-items: flex-start;
     gap: 9px;
-    background: #3b83d6;
+    // background: #e27d02;
     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
-    display: inline-flex;
     .header-1{
         width: 1542px;
         height: 53px;
@@ -25,10 +32,11 @@
             height: 46px;
             flex-shrink: 0;
             border-radius: 8px;
-            border: 1px solid var(--stroke-primary, #4A90E2);
+            // border: 1px solid var(--stroke-primary, #e27d02);
             background: var(--background-white, #FFF);
             position: relative;
             margin-left: 658.001px;
+            display: flex;
             .search-button{
                 display: inline-flex;
                 height: 46px;
@@ -37,10 +45,9 @@
                 align-items: center;
                 flex-shrink: 0;
                 border-radius: 0px 8px 8px 0px;
-                background: var(--text-main, #cdd393);
+                background: var(--text-main, #FF8C00);
                 position: absolute;
                 right: 0;
-                top: -1px;
                 // bottom: 0;
                 .search-icon{
                     width: 24px;
@@ -74,7 +81,7 @@
             .text-logo{
                 color: #000000;
                 text-align: center;
-                font-family: Andika;
+                font-family: Open Sans;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 400;
@@ -96,7 +103,7 @@
             
             flex-shrink: 0;
             border-radius: 8px;
-            background: var(--text-main, #3b83d6);
+            // background: var(--text-main, #e27d02);
             position: relative;
             margin-top: 5px;
             .danhmuc-div{
@@ -120,8 +127,8 @@
                     color: var(--background-white, #ffffff);
                     margin-left: 10px;
 
-                    /* andika */
-                    font-family: Andika;
+                    /* Open Sans */
+                    font-family: Open Sans;
                     font-size: 18px;
                     font-style: normal;
                     font-weight: 400;
@@ -134,8 +141,9 @@
 
                     &.active {
                         display: block;
-                        display: flex;
-                        z-index: 1000;
+                        // display: flex;
+                        z-index: 10000;
+                        transition: z-index 0.3s ease;
                     }
                 position: absolute;
                 width: 254px;
@@ -155,7 +163,7 @@
                     width: 254px;
                     height: 30px;
                     padding-left: 3px ;
-                    align-items: flex-start;
+                    align-items: center;
                     gap: 7px;
                     flex-shrink: 0;
                     border-bottom: 0.25px solid #C2C2C2;
@@ -172,7 +180,7 @@
                     .arrow-icon{
                         width: 15px;
                         height: 15px;
-                        margin-top: 5px;
+                        // margin-top: 5px;
                         position: absolute;
                         right: 2px;
                     }
@@ -185,16 +193,17 @@
                         justify-content: flex-end;
                         align-items: center;
                         color: #000;
-                        font-family: Arial;
+                        font-family: Open Sans;
                         font-size: 14px;
                         font-style: normal;
                         font-weight: 100;
                         line-height: normal;
+                        transition: transform 0.2s ease-in-out;
                         &:hover {
                             // background-color: #dddddd;
                             transform: scale(1.1); /* Zoom in 10% khi hover */
                             font-weight: bold;
-                            color: #0077cc;
+                            color: #FF8C00;
                         }
                     }
                 }
@@ -205,11 +214,10 @@
                 border: 1px solid #D6D6D6;
                 background: #FFF;
                 display: none;
-
                     &.active {
-                        display: block;
+                        // display: block;
                         display: flex;
-                        z-index: 1000;
+                        z-index: 3000;
                     }
                 position: absolute;
                 top: 0;
@@ -237,8 +245,8 @@
                             align-items: center;
                             border-bottom: 0.5px solid #DEDEDE;
                             .topic-text{
-                                color: #1F34EC;
-                                font-family: Arial;
+                                color: #ff8c00;
+                                font-family: Open Sans;
                                 font-size: 12px;
                                 font-style: normal;
                                 font-weight: 700;
@@ -278,8 +286,8 @@
                             align-items: center;
                             border-bottom: 0.5px solid #DEDEDE;
                             .topic-text{
-                                color: #1F34EC;
-                                font-family: Arial;
+                                color: #ff8c00;
+                                font-family: Open Sans;
                                 font-size: 12px;
                                 font-style: normal;
                                 font-weight: 700;
@@ -319,8 +327,8 @@
                             align-items: center;
                             border-bottom: 0.5px solid #DEDEDE;
                             .topic-text{
-                                color: #1F34EC;
-                                font-family: Arial;
+                                color: #ff8c00;
+                                font-family: Open Sans;
                                 font-size: 12px;
                                 font-style: normal;
                                 font-weight: 700;
@@ -360,8 +368,8 @@
                             align-items: center;
                             border-bottom: 0.5px solid #DEDEDE;
                             .topic-text{
-                                color: #1F34EC;
-                                font-family: Arial;
+                                color: #ff8c00;
+                                font-family: Open Sans;
                                 font-size: 12px;
                                 font-style: normal;
                                 font-weight: 700;
@@ -391,7 +399,7 @@
                 display: inline-block;
                 margin-right: 22px;
                 /* medium 18 */
-                font-family: Andika;
+                font-family: Open Sans;
                 font-size: 18px;
                 font-style: normal;
                 font-weight: 400;
@@ -405,7 +413,7 @@
                 margin-top: 13px;
 
                 /* medium 18 */
-                font-family: Andika;
+                font-family: Open Sans;
                 font-size: 30px;
                 font-style: normal;
                 font-weight: 900;
@@ -416,9 +424,48 @@
         }
     }
 }
+.backGround{
+    position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+      
+}
+.backGround-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    z-index: 2;
+    margin-top: 100px;
+    margin-left: 500px;
+    margin-right: 500px;
+    .title1{
+        color: var(--white, #FFF);
+        text-align: center;
+        font-family: Forte;
+        font-size: 90px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .title2{
+        color: var(--white, #FFF);
+        text-align: center;
+        font-family: Open Sans;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+  }
 .text{
     color: #000;
-    font-family: Arial;
+    font-family: Open Sans;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -427,10 +474,11 @@
 }
 .Text{
     color: #000;
-    font-family: Arial;
+    font-family: Open Sans;
     font-size: 15px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     white-space: nowrap;
+}
 }

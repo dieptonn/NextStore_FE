@@ -87,9 +87,11 @@ export default function Details() {
                         </div>
                     </div>
                     <div className={styles['addCart']}>
-
+                        <div className={styles['smallImg']}>
+                            <img src="../image/details/cart-plus.png" alt="" />
+                        </div>
                         <div className={styles['addText']}>
-                            Thêm vào giỏ hàng
+                            Thêm vào giỏ
                         </div>
                     </div>
                 </div>
