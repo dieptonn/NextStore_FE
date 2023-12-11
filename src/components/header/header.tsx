@@ -31,9 +31,9 @@ export default function Header() {
                     <div className={styles['like']}>
                         <img src="../image/Korzina.png" alt="" />
                     </div>
-                    <div className={styles['avatar']}>
+                    <Link href='/login' className={styles['avatar']}>
                         <div className={styles['text-logo']}>Kirish</div>
-                    </div>
+                    </Link>
                 </div>
                 <div className={styles['header-2']}>
                     <button className={styles['danh-muc']}
@@ -482,7 +482,7 @@ export default function Header() {
                     </button>
                     <div className={styles['menu-list']}>
                         <div className={styles['header-suoc']}>|</div>
-                        <div className={styles['header-text']}>Tivi</div>
+                        <Link href='/products' className={styles['header-text']}>Tivi</Link>
                         <div className={styles['header-text']}>Tủ lạnh</div>
                         <div className={styles['header-text']}>Máy giặt</div>
                         <div className={styles['header-text']}>Máy sấy</div>

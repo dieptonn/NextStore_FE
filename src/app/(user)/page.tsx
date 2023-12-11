@@ -2,13 +2,12 @@
 import Image from 'next/image'
 import Slider1 from '@/components/slider/slider1'
 import Slider2 from '@/components/slider/slider2'
-import styles from '@/app/children.module.scss'
+import styles from './children.module.scss'
 import Hot from '@/components/list/hot'
 import Sale from '@/components/list/sale'
 import Trend from '@/components/list/trend'
 import Dev from '@/components/list/dev'
-
-
+import Chatbot from '@/components/chatbot/chatbot'
 
 
 export default function Home() {
@@ -20,9 +19,7 @@ export default function Home() {
       <Slider2 />
       <Trend />
       <Dev />
-      <button className={styles['zalo']}>
-        <img src="./image/zalo.png" alt="" />
-      </button>
+      <Chatbot />
     </main>
   )
 }

@@ -1,0 +1,78 @@
+.zalo{
+    display: flex;
+    width: 58px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+    background: #FFF;
+    position: fixed;
+    left: 1800px;
+    bottom: 58px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    // border: 0.025px solid #333333;
+    transition: transform 0.2s ease-in-out;
+    &:hover {
+        // Kiểm tra nếu zalo không active thì mới áp dụng hiệu ứng hover
+        &:not(.active) {
+            transform: scale(0.75);
+        }
+    }
+    z-index: 2;
+}
+.chatBox{
+    display: none;
+    position: absolute;
+    right: 68px;
+    bottom: 60px;
+    transition: transform 0.3s ease-in-out;
+    &.active {
+        display: flex;
+        flex-direction: column;
+    }
+    width: 388px;
+    height: 531px;
+    border-radius: 34px 34px 8px 34px;
+    background: var(--white, #FFF);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    .header{
+        display: inline-flex;
+        padding: 41px 31px 10px 56px;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 21px;
+        border-radius: 34px 34px 0px 0px;
+        background: #FA8B02;
+        .title{
+            width: 401px;
+            height: 44px;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            .next{
+                color: #FFF;
+                font-family: Open Sans;
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+            .store{
+                color: var(--black, #333);
+                font-family: Open Sans;
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+        }
+        .hello{
+            display: flex;
+            width: 278px;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            gap: 20px;
+        }
+    }
+}
