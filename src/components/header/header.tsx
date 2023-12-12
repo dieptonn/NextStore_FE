@@ -78,7 +78,7 @@ export default function Header() {
                                                 <div className={styles['Text']}>
                                                     Tivi
                                                 </div>
-                                                <Link href="/products" className={styles['topic-text']}>
+                                                <Link href="/tivi" className={styles['topic-text']}>
                                                     Xem tất cả
                                                 </Link>
                                             </div>
@@ -482,21 +482,21 @@ export default function Header() {
                     </button>
                     <div className={styles['menu-list']}>
                         <div className={styles['header-suoc']}>|</div>
-                        <Link href='/products' className={styles['header-text']}>Tivi</Link>
-                        <div className={styles['header-text']}>Tủ lạnh</div>
-                        <div className={styles['header-text']}>Máy giặt</div>
-                        <div className={styles['header-text']}>Máy sấy</div>
-                        <div className={styles['header-text']}>Gia dụng</div>
-                        <div className={styles['header-text']}>Lọc nước</div>
-                        <div className={styles['header-text']}>Điều hòa</div>
-                        <div className={styles['header-text']}>Nồi cơm</div>
-                        <div className={styles['header-text']}>Nồi chiên</div>
-                        <div className={styles['header-text']}>Bếp điện</div>
-                        <div className={styles['header-text']}>Loa</div>
-                        <div className={styles['header-text']}>Điện thoại</div>
-                        <div className={styles['header-text']}>Máy cũ</div>
-                        <div className={styles['header-text']}>Laptop</div>
-                        <div className={styles['header-text']}>Tủ đông</div>
+                        <Link href='/tivi' className={styles['header-text']}>Tivi</Link>
+                        <Link href='tu-lanh' className={styles['header-text']}>Tủ lạnh</Link>
+                        <Link href='may-giat' className={styles['header-text']}>Máy giặt</Link>
+                        <Link href='may-say' className={styles['header-text']}>Máy sấy</Link>
+                        <Link href='gia-dung' className={styles['header-text']}>Gia dụng</Link>
+                        <Link href='loc-nuoc' className={styles['header-text']}>Lọc nước</Link>
+                        <Link href='dieu-hoa' className={styles['header-text']}>Điều hòa</Link>
+                        <Link href='noi-com' className={styles['header-text']}>Nồi cơm</Link>
+                        <Link href='noi-chien' className={styles['header-text']}>Nồi chiên</Link>
+                        <Link href='bep-dien' className={styles['header-text']}>Bếp điện</Link>
+                        <Link href='loa' className={styles['header-text']}>Loa</Link>
+                        <Link href='dien-thoai' className={styles['header-text']}>Điện thoại</Link>
+                        <Link href='may-cu' className={styles['header-text']}>Máy cũ</Link>
+                        <Link href='laptop' className={styles['header-text']}>Laptop</Link>
+                        <Link href='tu-dong' className={styles['header-text']}>Tủ đông</Link>
                     </div>
                 </div>
             </div>

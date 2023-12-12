@@ -1,5 +1,5 @@
 'use client'
-import styles from './products.module.scss'
+import styles from '../styles.module.scss'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -27,7 +27,7 @@ export default function Products() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get<{ data: Product[] }>('http://127.0.0.1:8000/api/v1/televisions/showProduct');
+                const response = await axios.get<{ data: Product[] }>('http://127.0.0.1:8000/api/v1/fridges/showProduct');
                 console.log({
                     Response: response.data.data,
                 });
@@ -214,7 +214,9 @@ export default function Products() {
             <div className={styles['list']}>
                 {data.map((product) => (
                     <Link key={product._id} href="/products/details" className={styles['product']}>
-                        <img src={product.product_img} alt={product.name} />
+                        <div className={styles['productImg']}>
+                            <img src={product.product_img} alt={product.name} />
+                        </div>
                         <div className={styles['heart']}>
                             <img src="./image/sale/Sevimli.png" alt="" />
                         </div>
