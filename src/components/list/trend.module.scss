@@ -22,7 +22,7 @@
             color: var(--text-main, #ffffff);
 
             /* medium 28 */
-            font-family: Andika;
+            font-family: Arial;
             font-size: 28px;
             font-style: normal;
             font-weight: 400;
@@ -71,7 +71,7 @@
                 color: #000;
                 text-align: center;
                 /* medium 18 */
-                font-family: Andika;
+                font-family: Arial;
                 font-size: 18px;
                 font-style: normal;
                 font-weight: 400;
@@ -108,7 +108,7 @@
         color: var(--background-main-color, #FF8C00);
 
         /* medium 18 */
-        font-family: Andika;
+        font-family: Arial;
         font-size: 18px;
         font-style: normal;
         font-weight: 400;
@@ -120,7 +120,7 @@
     }
     .detail{
         color: var(--text-main, #1E1E1E);
-        font-family: Andika;
+        font-family: Arial;
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
@@ -129,10 +129,11 @@
         left: 20px;
         top: 230px;
         transition: transform 0.2s ease-in-out;
+        padding-right: 10px;
     }
     .quantity{
         color: var(--text-secondary, #6C757D);
-        font-family: Andika;
+        font-family: Arial;
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
@@ -162,7 +163,7 @@
         }
         .cart-text{
             color: var(--background-white, #FFF);
-            font-family: Andika;
+            font-family: Arial;
             font-size: 16px;
             font-style: normal;
             font-weight: 400;

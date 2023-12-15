@@ -163,7 +163,7 @@
                             }
                             .qty{
                                 color: var(--text-secondary, #6C757D);
-                                font-family: Open Sans;
+                                font-family: Arial;
                                 font-size: 14px;
                                 font-style: normal;
                                 font-weight: 400;
@@ -262,7 +262,7 @@
                 color: var(--background-main-color, #FF8C00);
         
                 /* medium 18 */
-                font-family: Open Sans;
+                font-family: Arial;
                 font-size: 18px;
                 font-style: normal;
                 font-weight: 500;
@@ -273,7 +273,7 @@
             }
             .detail{
                 color: var(--text-main, #1E1E1E);
-                font-family: Open Sans;
+                font-family: Arial;
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 400;
@@ -281,10 +281,11 @@
                 position: absolute;
                 left: 20px;
                 top: 230px;
+                padding-right: 10px;
             }
             .quantity{
                 color: var(--text-secondary, #6C757D);
-                font-family: Open Sans;
+                font-family: Arial;
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 400;
@@ -312,7 +313,7 @@
                 }
                 .cart-text{
                     color: var(--background-white, #FFF);
-                    font-family: Open Sans;
+                    font-family: Arial;
                     font-size: 16px;
                     font-style: normal;
                     font-weight: 400;
@@ -335,7 +336,7 @@
 
 .filter-text{
     color: var(--text-main, #1E1E1E);
-    font-family: Open Sans;
+    font-family: Arial;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;

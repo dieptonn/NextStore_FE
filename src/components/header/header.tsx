@@ -8,10 +8,31 @@ export default function Header() {
     const [menu, setMenu] = useState(false);
     const [menu_details, setMenu_details] = useState(false);
 
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            // Cập nhật vị trí cuộn
+            setScrollPosition(window.scrollY);
+        };
+
+        // Lắng nghe sự kiện cuộn
+        window.addEventListener('scroll', handleScroll);
+
+        // Hủy đăng ký lắng nghe khi component unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    // Màu nền sẽ thay đổi khi vị trí cuộn lớn hơn 100px
+    const backgroundColor = scrollPosition > 110 ? 'rgba(51, 51, 51, 1)' : 'transparent';
+
+
 
     return (
         <div className={styles['headerZ']}>
-            <div className={styles['header']}>
+            <div className={styles['header']} style={{ backgroundColor }}>
                 <div className={styles['header-1']}>
                     <Link href="/" className={styles['logo-img']}>
                         <img src="../image/Logo.jpg" alt="" />
@@ -28,11 +49,11 @@ export default function Header() {
                     <div className={styles['like']}>
                         <img src="../image/Sevimlilar.png" alt="" />
                     </div>
-                    <div className={styles['like']}>
+                    <Link href='/gio-hang' className={styles['like']}>
                         <img src="../image/Korzina.png" alt="" />
-                    </div>
+                    </Link>
                     <Link href='/login' className={styles['avatar']}>
-                        <div className={styles['text-logo']}>Kirish</div>
+                        <div className={styles['text-logo']}>Sign in</div>
                     </Link>
                 </div>
                 <div className={styles['header-2']}>

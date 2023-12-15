@@ -213,7 +213,7 @@ export default function Products() {
             </div>
             <div className={styles['list']}>
                 {data.map((product) => (
-                    <Link key={product._id} href="/products/details" className={styles['product']}>
+                    <Link key={product._id} href="/tu-lanh/[productName]" as={`/tu-lanh/${encodeURIComponent(product.name)}`} className={styles['product']}>
                         <div className={styles['productImg']}>
                             <img src={product.product_img} alt={product.name} />
                         </div>

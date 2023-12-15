@@ -1,0 +1,105 @@
+
+
+
+.main{
+    width: 835px;
+    height: 102px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    position: relative;
+    // gap: 10px;
+    .cart{
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        .cartNum{
+            width: 37px;
+            height: 37px;
+            flex-shrink: 0;
+            background-color: var(--Orange, #FA8B02);
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .cartText{
+                color: var(--white, #FFF);
+                text-align: center;
+                font-family: Open Sans;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+        }
+        .text{
+            color: var(--Orange, #FA8B02);
+            text-align: center;
+            font-family: Open Sans;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+        
+    }
+    .line1{
+        position: absolute;
+        left: 80px;
+        top: 30.5px;
+        width: 275px;
+        height: 4px;
+        flex-shrink: 0;
+        background: var(--gray, #EFEFEF);
+    }
+    .order{
+        margin-left: 280px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;  
+        .orNum{
+            width: 37px;
+            height: 37px;
+            flex-shrink: 0;
+            background-color: var(--Orange, #EFEFEF);
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .orText{
+                color: var(--white, #FFF);
+                text-align: center;
+                font-family: Open Sans;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+        }
+        .orTitle{
+            color: var(--Orange, #333);
+            text-align: center;
+            font-family: Open Sans;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            opacity: 0.4;
+        }
+        
+    }
+    .line2{
+        position: absolute;
+        left: 445px;
+        top: 30.5px;
+        width: 275px;
+        height: 4px;
+        flex-shrink: 0;
+        background: var(--gray, #EFEFEF);
+    }
+}
