@@ -53,56 +53,56 @@ export default function Products() {
                                     <div className={styles['filter-arrow']}>
                                         <img src="./image/product_page/arrow_left.png" alt="" />
                                     </div>
-                                    <div className={styles['filter-text']}>Smartfonlar</div>
+                                    <div className={styles['filter-text']}>Smartphone</div>
                                 </div>
                                 <div className={styles['filter1-category']}>
                                     <div className={styles['filter-arrow']}>
                                         <img src="./image/product_page/arrow_left.png" alt="" />
                                     </div>
-                                    <div className={styles['filter-text']}>Kir yuvish mashinalari</div>
+                                    <div className={styles['filter-text']}>Đồ gia dụng</div>
                                 </div>
                                 <div className={styles['filter1-category']}>
                                     <div className={styles['filter-arrow']}>
                                         <img src="./image/product_page/arrow_left.png" alt="" />
                                     </div>
-                                    <div className={styles['filter-text']}>Televizorlar</div>
+                                    <div className={styles['filter-text']}>Tivi</div>
                                 </div>
                                 <div className={styles['filter1-category']}>
                                     <div className={styles['filter-arrow']}>
                                         <img src="./image/product_page/arrow_left.png" alt="" />
                                     </div>
-                                    <div className={styles['filter-text']}>Aqlli soatlar</div>
+                                    <div className={styles['filter-text']}>Máy lạnh</div>
                                 </div>
                                 <div className={styles['filter1-category']}>
                                     <div className={styles['filter-arrow']}>
                                         <img src="./image/product_page/arrow_left.png" alt="" />
                                     </div>
-                                    <div className={styles['filter-text']}>Quloqchinlar</div>
+                                    <div className={styles['filter-text']}>Đồ điện tử</div>
                                 </div>
                                 <div className={styles['filter1-category']}>
                                     <div className={styles['filter-arrow']}>
                                         <img src="./image/product_page/arrow_left.png" alt="" />
                                     </div>
-                                    <div className={styles['filter-text']}>Konditsionerlar</div>
+                                    <div className={styles['filter-text']}>Điều hòa</div>
                                 </div>
                                 <div className={styles['filter1-category']}>
                                     <div className={styles['filter-arrow']}>
                                         <img src="./image/product_page/arrow_left.png" alt="" />
                                     </div>
-                                    <div className={styles['filter-text']}>Sovutkichlar</div>
+                                    <div className={styles['filter-text']}>Tủ lạnh</div>
                                 </div>
                                 <div className={styles['filter1-category']}>
                                     <div className={styles['filter-arrow']}>
                                         <img src="./image/product_page/arrow_down.png" alt="" />
                                     </div>
-                                    <div className={styles['filter-text']}>Kompyuter va notebooklar</div>
+                                    <div className={styles['filter-text']}>Máy tính</div>
                                 </div>
 
                             </div>
                         </div>
                     </div>
                     <div className={styles['filter2']}>
-                        <div className={styles['filter-katalog']}>Narx so’mda</div>
+                        <div className={styles['filter-katalog']}>Giá</div>
                         <div className={styles['salary']}>
                             <div className={styles['from']}>
                                 <div className={styles['filter-text']}>0</div>
@@ -115,7 +115,7 @@ export default function Products() {
                         </div>
                     </div>
                     <div className={styles['filter3']}>
-                        <div className={styles['filter-katalog']}>Brend bo’yicha</div>
+                        <div className={styles['filter-katalog']}>Theo thương hiệu</div>
                         <div className={styles['search']}>
                             <input className={styles['input']} type="text" />
                             <div className={styles['filter-arrow']}>
@@ -185,19 +185,19 @@ export default function Products() {
                     <div className={styles['filter4']}>
                         <div className={styles['filter4-content']}>
                             <div className={styles['filter4-tick']}>
-                                <div className={styles['filter-text']}>Bo’lib to’lash</div>
+                                <div className={styles['filter-text']}>Hàng mới</div>
                                 <div className={styles['tick']}>
                                     <img src="./image/product_page/switch.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['filter4-tick']}>
-                                <div className={styles['filter-text']}>Yangi mahsulotlar</div>
+                                <div className={styles['filter-text']}>Hàng cũ</div>
                                 <div className={styles['tick']}>
                                     <img src="./image/product_page/switch2.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['filter4-tick']}>
-                                <div className={styles['filter-text']}>Chegirmali mahsulot</div>
+                                <div className={styles['filter-text']}>Hàng đổi trả</div>
                                 <div className={styles['tick']}>
                                     <img src="./image/product_page/switch.png" alt="" />
                                 </div>
