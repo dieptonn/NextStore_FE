@@ -188,19 +188,19 @@ export default function Products() {
                             <div className={styles['filter4-tick']}>
                                 <div className={styles['filter-text']}>Hàng mới</div>
                                 <div className={styles['tick']}>
-                                    <Image width={24} height={24} src="/image/product_page/switch.png" alt="" />
+                                    <Image width={41} height={21} src="/image/product_page/switch.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['filter4-tick']}>
                                 <div className={styles['filter-text']}>Hàng cũ</div>
                                 <div className={styles['tick']}>
-                                    <Image width={24} height={24} src="/image/product_page/switch2.png" alt="" />
+                                    <Image width={41} height={21} src="/image/product_page/switch2.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['filter4-tick']}>
                                 <div className={styles['filter-text']}>Hàng đổi trả</div>
                                 <div className={styles['tick']}>
-                                    <Image width={24} height={24} src="/image/product_page/switch.png" alt="" />
+                                    <Image width={41} height={21} src="/image/product_page/switch.png" alt="" />
                                 </div>
                             </div>
                         </div>

@@ -37,7 +37,7 @@ export default function Header() {
             </div>
             <div className={styles['header2']}>
                 <div className={styles['avatar']}>
-                    <Image width={18} height={18} src="/image/admin/avatar.png" alt="" />
+                    <Image width={30} height={30} src="/image/admin/avatar.png" alt="" />
                 </div>
                 <div className={styles['name']}>diepton</div>
             </div>
