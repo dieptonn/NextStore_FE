@@ -1,13 +1,10 @@
-// app/login/page.tsx
-
 import styles from './styles.module.scss'
-import Link from 'next/link';
-
+import SideBar from '@/components/sidebar/SideBar'
 
 export default function Page() {
     return (
         <div className={styles['dashboard']}>
+            <SideBar />
         </div>
     )
 }
-
