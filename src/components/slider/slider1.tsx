@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './slider1.module.scss'
 import { Carousel } from 'antd';
+import Image from 'next/image'
 
 const Slider1: React.FC = () => {
 
@@ -26,22 +27,22 @@ const Slider1: React.FC = () => {
                 <Carousel className={styles['slider']} autoplay autoplaySpeed={3000}>
                     <div>
                         <div style={contentStyle}>
-                            <img src="./image/slider/slider.png" alt="" />
+                            <Image width={1009} height={294} src="/image/slider/slider.png" alt="" />
                         </div>
                     </div>
                     <div>
                         <div style={contentStyle}>
-                            <img src="./image/slider/slider.png" alt="" />
+                            <Image width={1009} height={294} src="/image/slider/slider.png" alt="" />
                         </div>
                     </div>
                     <div>
                         <div style={contentStyle}>
-                            <img src="./image/slider/slider.png" alt="" />
+                            <Image width={1009} height={294} src="/image/slider/slider.png" alt="" />
                         </div>
                     </div>
                     <div>
                         <div style={contentStyle}>
-                            <img src="./image/slider/slider.png" alt="" />
+                            <Image width={1009} height={294} src="/image/slider/slider.png" alt="" />
                         </div>
                     </div>
                 </Carousel>

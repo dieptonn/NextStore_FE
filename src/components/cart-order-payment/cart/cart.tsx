@@ -1,6 +1,7 @@
 'use client'
 import styles from './styles.module.scss';
 import Link from 'next/link'
+import Image from 'next/image'
 // import React, { useEffect, useState } from "react";
 
 
@@ -14,7 +15,7 @@ export default function Cart() {
                 <div className={styles['cartNote']}>
                     <div className={styles['cartNoteText']}>
                         • Please check your shopping cart again before paying <br />
-                        • Please contact us if you need assistance with payment, orders, products, <br /> manufacturers, unit prices,...
+                        • Please contact us if you need assistance with payment, orders, products, <br /> manufacturers, unit prices,.
                     </div>
                 </div>
                 <div className={styles['cart1']}>
@@ -28,7 +29,7 @@ export default function Cart() {
                     </div>
                     <div className={styles['qtyDiv']}>
                         <div className={styles['sub']}>
-                            <img src="../image/cart/sub.png" alt="" />
+                            <Image width={24} height={24} src="/image/cart/sub.png" alt="" />
                         </div>
                         <div className={styles['qty']}>
                             <div className={styles['qtyText']}>
@@ -36,7 +37,7 @@ export default function Cart() {
                             </div>
                         </div>
                         <div className={styles['add']}>
-                            <img src="../image/cart/add.png" alt="" />
+                            <Image width={24} height={24} src="/image/cart/add.png" alt="" />
                         </div>
                     </div>
                 </div>
@@ -55,7 +56,7 @@ export default function Cart() {
                     </div>
                     <div className={styles['qtyDiv']}>
                         <div className={styles['sub']}>
-                            <img src="../image/cart/sub.png" alt="" />
+                            <Image width={24} height={24} src="/image/cart/sub.png" alt="" />
                         </div>
                         <div className={styles['qty']}>
                             <div className={styles['qtyText']}>
@@ -63,7 +64,7 @@ export default function Cart() {
                             </div>
                         </div>
                         <div className={styles['add']}>
-                            <img src="../image/cart/add.png" alt="" />
+                            <Image width={24} height={24} src="/image/cart/add.png" alt="" />
                         </div>
                     </div>
                 </div>
@@ -82,7 +83,7 @@ export default function Cart() {
                     </div>
                     <div className={styles['qtyDiv']}>
                         <div className={styles['sub']}>
-                            <img src="../image/cart/sub.png" alt="" />
+                            <Image width={24} height={24} src="/image/cart/sub.png" alt="" />
                         </div>
                         <div className={styles['qty']}>
                             <div className={styles['qtyText']}>
@@ -90,7 +91,7 @@ export default function Cart() {
                             </div>
                         </div>
                         <div className={styles['add']}>
-                            <img src="../image/cart/add.png" alt="" />
+                            <Image width={24} height={24} src="/image/cart/add.png" alt="" />
                         </div>
                     </div>
                 </div>
@@ -102,7 +103,7 @@ export default function Cart() {
                 <div className={styles['div']}>
                     <div className={styles['order']}>
                         <div className={styles['orderImg']}>
-                            <img src="../image/cart/pic.png" alt="" />
+                            <Image width={512} height={352} src="/image/cart/pic.png" alt="" />
                         </div>
                         <div className={styles['orInfo']}>
                             <div className={styles['orTitle']}>
@@ -110,7 +111,7 @@ export default function Cart() {
                             </div>
                             <div className={styles['orDate']}>
                                 <div className={styles['dateImg']}>
-                                    <img src="../image/cart/date.png" alt="" />
+                                    <Image width={24} height={24} src="/image/cart/date.png" alt="" />
                                 </div>
                                 <div className={styles['date']}>
                                     FRI, 23 DEC 2022
@@ -118,7 +119,7 @@ export default function Cart() {
                             </div>
                             <div className={styles['orTime']}>
                                 <div className={styles['dateImg']}>
-                                    <img src="../image/cart/time.png" alt="" />
+                                    <Image width={24} height={24} src="/image/cart/time.png" alt="" />
                                 </div>
                                 <div className={styles['date']}>
                                     15:00

@@ -1,12 +1,12 @@
 import styles from './slider2.module.scss'
-
+import Image from 'next/image'
 
 export default function Slider1() {
     return (
         <div className={styles['slider2']}>
             <div className={styles['slider']}>
                 <div className={styles['about']}>
-                    <img src="../image/about.png" alt="" />
+                    <Image width={355} height={512} src="/image/about.png" alt="" />
                 </div>
                 <div className={styles['content']}>
                     <div className={styles['title']}>

@@ -1,5 +1,5 @@
 import styles from './trend.module.scss'
-
+import Image from 'next/image'
 
 export default function Trend() {
     return (
@@ -11,9 +11,9 @@ export default function Trend() {
                 <div className={styles['list']}>
                     <div className={styles['list1']}>
                         <div className={styles['product']}>
-                            <img src="./image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
                             <div className={styles['heart']}>
-                                <img src="./image/sale/Sevimli.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
                             <div className={styles['price']}>299 000 so’m</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
@@ -24,14 +24,14 @@ export default function Trend() {
                                 <div className={styles['cart-text']}>Sotib olish</div>
                             </div>
                             <div className={styles['shopping-cart']}>
-                                <img src="./image/sale/shopping_cart.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
                             </div>
 
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
                             <div className={styles['heart']}>
-                                <img src="./image/sale/Sevimli.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
                             <div className={styles['price']}>299 000 so’m</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
@@ -42,14 +42,14 @@ export default function Trend() {
                                 <div className={styles['cart-text']}>Sotib olish</div>
                             </div>
                             <div className={styles['shopping-cart']}>
-                                <img src="./image/sale/shopping_cart.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
                             </div>
 
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
                             <div className={styles['heart']}>
-                                <img src="./image/sale/Sevimli.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
                             <div className={styles['price']}>299 000 so’m</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
@@ -60,14 +60,14 @@ export default function Trend() {
                                 <div className={styles['cart-text']}>Sotib olish</div>
                             </div>
                             <div className={styles['shopping-cart']}>
-                                <img src="./image/sale/shopping_cart.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
                             </div>
 
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
                             <div className={styles['heart']}>
-                                <img src="./image/sale/Sevimli.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
                             <div className={styles['price']}>299 000 so’m</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
@@ -78,14 +78,14 @@ export default function Trend() {
                                 <div className={styles['cart-text']}>Sotib olish</div>
                             </div>
                             <div className={styles['shopping-cart']}>
-                                <img src="./image/sale/shopping_cart.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
                             </div>
 
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
                             <div className={styles['heart']}>
-                                <img src="./image/sale/Sevimli.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
                             <div className={styles['price']}>299 000 so’m</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
@@ -96,16 +96,16 @@ export default function Trend() {
                                 <div className={styles['cart-text']}>Sotib olish</div>
                             </div>
                             <div className={styles['shopping-cart']}>
-                                <img src="./image/sale/shopping_cart.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
                             </div>
 
                         </div>
                     </div>
                     <div className={styles['list1']}>
                         <div className={styles['product']}>
-                            <img src="./image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
                             <div className={styles['heart']}>
-                                <img src="./image/sale/Sevimli.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
                             <div className={styles['price']}>299 000 so’m</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
@@ -116,14 +116,14 @@ export default function Trend() {
                                 <div className={styles['cart-text']}>Sotib olish</div>
                             </div>
                             <div className={styles['shopping-cart']}>
-                                <img src="./image/sale/shopping_cart.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
                             </div>
 
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
                             <div className={styles['heart']}>
-                                <img src="./image/sale/Sevimli.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
                             <div className={styles['price']}>299 000 so’m</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
@@ -134,14 +134,14 @@ export default function Trend() {
                                 <div className={styles['cart-text']}>Sotib olish</div>
                             </div>
                             <div className={styles['shopping-cart']}>
-                                <img src="./image/sale/shopping_cart.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
                             </div>
 
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
                             <div className={styles['heart']}>
-                                <img src="./image/sale/Sevimli.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
                             <div className={styles['price']}>299 000 so’m</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
@@ -152,14 +152,14 @@ export default function Trend() {
                                 <div className={styles['cart-text']}>Sotib olish</div>
                             </div>
                             <div className={styles['shopping-cart']}>
-                                <img src="./image/sale/shopping_cart.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
                             </div>
 
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
                             <div className={styles['heart']}>
-                                <img src="./image/sale/Sevimli.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
                             <div className={styles['price']}>299 000 so’m</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
@@ -170,14 +170,14 @@ export default function Trend() {
                                 <div className={styles['cart-text']}>Sotib olish</div>
                             </div>
                             <div className={styles['shopping-cart']}>
-                                <img src="./image/sale/shopping_cart.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
                             </div>
 
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
                             <div className={styles['heart']}>
-                                <img src="./image/sale/Sevimli.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
                             <div className={styles['price']}>299 000 so’m</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
@@ -188,7 +188,7 @@ export default function Trend() {
                                 <div className={styles['cart-text']}>Sotib olish</div>
                             </div>
                             <div className={styles['shopping-cart']}>
-                                <img src="./image/sale/shopping_cart.png" alt="" />
+                                <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
                             </div>
 
                         </div>

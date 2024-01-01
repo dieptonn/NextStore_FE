@@ -2,7 +2,7 @@
 import styles from './styles.module.scss';
 import Link from 'next/link'
 import React, { useEffect, useState } from "react";
-
+import Image from 'next/image';
 
 export default function Chatbot() {
     const [chatBox, setChatBox] = useState(false);
@@ -14,7 +14,7 @@ export default function Chatbot() {
             }
             }
         >
-            <img src="./image/zalo.png" alt="" />
+            <Image width={521} height={512} src="/image/zalo.png" alt="" />
             <div className={chatBox ? `${styles.chatBox} ${styles.active}` : `${styles.chatBox}`}>
                 <div className={styles['header']}>
                     <div className={styles['title']}>
@@ -30,7 +30,7 @@ export default function Chatbot() {
                         </div>
                     </div>
                     <div className={styles['down']}>
-                        <img src="../image/down.png" alt="" />
+                        <Image width={26} height={26} src="/image/down.png" alt="" />
                     </div>
                 </div>
                 <div className={styles['content']}>

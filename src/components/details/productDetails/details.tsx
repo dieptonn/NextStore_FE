@@ -1,4 +1,5 @@
 import styles from './styles.module.scss'
+import Image from 'next/image'
 
 export default function Details() {
     return (
@@ -6,27 +7,27 @@ export default function Details() {
             <div className={styles['details-image']}>
                 <div className={styles['details-img']}>
                     <div className={styles['img']}>
-                        <img src="../image/details/product_img.png" alt="" />
+                        <Image width={512} height={512} src="/image/details/product_img.png" alt="" />
                     </div>
                     <div className={styles['like']}>
-                        <img src="../image/details/like.png" alt="" />
+                        <Image width={32} height={32} src="/image/details/like.png" alt="" />
                     </div>
                     <div className={styles['share']}>
-                        <img src="../image/details/share.png" alt="" />
+                        <Image width={32} height={32} src="/image/details/share.png" alt="" />
                     </div>
                 </div>
                 <div className={styles['small-img']}>
                     <div className={styles['pic1']}>
-                        <img src="../image/details/Pic1.png" alt="" />
+                        <Image width={105} height={105} src="/image/details/Pic1.png" alt="" />
                     </div>
                     <div className={styles['pic1']}>
-                        <img src="../image/details/Pic2.png" alt="" />
+                        <Image width={105} height={105} src="/image/details/Pic2.png" alt="" />
                     </div>
                     <div className={styles['pic1']}>
-                        <img src="../image/details/Pic3.png" alt="" />
+                        <Image width={105} height={105} src="/image/details/Pic3.png" alt="" />
                     </div>
                     <div className={styles['pic1']}>
-                        <img src="../image/details/Pic4.png" alt="" />
+                        <Image width={105} height={105} src="/image/details/Pic4.png" alt="" />
                     </div>
                 </div>
             </div>
@@ -88,7 +89,7 @@ export default function Details() {
                     </div>
                     <div className={styles['addCart']}>
                         <div className={styles['smallImg']}>
-                            <img src="../image/details/cart-plus.png" alt="" />
+                            <Image width={24} height={24} src="/image/details/cart-plus.png" alt="" />
                         </div>
                         <div className={styles['addText']}>
                             Thêm vào giỏ
@@ -96,13 +97,13 @@ export default function Details() {
                     </div>
                 </div>
                 <div className={styles['more']}>
-                    <img src="../image/details/1.png" alt="" />
+                    <Image width={512} height={36} src="/image/details/1.png" alt="" />
                 </div>
                 <div className={styles['more']}>
-                    <img src="../image/details/2.png" alt="" />
+                    <Image width={346} height={24} src="/image/details/2.png" alt="" />
                 </div>
                 <div className={styles['more']}>
-                    <img src="../image/details/3.png" alt="" />
+                    <Image width={521} height={28} src="/image/details/3.png" alt="" />
                 </div>
 
             </div>

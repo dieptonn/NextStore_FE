@@ -2,7 +2,7 @@
 import styles from './header.module.scss';
 import Link from 'next/link'
 import React, { useEffect, useState } from "react";
-
+import Image from 'next/image'
 
 export default function Header() {
     const [menu, setMenu] = useState(false);
@@ -36,22 +36,22 @@ export default function Header() {
             <div className={styles['header']} style={{ backgroundColor }}>
                 <div className={styles['header-1']}>
                     <Link href="/" className={styles['logo-img']}>
-                        <img src="../image/Logo.jpg" alt="" />
+                        <Image width={512} height={197} src="/image/Logo.jpg" alt="" />
                     </Link>
                     <div className={styles['search']}>
 
                         <div className={styles['search-button']}>
                             <div className={styles['search-icon']}>
-                                <img src="../image/search.png" alt="" />
+                                <Image width={24} height={24} src="/image/search.png" alt="" />
                             </div>
                         </div>
 
                     </div>
                     <div className={styles['like']}>
-                        <img src="../image/Sevimlilar.png" alt="" />
+                        <Image width={105} height={105} src="/image/Sevimlilar.png" alt="" />
                     </div>
                     <Link href='/gio_hang' className={styles['like']}>
-                        <img src="../image/Korzina.png" alt="" />
+                        <Image width={105} height={105} src="/image/Korzina.png" alt="" />
                     </Link>
                     <Link href='/login' className={styles['avatar']}>
                         <div className={styles['text-logo']}>Sign in</div>
@@ -65,7 +65,7 @@ export default function Header() {
                         <div className={styles['danhmuc-div']}>
                             <div className={styles['ba-que']}>
                                 <div className={styles['menu-icon']}>
-                                    <img src="../image/menu.png" alt="" />
+                                    <Image width={105} height={105} src="/image/menu.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['danhmuc-text']}>Tất cả danh mục</div>
@@ -80,11 +80,11 @@ export default function Header() {
                                 }}
                             >
                                 <div className={styles['menu-icon']}>
-                                    <img src="../image/menu/crown.png" alt="" />
+                                    <Image width={105} height={105} src="/image/menu/crown.png" alt="" />
                                 </div>
                                 <div className={styles['menu-text']}>Hàng cao cấp</div>
                                 <div className={styles['arrow-icon']}>
-                                    <img src="../image/arrow-right.png" alt="" />
+                                    <Image width={105} height={105} src="/image/arrow-right.png" alt="" />
                                 </div>
                                 <div className={menu_details ? `${styles.menu_details} ${styles.active}` : `${styles.menu_details}`}
                                     onMouseLeave={() => {
@@ -375,128 +375,128 @@ export default function Header() {
                             </div>
                             <div className={styles['menu-div']}>
                                 <div className={styles['menu-icon']}>
-                                    <img src="../image/menu/monitor-mobbile.png" alt="" />
+                                    <Image width={105} height={105} src="/image/menu/monitor-mobbile.png" alt="" />
                                 </div>
                                 <div className={styles['menu-text']}>Tivi, loa, dàn karaoke</div>
                                 <div className={styles['arrow-icon']}>
-                                    <img src="../image/arrow-right.png" alt="" />
+                                    <Image width={105} height={105} src="/image/arrow-right.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['menu-div']}>
                                 <div className={styles['menu-icon']}>
-                                    <img src="../image/menu/external-drive.png" alt="" />
+                                    <Image width={105} height={105} src="/image/menu/external-drive.png" alt="" />
                                 </div>
                                 <div className={styles['menu-text']}>Tủ lạnh, tủ đông, tủ mát</div>
                                 <div className={styles['arrow-icon']}>
-                                    <img src="../image/arrow-right.png" alt="" />
+                                    <Image width={105} height={105} src="/image/arrow-right.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['menu-div']}>
                                 <div className={styles['menu-icon']}>
-                                    <img src="../image/menu/simcard.png" alt="" />
+                                    <Image width={105} height={105} src="/image/menu/simcard.png" alt="" />
                                 </div>
                                 <div className={styles['menu-text']}>Máy giặt,  máy sấy, máy lạnh</div>
                                 <div className={styles['arrow-icon']}>
-                                    <img src="../image/arrow-right.png" alt="" />
+                                    <Image width={105} height={105} src="/image/arrow-right.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['menu-div']}>
                                 <div className={styles['menu-icon']}>
-                                    <img src="../image/menu/house-2.png" alt="" />
+                                    <Image width={105} height={105} src="/image/menu/house-2.png" alt="" />
                                 </div>
                                 <div className={styles['menu-text']}>Máy nước nóng, quạt sưởi</div>
                                 <div className={styles['arrow-icon']}>
-                                    <img src="../image/arrow-right.png" alt="" />
+                                    <Image width={105} height={105} src="/image/arrow-right.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['menu-div']}>
                                 <div className={styles['menu-icon']}>
-                                    <img src="../image/menu/electricity.png" alt="" />
+                                    <Image width={105} height={105} src="/image/menu/electricity.png" alt="" />
                                 </div>
                                 <div className={styles['menu-text']}>Điện gia dụng, xay ép</div>
                                 <div className={styles['arrow-icon']}>
-                                    <img src="../image/arrow-right.png" alt="" />
+                                    <Image width={105} height={105} src="/image/arrow-right.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['menu-div']}>
                                 <div className={styles['menu-icon']}>
-                                    <img src="../image/menu/trush-square.png" alt="" />
+                                    <Image width={105} height={105} src="/image/menu/trush-square.png" alt="" />
                                 </div>
                                 <div className={styles['menu-text']}>Bếp điện, nồi cơm, đồ bếp</div>
                                 <div className={styles['arrow-icon']}>
-                                    <img src="../image/arrow-right.png" alt="" />
+                                    <Image width={105} height={105} src="/image/arrow-right.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['menu-div']}>
                                 <div className={styles['menu-icon']}>
-                                    <img src="../image/menu/filter-tick.png" alt="" />
+                                    <Image width={105} height={105} src="/image/menu/filter-tick.png" alt="" />
                                 </div>
                                 <div className={styles['menu-text']}>Máy lọc nước, nồi chiên</div>
                                 <div className={styles['arrow-icon']}>
-                                    <img src="../image/arrow-right.png" alt="" />
+                                    <Image width={105} height={105} src="/image/arrow-right.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['menu-div']}>
                                 <div className={styles['menu-icon']}>
-                                    <img src="../image/menu/broom.png" alt="" />
+                                    <Image width={105} height={105} src="/image/menu/broom.png" alt="" />
                                 </div>
                                 <div className={styles['menu-text']}>Máy hút bụi, máy rửa chén</div>
                                 <div className={styles['arrow-icon']}>
-                                    <img src="../image/arrow-right.png" alt="" />
+                                    <Image width={105} height={105} src="/image/arrow-right.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['menu-div']}>
                                 <div className={styles['menu-icon']}>
-                                    <img src="../image/menu/heart-tick.png" alt="" />
+                                    <Image width={105} height={105} src="/image/menu/heart-tick.png" alt="" />
                                 </div>
                                 <div className={styles['menu-text']}>Sức khỏe, làm đẹp</div>
                                 <div className={styles['arrow-icon']}>
-                                    <img src="../image/arrow-right.png" alt="" />
+                                    <Image width={105} height={105} src="/image/arrow-right.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['menu-div']}>
                                 <div className={styles['menu-icon']}>
-                                    <img src="../image/menu/setting-2.png" alt="" />
+                                    <Image width={105} height={105} src="/image/menu/setting-2.png" alt="" />
                                 </div>
                                 <div className={styles['menu-text']}>Đồ nghề - dụng cụ sửa chữa</div>
                                 <div className={styles['arrow-icon']}>
-                                    <img src="../image/arrow-right.png" alt="" />
+                                    <Image width={105} height={105} src="/image/arrow-right.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['menu-div']}>
                                 <div className={styles['menu-icon']}>
-                                    <img src="../image/menu/mobile.png" alt="" />
+                                    <Image width={105} height={105} src="/image/menu/mobile.png" alt="" />
                                 </div>
                                 <div className={styles['menu-text']}>Điện thoại, latop, tablet</div>
                                 <div className={styles['arrow-icon']}>
-                                    <img src="../image/arrow-right.png" alt="" />
+                                    <Image width={105} height={105} src="/image/arrow-right.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['menu-div']}>
                                 <div className={styles['menu-icon']}>
-                                    <img src="../image/menu/watch.png" alt="" />
+                                    <Image width={105} height={105} src="/image/menu/watch.png" alt="" />
                                 </div>
                                 <div className={styles['menu-text']}>Xe đạp, phụ kiện, đồng hồ</div>
                                 <div className={styles['arrow-icon']}>
-                                    <img src="../image/arrow-right.png" alt="" />
+                                    <Image width={105} height={105} src="/image/arrow-right.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['menu-div']}>
                                 <div className={styles['menu-icon']}>
-                                    <img src="../image/menu/undo.png" alt="" />
+                                    <Image width={105} height={105} src="/image/menu/undo.png" alt="" />
                                 </div>
                                 <div className={styles['menu-text']}>Máy cũ, trưng bày</div>
                                 <div className={styles['arrow-icon']}>
-                                    <img src="../image/arrow-right.png" alt="" />
+                                    <Image width={105} height={105} src="/image/arrow-right.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['menu-div']}>
                                 <div className={styles['menu-icon']}>
-                                    <img src="../image/menu/verify.png" alt="" />
+                                    <Image width={105} height={105} src="/image/menu/verify.png" alt="" />
                                 </div>
                                 <div className={styles['menu-text']}>Dịch vụ hữu ích</div>
                                 <div className={styles['arrow-icon']}>
-                                    <img src="../image/arrow-right.png" alt="" />
+                                    <Image width={105} height={105} src="/image/arrow-right.png" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -527,7 +527,7 @@ export default function Header() {
                 <div className={styles['title2']}>Enjoy our services anytime</div>
             </div>
             <div className={styles['backGround']}>
-                <img src="./image/poster1.png" alt="" />
+                <Image width={1920} height={679} src="/image/poster1.png" alt="" />
             </div>
         </div>
     )

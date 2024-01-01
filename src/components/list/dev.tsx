@@ -1,5 +1,5 @@
 import styles from './dev.module.scss'
-
+import Image from 'next/image'
 
 export default function Dev() {
     return (
@@ -11,42 +11,42 @@ export default function Dev() {
                 <div className={styles['list']}>
                     <div className={styles['list1']}>
                         <div className={styles['product']}>
-                            <img src="./image/hp.png" alt="" />
+                            <Image width={512} height={274} src="/image/hp.png" alt="" />
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/acer.png" alt="" />
+                            <Image width={512} height={274} src="/image/acer.png" alt="" />
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/samsung.png" alt="" />
+                            <Image width={512} height={274} src="/image/samsung.png" alt="" />
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/asus.png" alt="" />
+                            <Image width={512} height={274} src="/image/asus.png" alt="" />
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/apple.png" alt="" />
+                            <Image width={512} height={274} src="/image/apple.png" alt="" />
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/msi.png" alt="" />
+                            <Image width={512} height={274} src="/image/msi.png" alt="" />
                         </div>
                     </div>
                     <div className={styles['list1']}>
                         <div className={styles['product']}>
-                            <img src="./image/mi.png" alt="" />
+                            <Image width={512} height={274} src="/image/mi.png" alt="" />
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/vivo.png" alt="" />
+                            <Image width={512} height={274} src="/image/vivo.png" alt="" />
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/texno.png" alt="" />
+                            <Image width={512} height={274} src="/image/texno.png" alt="" />
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/sandi.png" alt="" />
+                            <Image width={512} height={274} src="/image/sandi.png" alt="" />
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/good.png" alt="" />
+                            <Image width={512} height={274} src="/image/good.png" alt="" />
                         </div>
                         <div className={styles['product']}>
-                            <img src="./image/elma.png" alt="" />
+                            <Image width={512} height={274} src="/image/elma.png" alt="" />
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@
 import styles from './styles.module.scss'
 import Link from 'next/link';
 import React, { useEffect, useState } from "react";
-
+import Image from 'next/image'
 
 export default function SideBar() {
     const [dropdown, setDropdown] = useState(false)
@@ -14,7 +14,7 @@ export default function SideBar() {
                 <div className={styles['new']}>
                     <div className={styles['newDiv']}>
                         <div className={styles['newAdd']}>
-                            <img src="../image/admin/add.png" alt="" />
+                            <Image width={24} height={25} src="/image/admin/add.png" alt="" />
                         </div>
                         <div className={styles['newText']}>
                             New Item
@@ -29,14 +29,14 @@ export default function SideBar() {
                     <div className={styles['dashboardSon']}>
                         <div className={styles['dashboardDiv']}>
                             <div className={styles['dashboardIcon']}>
-                                <img src="../image/admin/icon.png" alt="" />
+                                <Image width={18} height={18} src="/image/admin/icon.png" alt="" />
                             </div>
                             <div className={styles['dashboardText']}>
                                 Dashboard
                             </div>
                         </div>
                         <div className={styles['drop']}>
-                            <img src="../image/admin/dropdown.png" alt="" />
+                            <Image width={18} height={18} src="/image/admin/dropdown.png" alt="" />
                         </div>
                     </div>
                     <div className={dropdown ? `${styles.dropdown} ${styles.active}` : `${styles.dropdown}`}>
@@ -67,14 +67,14 @@ export default function SideBar() {
                     <div className={styles['dashboardSon']}>
                         <div className={styles['dashboardDiv']}>
                             <div className={styles['dashboardIcon']}>
-                                <img src="../image/admin/icon.png" alt="" />
+                                <Image width={18} height={18} src="/image/admin/icon.png" alt="" />
                             </div>
                             <div className={styles['dashboardText']}>
                                 Application
                             </div>
                         </div>
                         <div className={styles['drop']}>
-                            <img src="../image/admin/dropdown.png" alt="" />
+                            <Image width={18} height={18} src="/image/admin/dropdown.png" alt="" />
                         </div>
                     </div>
                     <div className={styles['dropdown']}>
@@ -105,14 +105,14 @@ export default function SideBar() {
                     <div className={styles['dashboardSon']}>
                         <div className={styles['dashboardDiv']}>
                             <div className={styles['dashboardIcon']}>
-                                <img src="../image/admin/icon.png" alt="" />
+                                <Image width={18} height={18} src="/image/admin/icon.png" alt="" />
                             </div>
                             <div className={styles['dashboardText']}>
                                 Elements
                             </div>
                         </div>
                         <div className={styles['drop']}>
-                            <img src="../image/admin/dropdown.png" alt="" />
+                            <Image width={18} height={18} src="/image/admin/dropdown.png" alt="" />
                         </div>
                     </div>
                     <div className={styles['dropdown']}>
@@ -143,14 +143,14 @@ export default function SideBar() {
                     <div className={styles['dashboardSon']}>
                         <div className={styles['dashboardDiv']}>
                             <div className={styles['dashboardIcon']}>
-                                <img src="../image/admin/icon.png" alt="" />
+                                <Image width={18} height={18} src="/image/admin/icon.png" alt="" />
                             </div>
                             <div className={styles['dashboardText']}>
                                 Forms
                             </div>
                         </div>
                         <div className={styles['drop']}>
-                            <img src="../image/admin/dropdown.png" alt="" />
+                            <Image width={18} height={18} src="/image/admin/dropdown.png" alt="" />
                         </div>
                     </div>
                     <div className={styles['dropdown']}>
@@ -181,14 +181,14 @@ export default function SideBar() {
                     <div className={styles['dashboardSon']}>
                         <div className={styles['dashboardDiv']}>
                             <div className={styles['dashboardIcon']}>
-                                <img src="../image/admin/icon.png" alt="" />
+                                <Image width={18} height={18} src="/image/admin/icon.png" alt="" />
                             </div>
                             <div className={styles['dashboardText']}>
                                 Settings
                             </div>
                         </div>
                         <div className={styles['drop']}>
-                            <img src="../image/admin/dropdown.png" alt="" />
+                            <Image width={18} height={18} src="/image/admin/dropdown.png" alt="" />
                         </div>
                     </div>
                     <div className={styles['dropdown']}>

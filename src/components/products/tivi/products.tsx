@@ -3,6 +3,7 @@ import styles from '../styles.module.scss'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Image from 'next/image'
 
 interface Product {
     _id: string;
@@ -51,49 +52,49 @@ export default function Products() {
                             <div className={styles['filter1-list']}>
                                 <div className={styles['filter1-category']}>
                                     <div className={styles['filter-arrow']}>
-                                        <img src="./image/product_page/arrow_left.png" alt="" />
+                                        <Image width={24} height={24} src="/image/product_page/arrow_left.png" alt="" />
                                     </div>
                                     <div className={styles['filter-text']}>Smartphone</div>
                                 </div>
                                 <div className={styles['filter1-category']}>
                                     <div className={styles['filter-arrow']}>
-                                        <img src="./image/product_page/arrow_left.png" alt="" />
+                                        <Image width={24} height={24} src="/image/product_page/arrow_left.png" alt="" />
                                     </div>
                                     <div className={styles['filter-text']}>Đồ gia dụng</div>
                                 </div>
                                 <div className={styles['filter1-category']}>
                                     <div className={styles['filter-arrow']}>
-                                        <img src="./image/product_page/arrow_left.png" alt="" />
+                                        <Image width={24} height={24} src="/image/product_page/arrow_left.png" alt="" />
                                     </div>
                                     <div className={styles['filter-text']}>Tivi</div>
                                 </div>
                                 <div className={styles['filter1-category']}>
                                     <div className={styles['filter-arrow']}>
-                                        <img src="./image/product_page/arrow_left.png" alt="" />
+                                        <Image width={24} height={24} src="/image/product_page/arrow_left.png" alt="" />
                                     </div>
                                     <div className={styles['filter-text']}>Máy lạnh</div>
                                 </div>
                                 <div className={styles['filter1-category']}>
                                     <div className={styles['filter-arrow']}>
-                                        <img src="./image/product_page/arrow_left.png" alt="" />
+                                        <Image width={24} height={24} src="/image/product_page/arrow_left.png" alt="" />
                                     </div>
                                     <div className={styles['filter-text']}>Đồ điện tử</div>
                                 </div>
                                 <div className={styles['filter1-category']}>
                                     <div className={styles['filter-arrow']}>
-                                        <img src="./image/product_page/arrow_left.png" alt="" />
+                                        <Image width={24} height={24} src="/image/product_page/arrow_left.png" alt="" />
                                     </div>
                                     <div className={styles['filter-text']}>Điều hòa</div>
                                 </div>
                                 <div className={styles['filter1-category']}>
                                     <div className={styles['filter-arrow']}>
-                                        <img src="./image/product_page/arrow_left.png" alt="" />
+                                        <Image width={24} height={24} src="/image/product_page/arrow_left.png" alt="" />
                                     </div>
                                     <div className={styles['filter-text']}>Tủ lạnh</div>
                                 </div>
                                 <div className={styles['filter1-category']}>
                                     <div className={styles['filter-arrow']}>
-                                        <img src="./image/product_page/arrow_down.png" alt="" />
+                                        <Image width={24} height={24} src="/image/product_page/arrow_down.png" alt="" />
                                     </div>
                                     <div className={styles['filter-text']}>Máy tính</div>
                                 </div>
@@ -111,7 +112,7 @@ export default function Products() {
                             <div className={styles['to']}>100.000</div>
                         </div>
                         <div className={styles['slider']}>
-                            <img src="./image/product_page/Slider.png" alt="" />
+                            <Image width={213} height={28} src="/image/product_page/Slider.png" alt="" />
                         </div>
                     </div>
                     <div className={styles['filter3']}>
@@ -119,7 +120,7 @@ export default function Products() {
                         <div className={styles['search']}>
                             <input className={styles['input']} type="text" />
                             <div className={styles['filter-arrow']}>
-                                <img src="./image/product_page/search.png" alt="" />
+                                <Image width={24} height={24} src="/image/product_page/search.png" alt="" />
                             </div>
                         </div>
                         <div className={styles['check']}>
@@ -127,7 +128,7 @@ export default function Products() {
 
                                 <div className={styles['check-box']}>
                                     <div className={styles['filter-arrow']}>
-                                        <img src="./image/product_page/check_box.png" alt="" />
+                                        <Image width={24} height={24} src="/image/product_page/check_box.png" alt="" />
                                     </div>
                                     <div className={styles['check-div']}>
                                         <div className={styles['filter-text']}>Apple</div>
@@ -136,7 +137,7 @@ export default function Products() {
                                 </div>
                                 <div className={styles['check-box']}>
                                     <div className={styles['filter-arrow']}>
-                                        <img src="./image/product_page/check.png" alt="" />
+                                        <Image width={24} height={24} src="/image/product_page/check.png" alt="" />
                                     </div>
                                     <div className={styles['check-div']}>
                                         <div className={styles['filter-text']}>Samsung</div>
@@ -145,7 +146,7 @@ export default function Products() {
                                 </div>
                                 <div className={styles['check-box']}>
                                     <div className={styles['filter-arrow']}>
-                                        <img src="./image/product_page/check.png" alt="" />
+                                        <Image width={24} height={24} src="/image/product_page/check.png" alt="" />
                                     </div>
                                     <div className={styles['check-div']}>
                                         <div className={styles['filter-text']}>Xiaomi</div>
@@ -154,7 +155,7 @@ export default function Products() {
                                 </div>
                                 <div className={styles['check-box']}>
                                     <div className={styles['filter-arrow']}>
-                                        <img src="./image/product_page/check.png" alt="" />
+                                        <Image width={24} height={24} src="/image/product_page/check.png" alt="" />
                                     </div>
                                     <div className={styles['check-div']}>
                                         <div className={styles['filter-text']}>Huawei</div>
@@ -163,7 +164,7 @@ export default function Products() {
                                 </div>
                                 <div className={styles['check-box']}>
                                     <div className={styles['filter-arrow']}>
-                                        <img src="./image/product_page/check_box.png" alt="" />
+                                        <Image width={24} height={24} src="/image/product_page/check_box.png" alt="" />
                                     </div>
                                     <div className={styles['check-div']}>
                                         <div className={styles['filter-text']}>Artel</div>
@@ -172,7 +173,7 @@ export default function Products() {
                                 </div>
                                 <div className={styles['check-box']}>
                                     <div className={styles['filter-arrow']}>
-                                        <img src="./image/product_page/check.png" alt="" />
+                                        <Image width={24} height={24} src="/image/product_page/check.png" alt="" />
                                     </div>
                                     <div className={styles['check-div']}>
                                         <div className={styles['filter-text']}>Boshqalar</div>
@@ -187,19 +188,19 @@ export default function Products() {
                             <div className={styles['filter4-tick']}>
                                 <div className={styles['filter-text']}>Hàng mới</div>
                                 <div className={styles['tick']}>
-                                    <img src="./image/product_page/switch.png" alt="" />
+                                    <Image width={24} height={24} src="/image/product_page/switch.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['filter4-tick']}>
                                 <div className={styles['filter-text']}>Hàng cũ</div>
                                 <div className={styles['tick']}>
-                                    <img src="./image/product_page/switch2.png" alt="" />
+                                    <Image width={24} height={24} src="/image/product_page/switch2.png" alt="" />
                                 </div>
                             </div>
                             <div className={styles['filter4-tick']}>
                                 <div className={styles['filter-text']}>Hàng đổi trả</div>
                                 <div className={styles['tick']}>
-                                    <img src="./image/product_page/switch.png" alt="" />
+                                    <Image width={24} height={24} src="/image/product_page/switch.png" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -213,12 +214,12 @@ export default function Products() {
             </div>
             <div className={styles['list']}>
                 {data.map((product) => (
-                    <Link key={product._id} href="/tivi/[productName]" as={`/tivi/${encodeURIComponent(product.name)}`} className={styles['product']}>
+                    <Link key={product._id} href="/may_giat/[productName]" as={`/may_giat/${encodeURIComponent(product.name)}`} className={styles['product']}>
                         <div className={styles['productImg']}>
-                            <img src={product.product_img} alt={product.name} />
+                            <Image width={512} height={747} src={product.product_img} alt={product.name} />
                         </div>
                         <div className={styles['heart']}>
-                            <img src="./image/sale/Sevimli.png" alt="" />
+                            <Image width={24} height={24} src="/image/sale/Sevimli.png" alt="" />
                         </div>
                         <div className={styles['price']}>{formatNumber(product.price_old)} VND</div>
                         <div className={styles['detail']}>{product.name}</div>
@@ -227,7 +228,7 @@ export default function Products() {
                             <div className={styles['cart-text']}>Sotib olish</div>
                         </div>
                         <div className={styles['shopping-cart']}>
-                            <img src="./image/sale/shopping_cart.png" alt="" />
+                            <Image width={40} height={40} src="/image/sale/shopping_cart.png" alt="" />
                         </div>
                     </Link>
                 ))}

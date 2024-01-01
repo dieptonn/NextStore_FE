@@ -1,12 +1,12 @@
 import styles from './footer.module.scss';
-
+import Image from 'next/image'
 
 export default function Footer() {
     return (
         <div className={styles['footer']}>
             <div className={styles['footer1']}>
                 <div className={styles['image']}>
-                    <img src="../image/footerimage.png" alt="" />
+                    <Image width={1920} height={239.626} src="/image/footerimage.png" alt="" />
                 </div>
                 <div className={styles['background']}>
                     <div className={styles['content']}>
@@ -23,10 +23,10 @@ export default function Footer() {
                                 </div>
                                 <div className={styles['textDiv']}>
                                     <div className={styles['text']}>Lorem Ipsum is simply dummy text of
-                                        the printing and typesetting industry...</div>
+                                        the printing and typesetting industry.</div>
                                 </div>
                                 <div className={styles['list']}>
-                                    <img src="../image/List.png" alt="" />
+                                    <Image width={512} height={74} src="/image/List.png" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@ export default function Footer() {
                                     <div className={styles['instaLine']}></div>
                                 </div>
                                 <div className={styles['instaImg']}>
-                                    <img src="../image/gr.png" alt="" />
+                                    <Image width={255} height={204} src="/image/gr.png" alt="" />
                                 </div>
                             </div>
                         </div>
