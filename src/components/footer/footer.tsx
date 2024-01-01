@@ -95,7 +95,7 @@ export default function Footer() {
                                         <div className={styles['input']}>
                                             <div className={styles['inputDiv']}>
                                                 <div className={styles['inputText']}>
-                                                    Email I'd
+                                                    Email Id
                                                 </div>
                                             </div>
                                         </div>

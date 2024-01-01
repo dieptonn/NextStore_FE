@@ -2,6 +2,7 @@
 
 import styles from './styles.module.scss'
 import Link from 'next/link';
+import Image from 'next/image'
 
 export default function Page() {
     return (
@@ -10,7 +11,7 @@ export default function Page() {
                 <div className={styles['mask']}>
                     <div className={styles['signin']}>
                         <div className={styles['logo']}>
-                            <img src="../image/login/Logo.png" alt="" />
+                            <Image width={112} height={44} src="/image/login/Logo.png" alt="" />
                         </div>
                         <div className={styles['text']}>
                             <div className={styles['wellcome']}>
@@ -60,7 +61,7 @@ export default function Page() {
                                 </div>
                                 <div className={styles['gg']}>
                                     <div className={styles['ggImg']}>
-                                        <img src="../image/login/gg.png" alt="" />
+                                        <Image width={24} height={25} src="/image/login/gg.png" alt="" />
                                     </div>
                                     <div className={styles['ggText']}>
                                         Sign In with Google
@@ -80,7 +81,7 @@ export default function Page() {
                 </div>
             </div>
             <div className={styles['img']}>
-                <img src="../image/login/gr.png" alt="" />
+                <Image width={729} height={741} src="/image/login/gr.png" alt="" />
             </div>
         </div>
     )

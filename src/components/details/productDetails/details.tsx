@@ -49,10 +49,10 @@ export default function Details() {
                     <div className={styles['color1']}></div>
                 </div>
                 <div className={styles['type']}>
-                    16 114 285 so'm / dona
+                    16 114 285 som / dona
                 </div>
                 <div className={styles['typeDetails']}>
-                    6 434 000 so'm  x 3 oy
+                    6 434 000 som  x 3 oy
                 </div>
                 <div className={styles['config']}>
                     <div className={styles['config1']}>
