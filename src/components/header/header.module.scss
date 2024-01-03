@@ -2,10 +2,11 @@
 
 .headerZ{
     position: relative;
-    width: 100%;
+    width: 1920px;
     height: 670px;
     display: flex;
     align-items: center;
+    justify-content: center;
 
     .header{
         position: relative;
@@ -446,8 +447,8 @@
         position: relative;
         z-index: 1;
         // margin-top: 100px;
-        margin-left: 500px;
-        margin-right: 500px;
+        // margin-left: 500px;
+        // margin-right: 500px;
         .title1{
             color: var(--white, #FFF);
             text-align: center;
