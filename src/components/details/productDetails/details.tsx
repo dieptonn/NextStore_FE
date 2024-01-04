@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './styles.module.scss'
 import Image from 'next/image'
 
@@ -112,9 +113,9 @@ export const Details: React.FC<DetailsProps> = ({ apiData }) => {
                             <div className={styles['smallImg']}>
                                 <Image width={24} height={24} src="/image/details/cart-plus.png" alt="" />
                             </div>
-                            <div className={styles['addText']}>
+                            <Link href={'/gio_hang'} className={styles['addText']}>
                                 Thêm vào giỏ
-                            </div>
+                            </Link>
                         </button>
                     </div>
                     <div className={styles['more']}>
