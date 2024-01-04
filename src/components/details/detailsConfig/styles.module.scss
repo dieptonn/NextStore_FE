@@ -1,13 +1,9 @@
-
-
-
-.config{
+.config {
     display: flex;
     width: 1230px;
-    height: 981px;
-    padding: 40px 19px;
+    height: auto;
+    padding: 40px;
     flex-direction: column;
-    align-items: flex-start;
     gap: 20px;
     flex-shrink: 0;
     border-radius: 10px;
@@ -15,4 +11,58 @@
     background: var(--background-white, #FFF);
     margin-bottom: 40px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    .title{
+        font-size: 32px;
+        margin-bottom: 20px;
+        font-weight: 600;
+        color: #FF8C00;
+    }
+    .configDiv {
+        border-radius: 8px;
+        margin-bottom: 20px; // Thêm margin để tạo khoảng cách giữa các configDiv
+        overflow: hidden; // Ẩn phần bị tràn ra nếu có nhiều phần tử
+        width: 100%;
+        .configPair {
+            display: flex;
+            height: 60px;
+            margin-bottom: 10px;
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.2s ease-in-out;
+            &:hover{
+                // transform: scale(1.005);
+                background-color: #FF8C00;
+            }
+            .configDiv1{
+                // flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40%;
+                background-color: rgba(240, 240, 240, 0.628);
+                border-radius: 8px 0px 0px 8px;
+                border-right: 2px solid #ebebeb;
+                .text1{
+                    text-align: center;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 18px;
+                }
+            }
+            .configDiv2 {
+                // flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 60%;
+                background-color: rgba(240, 240, 240, 0.628);
+                border-radius: 0px 8px 8px 0px;
+                .text2 {
+                    text-align: center;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 18px;
+                }
+            }
+
+        }
+    }
 }

@@ -2,12 +2,23 @@
 
 
 .intro{
+    display: flex;
     width: 1230px;
-    height: 574px;
+    height: auto;
+    padding: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
     flex-shrink: 0;
+    border-radius: 10px;
     border: 1px solid var(--stroke-primary, #E4E7EE);
     background: var(--background-white, #FFF);
     margin-bottom: 40px;
-    border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    .intro2{
+        font-size: 32px;
+        margin-bottom: 20px;
+        font-weight: 600;
+        color: #FF8C00;
+    }
 }
