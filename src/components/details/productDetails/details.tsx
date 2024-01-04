@@ -113,7 +113,7 @@ export const Details: React.FC<DetailsProps> = ({ apiData }) => {
                             <div className={styles['smallImg']}>
                                 <Image width={24} height={24} src="/image/details/cart-plus.png" alt="" />
                             </div>
-                            <Link href={'/gio_hang'} className={styles['addText']}>
+                            <Link href='/gio_hang' className={styles['addText']}>
                                 Thêm vào giỏ
                             </Link>
                         </button>
