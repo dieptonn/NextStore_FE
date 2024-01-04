@@ -82,7 +82,7 @@ export default function Footer() {
                         <div className={styles['new']}>
                             <div className={styles['newDiv']}>
                                 <div className={styles['newHeading']}>
-                                    <div className={styles['newTitle']}>News letter</div>
+                                    <div className={styles['newTitle']}>Newsletter</div>
                                     <div className={styles['newLine']}></div>
                                 </div>
                                 <div className={styles['newContent']}>
