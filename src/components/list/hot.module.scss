@@ -17,11 +17,11 @@
         flex-shrink: 0;
         // display: block;
         gap: 18px;
-        background: #333333;
-        border-radius: 12px;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        // background: #333333;
+        // border-radius: 12px;
+        // box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
         .title{
-            color: var(--text-main, #ffffff);
+            color: var(--text-main, #333333);
 
             /* medium 28 */
             font-family: Arial;
@@ -48,7 +48,7 @@
                 width: 134.882px;
                 height: 200px;
                 padding: 9px 0px;
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
                 gap: 3px;
                 flex-shrink: 0;
@@ -69,12 +69,12 @@
             justify-content: flex-end;
             align-items: center;
             border-radius: 10px;
-            background: #FFF;
+            background: #FF8C00;
             margin-left: 30px;
             margin-right: 20px;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
             .more-text{
-                color: #000;
+                color: #ffffff;
 
                 /* medium 18 */
                 font-family: Arial;

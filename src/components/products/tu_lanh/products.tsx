@@ -31,6 +31,7 @@ export default function Products() {
         const fetchData = async () => {
             try {
                 const response = await axios.get<{ data: Product[] }>('https://nextstore-be.onrender.com/api/v1/fridges/showProduct');
+                // const response = await axios.get<{ data: Product[] }>('http://localhost:8000/api/v1/fridges/showProduct');
                 console.log({
                     Response: response.data.data,
                 });
