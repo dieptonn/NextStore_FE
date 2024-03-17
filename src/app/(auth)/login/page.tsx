@@ -59,14 +59,14 @@ export default function Page() {
                                 <div className={styles['or']}>
                                     or
                                 </div>
-                                <div className={styles['gg']}>
+                                <Link href="http://localhost:8000/api/v1/auth/google" className={styles['gg']}>
                                     <div className={styles['ggImg']}>
                                         <Image width={24} height={25} src="/image/login/gg.png" alt="" />
                                     </div>
                                     <div className={styles['ggText']}>
                                         Sign In with Google
                                     </div>
-                                </div>
+                                </Link>
                             </div>
                             <div className={styles['signup']}>
                                 <div className={styles['dontHave']}>
