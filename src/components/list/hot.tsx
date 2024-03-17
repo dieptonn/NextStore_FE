@@ -34,8 +34,10 @@ export default function Hot() {
                         <Image width={512} height={274} src="/image/hot/product8.png" alt="" />
                     </div>
                 </div>
-                <div className={styles['more']}>
-                    <div className={styles['more-text']}>More...</div>
+                <div className={styles['moreDiv']}>
+                    <div className={styles['more']}>
+                        <div className={styles['more-text']}>More...</div>
+                    </div>
                 </div>
             </div>
         </div>

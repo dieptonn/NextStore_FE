@@ -9,7 +9,7 @@
     background: #ffffff;
     display: flex;
     position: relative;
-    margin-bottom: 80px;
+    // margin-bottom: 80px;
     
     .hot-list{
         width: 1475px;
@@ -62,26 +62,32 @@
                   }
             }
         }
-        .more{
+        .moreDiv{
+            margin-top: 30px;
             display: flex;
-            width: 90%;
-            padding: 12px 683px 11px 732px;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
-            border-radius: 10px;
-            background: #FF8C00;
-            margin-left: 30px;
-            margin-right: 20px;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-            .more-text{
-                color: #ffffff;
-
-                /* medium 18 */
-                font-family: Arial;
-                font-size: 18px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
+            .more{
+                display: flex;
+                width: 10%;
+                padding: 12px 43px 11px 43px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px;
+                background: #FF8C00;
+                // margin-left: 30px;
+                // margin-right: 20px;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+                .more-text{
+                    color: #ffffff;
+    
+                    /* medium 18 */
+                    font-family: Arial;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
             }
         }
     }
