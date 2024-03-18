@@ -59,7 +59,7 @@ export default function Page() {
                                 <div className={styles['or']}>
                                     or
                                 </div>
-                                <Link href="https://next-store-kohl.vercel.app/api/v1/auth/google" className={styles['gg']}>
+                                <Link href="https://nextstore-be.onrender.com/api/v1/auth/google" className={styles['gg']}>
                                     <div className={styles['ggImg']}>
                                         <Image width={24} height={25} src="/image/login/gg.png" alt="" />
                                     </div>
