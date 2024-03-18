@@ -196,7 +196,7 @@ export default function Sale() {
                 </div>
                 <div className={styles['moreDiv']}>
                     <div className={styles['more']}>
-                        <div className={styles['more-text']}>More...</div>
+                        <div className={styles['more-text']}>More</div>
                     </div>
                 </div>
             </div>
