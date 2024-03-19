@@ -55,7 +55,7 @@ export default function DetailsPage() {
             <Intro apiData={apiData} />
             <Config apiData={apiData} />
             <Recommended />
-            <Chatbot />
+            {/* <Chatbot /> */}
         </main>
     )
 }

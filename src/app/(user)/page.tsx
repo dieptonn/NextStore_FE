@@ -19,7 +19,7 @@ export default function Home() {
       <Slider2 />
       <Trend />
       <Dev />
-      <Chatbot />
+      {/* <Chatbot /> */}
     </main>
   )
 }
