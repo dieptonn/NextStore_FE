@@ -1,4 +1,4 @@
-// 'use client'
+'use client'
 import Image from 'next/image'
 import Slider1 from '@/components/slider/slider1'
 import Slider2 from '@/components/slider/slider2'
