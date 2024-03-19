@@ -28,12 +28,12 @@ export default function Chatbot() {
     }, []);
 
     return (
-        <div className={styles['chatbot']}>
-            <df-messenger
+        <div>
+            <df-messenger className={styles['chatbot']}
                 intent="WELCOME"
                 chat-title="NextChat"
                 agent-id="d19f3953-b7db-4251-928b-31a5ed9b901d"
-                language-code="en"
+                language-code="vi"
             ></df-messenger>
         </div>
     )
