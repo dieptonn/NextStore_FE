@@ -1,8 +1,6 @@
 'use client'
 import styles from './styles.module.scss';
-import React, { useEffect, useState } from "react";
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-
+import { useEffect } from 'react';
 
 declare global {
     namespace JSX {
@@ -14,10 +12,23 @@ declare global {
 
 export default function Chatbot() {
 
+    useEffect(() => {
+        // Tạo một script element
+        const script = document.createElement('script');
+        script.src = 'https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1';
+        script.async = true;
+
+        // Thêm script vào body của trang
+        document.body.appendChild(script);
+
+        // Xóa script khi component unmount
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
 
     return (
         <div className={styles['chatbot']}>
-            <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
             <df-messenger
                 intent="WELCOME"
                 chat-title="NextChat"
