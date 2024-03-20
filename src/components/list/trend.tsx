@@ -6,7 +6,7 @@ export default function Trend() {
         <div className={styles['sale']}>
             <div className={styles['sale-list']}>
                 <div className={styles['title']}>
-                    Đang sale 🔥🔥🔥
+                    Top sản phẩm thịnh hành 📣📣📣
                 </div>
                 <div className={styles['list']}>
                     <div className={styles['list1']}>

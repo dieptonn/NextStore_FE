@@ -6,7 +6,7 @@ export default function Sale() {
         <div className={styles['sale']}>
             <div className={styles['sale-list']}>
                 <div className={styles['title']}>
-                    Đang sale 🔥🔥🔥
+                    Đang sale ⚡⚡⚡
                 </div>
                 <div className={styles['list']}>
                     <div className={styles['list1']}>

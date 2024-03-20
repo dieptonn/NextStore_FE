@@ -6,7 +6,7 @@ export default function Hot() {
         <div className={styles['hot']}>
             <div className={styles['hot-list']}>
                 <div className={styles['title']}>
-                    Các danh mục sản phẩm hot 💥💥💥
+                    Các danh mục sản phẩm hot 🔥🔥🔥
                 </div>
                 <div className={styles['list']}>
                     <div className={styles['product']}>
