@@ -17,57 +17,7 @@
         display: flex;
         width: 1009px;
         height: 294px;
-        // padding: 0px 73.906px 36px 73.905px;
-        justify-content: center;
-        align-items: center;
-        flex-shrink: 0;
-        position: relative;
-        top: 48px;   
-        // position: absolute;
-        top: 0; /* Điều chỉnh vị trí đè lên theo ý muốn của bạn */
-        // left: 363px; /* Điều chỉnh vị trí đè lên theo ý muốn của bạn */
-        // background: linear-gradient(to bottom, #3C96FE, #3C96FE 50%, #ecf4f4 50%, #ecf4f4); /* Màu xanh cho nửa trên và màu trắng cho nửa dưới */
         z-index: 1; /* Đảm bảo khối đè lên được hiển thị trên khối chứa ảnh */
     }
-    .arrow-right{
-        width: 44px;
-        height: 44px;
-        flex-shrink: 0;
-        position: relative;
-        right: -630px;
-        top: 21.5px;
-        z-index: 10;
-    }
-    .arrow-left{
-        width: 44px;
-        height: 44px;
-        flex-shrink: 0;
-        position: relative;
-        left: -630px;
-        top: 21.5px;
-        z-index: 10;
-    }
-    .bacham{
-        position: absolute;
-        display: flex;
-        padding: 0px 6px 5px 0px;
-        align-items: flex-start;
-        gap: 11px;
-        right: 897.5px;
-        top: 245px;
-        z-index: 1;
-        .black-radius{
-            width: 15px;
-            height: 15px;
-            border-radius: 100px;
-            background: #4A90E2;
-            position: relative;
-        }
-        .white-radius{
-            width: 15px;
-            height: 15px;
-            border-radius: 100px;
-            background: #CCC;
-        }
-    }
+    
 }
