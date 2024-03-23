@@ -1,0 +1,201 @@
+.paymentDiv{
+    padding: 80px;
+    display: flex;
+    flex-direction: row;
+    gap: 103px;
+    .payment{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        .paymentTit{
+            color: var(--black, #333);
+            font-family: "Open Sans";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+        .paypalBtn{
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+
+    .totalOrder{
+        flex-grow: 1;
+        display: flex;
+        padding: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        border-radius: 24px;
+        border: 1px solid rgba(51, 51, 51, 0.20);
+        background: var(--white, #FFF);
+        box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.25);
+        .title{
+            color: var(--black, #333);
+            font-family: Open Sans;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: normal;
+        }
+        .div{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            .order{
+                display: flex;
+                padding: 20px 0px;
+                align-items: flex-start;
+                gap: 20px;
+                border-bottom: 1px solid var(--gray, #EFEFEF);
+                .orderImg{
+                    width: 160px;
+                    height: 110px;
+                    border-radius: 12px;
+                    background:  lightgray 50% / cover no-repeat;
+                }
+                .orInfo{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 14px;
+                    .orTitle{
+                        width: 360px;
+                        color: var(--black, #333);
+                        font-family: Open Sans;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                    }
+                    .orDate{
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 10px;
+                        .dateImg{
+                            width: 24px;
+                            height: 24px;
+                        }
+                        .date{
+                            width: 270px;
+                            color: var(--black, #333);
+                            font-family: Open Sans;
+                            font-size: 18px;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: normal;
+                        }
+                    }
+                    .orTime{
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 10px;
+                    }
+                }
+            }
+            .memo{
+                width: 100%;
+                display: flex;
+                padding: 20px 0px;
+                flex-direction: column;
+                align-items: flex-start;
+                border-bottom: 1px solid var(--gray, #EFEFEF);
+                .memo1{
+                    width: 100%;
+                    display: flex;
+                    padding: 16px 0px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 126px;
+                    justify-content: space-between;
+                    .memo1Div{
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        .memo1Num{
+                            width: 37px;
+                            height: 37px;
+                            .memo1El{
+                                width: 37px;
+                                height: 37px;
+                                flex-shrink: 0;
+                                background: #EFEFEF;
+                                border-radius: 100px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                        }
+                        .memo1Text{
+                            color: var(--black, #333);
+                            text-align: center;
+                            font-family: Open Sans;
+                            font-size: 20px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+                        }
+                    }
+    
+                    .memo1Sal{
+                        color: var(--black, #333);
+                        text-align: center;
+                        font-family: Open Sans;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
+                    }
+                }
+            }
+            .totalPrice{
+                width: 100%;
+                display: flex;
+                padding: 20px 0px;
+                align-items: center;
+                gap: 271px;
+                justify-content: space-between;
+                .totalPriceTitle{
+                    color: var(--black, #333);
+                    font-family: Open Sans;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    opacity: 0.8;
+                }
+                .totalPriceSal{
+                    color: var(--Orange, #FA8B02);
+                    text-align: right;
+                    font-family: Open Sans;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                }
+            }
+        }
+        .button{
+            display: flex;
+            padding: 16px 24px;
+            align-items: flex-start;
+            gap: 10px;
+            border-radius: 50px;
+            background: var(--Orange, #FA8B02);
+            .buttonText{
+                width: 492px;
+                color: var(--white, #FFF);
+                text-align: center;
+                font-family: Open Sans;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+        }
+    }
+}
