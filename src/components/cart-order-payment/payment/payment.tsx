@@ -34,7 +34,9 @@ export default function Payment() {
                                 }
                             }
                         ],
-                        "total_price": "1557000",
+                        "total_price": "1567000",
+                        "shipping_fee": "10000",
+                        "payment_method": "paypal"
                     },
                 ],
             }),
