@@ -35,22 +35,23 @@ export default function Header() {
         <div className={styles['headerZ']}>
             <div className={styles['header']} style={{ backgroundColor }}>
                 <div className={styles['header-1']}>
-                    <Link href="/" className={styles['logo-img']}>
+                    <Link href="/home" className={styles['logo-img']}>
                         <Image width={512} height={197} src="/image/Logo.jpg" alt="" />
                     </Link>
                     <div className={styles['search']}>
-
+                        <div className={styles['searchInput']}>
+                            <input placeholder='Search ...' className={styles['Input']} type="text" />
+                        </div>
                         <div className={styles['search-button']}>
                             <div className={styles['search-icon']}>
                                 <Image width={24} height={24} src="/image/search.png" alt="" />
                             </div>
                         </div>
-
                     </div>
                     <div className={styles['like']}>
                         <Image width={105} height={105} src="/image/Sevimlilar.png" alt="" />
                     </div>
-                    <Link href='/gio_hang' className={styles['like']}>
+                    <Link href='/home/gio_hang' className={styles['like']}>
                         <Image width={105} height={105} src="/image/Korzina.png" alt="" />
                     </Link>
                     <Link href='/login' className={styles['avatar']}>
@@ -100,7 +101,7 @@ export default function Header() {
                                                 <div className={styles['Text']}>
                                                     Tivi
                                                 </div>
-                                                <Link href="/tivi" className={styles['topic-text']}>
+                                                <Link href="/home/tivi" className={styles['topic-text']}>
                                                     Xem tất cả
                                                 </Link>
                                             </div>
@@ -504,21 +505,21 @@ export default function Header() {
                     </button>
                     <div className={styles['menu-list']}>
                         <div className={styles['header-suoc']}>|</div>
-                        <Link href='/tivi' className={styles['header-text']}>Tivi</Link>
-                        <Link href='/tu_lanh' className={styles['header-text']}>Tủ lạnh</Link>
-                        <Link href='/may_giat' className={styles['header-text']}>Máy giặt</Link>
-                        <Link href='/may_say' className={styles['header-text']}>Máy sấy</Link>
-                        <Link href='/gia_dung' className={styles['header-text']}>Gia dụng</Link>
-                        <Link href='/loc_nuoc' className={styles['header-text']}>Lọc nước</Link>
-                        <Link href='/dieu_hoa' className={styles['header-text']}>Điều hòa</Link>
-                        <Link href='/noi_com' className={styles['header-text']}>Nồi cơm</Link>
-                        <Link href='/noi_chien' className={styles['header-text']}>Nồi chiên</Link>
-                        <Link href='/bep_dien' className={styles['header-text']}>Bếp điện</Link>
-                        <Link href='/loa' className={styles['header-text']}>Loa</Link>
-                        <Link href='/dien_thoai' className={styles['header-text']}>Điện thoại</Link>
-                        <Link href='/may_cu' className={styles['header-text']}>Máy cũ</Link>
-                        <Link href='/lap_top' className={styles['header-text']}>Laptop</Link>
-                        <Link href='/tu_dong' className={styles['header-text']}>Tủ đông</Link>
+                        <Link href='/home/tivi' className={styles['header-text']}>Tivi</Link>
+                        <Link href='/home/tu_lanh' className={styles['header-text']}>Tủ lạnh</Link>
+                        <Link href='/home/may_giat' className={styles['header-text']}>Máy giặt</Link>
+                        <Link href='/home/may_say' className={styles['header-text']}>Máy sấy</Link>
+                        <Link href='/home/gia_dung' className={styles['header-text']}>Gia dụng</Link>
+                        <Link href='/home/loc_nuoc' className={styles['header-text']}>Lọc nước</Link>
+                        <Link href='/home/dieu_hoa' className={styles['header-text']}>Điều hòa</Link>
+                        <Link href='/home/noi_com' className={styles['header-text']}>Nồi cơm</Link>
+                        <Link href='/home/noi_chien' className={styles['header-text']}>Nồi chiên</Link>
+                        <Link href='/home/bep_dien' className={styles['header-text']}>Bếp điện</Link>
+                        <Link href='/home/loa' className={styles['header-text']}>Loa</Link>
+                        <Link href='/home/dien_thoai' className={styles['header-text']}>Điện thoại</Link>
+                        <Link href='/home/may_cu' className={styles['header-text']}>Máy cũ</Link>
+                        <Link href='/home/lap_top' className={styles['header-text']}>Laptop</Link>
+                        <Link href='/home/tu_dong' className={styles['header-text']}>Tủ đông</Link>
                     </div>
                 </div>
             </div>

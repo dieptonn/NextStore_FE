@@ -17,7 +17,7 @@
             width: 37px;
             height: 37px;
             flex-shrink: 0;
-            background-color: var(--Orange, #fa8b02);
+            background-color: var(--Orange, #efefef);
             border-radius: 100px;
             display: flex;
             justify-content: center;
@@ -33,13 +33,14 @@
             }
         }
         .text {
-            color: var(--Orange, #fa8b02);
+            color: var(--Orange, #333);
             text-align: center;
             font-family: Open Sans;
             font-size: 20px;
             font-style: normal;
             font-weight: 600;
             line-height: normal;
+            opacity: 0.4;
         }
     }
     .line1 {
@@ -96,5 +97,41 @@
         height: 4px;
         flex-shrink: 0;
         background: var(--gray, #efefef);
+    }
+    .order2 {
+        margin-left: 280px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        .orNum2 {
+            width: 37px;
+            height: 37px;
+            flex-shrink: 0;
+            background-color: var(--Orange, #ff8c00);
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .orText2 {
+                color: var(--white, #fff);
+                text-align: center;
+                font-family: Open Sans;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+        }
+        .orTitle2 {
+            color: var(--Orange, #ff8c00);
+            text-align: center;
+            font-family: Open Sans;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
     }
 }

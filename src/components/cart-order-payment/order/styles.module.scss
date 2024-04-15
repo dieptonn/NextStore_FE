@@ -1,7 +1,422 @@
-.orderDiv{
-    padding: 80px;
-    .paypalBtn{
-        position: relative;
-        z-index: 1;
+.cartDiv {
+    margin-top: 80px;
+    display: inline-flex;
+    padding: 73px 79px 80px 66px;
+    align-items: flex-start;
+    gap: 103px;
+    .cart {
+        width: 733px;
+        height: 701px;
+        .cartTit {
+            color: var(--black, #333);
+            font-family: Open Sans;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+        .cartNote {
+            margin-top: 20px;
+            margin-bottom: 16px;
+            width: 643px;
+            display: inline-flex;
+            padding: 16px 24px;
+            align-items: flex-start;
+            gap: 10px;
+            border-radius: 12px;
+            background: rgba(239, 239, 239, 0.4);
+            .cartNoteText {
+                width: 643px;
+                color: var(--black, #333);
+                font-family: Open Sans;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                opacity: 0.8;
+                line-height: 1.5;
+            }
+        }
+        .voucherList {
+            margin-bottom: 45px;
+            margin-top: 45px;
+            display: inline-flex;
+            height: 429px;
+            padding: 17px 20px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 29px;
+            flex-shrink: 0;
+            border-top: 0.5px solid rgba(51, 51, 51, 0.2);
+            border-bottom: 0.5px solid rgba(51, 51, 51, 0.2);
+            .voucher1 {
+                display: flex;
+                position: relative;
+                // justify-content: center;
+                padding: 0px 15px;
+                align-items: center;
+                width: 641.09px;
+                height: 108px;
+                border-radius: 12px;
+                background: #fff;
+                box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.25);
+                .voucherImg {
+                    margin-right: 82.91px;
+                }
+                .voucherStick {
+                    width: 1px;
+                    height: 38.013px;
+                    background: #6b6b6b;
+                    margin-right: 60px;
+                }
+                .voucherBtn {
+                    position: absolute;
+                    right: 18px;
+                    display: flex;
+                    padding: 3px 15px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    border-radius: 12px;
+                    border: 1px solid #fa8b02;
+                    background: #fa8b02;
+                    .voucherBtnTxt {
+                        color: #fff;
+                        font-family: "Open Sans";
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                    }
+                }
+                .voucherBtn2 {
+                    position: absolute;
+                    right: 18px;
+                    display: inline-flex;
+                    padding: 3px 15px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    border-radius: 12px;
+                    border: 1px solid #fa8b02;
+                    .voucherBtnTxt2 {
+                        color: #fa8b02;
+                        font-family: "Open Sans";
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                    }
+                }
+                .voucherBtn3 {
+                    position: absolute;
+                    right: 18px;
+                    display: inline-flex;
+                    padding: 3px 15px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    border-radius: 12px;
+                    background: #828282;
+                    .voucherBtnTxt3 {
+                        color: #fff;
+                        font-family: "Open Sans";
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                    }
+                }
+            }
+        }
+        .addressDiv {
+            padding: 21px;
+            margin-top: 20px;
+            width: 685px;
+            height: 64px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            background: rgba(239, 239, 239, 0.4);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .addressDivTxt {
+                width: 490px;
+                color: var(--black, #333);
+                font-family: "Open Sans";
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                opacity: 0.8;
+            }
+        }
     }
+    .totalOrder {
+        display: flex;
+        padding: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        border-radius: 24px;
+        border: 1px solid rgba(51, 51, 51, 0.2);
+        background: var(--white, #fff);
+        box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.25);
+        .title {
+            color: var(--black, #333);
+            font-family: Open Sans;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: normal;
+        }
+        .div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            .order {
+                display: flex;
+                padding: 20px 0px;
+                align-items: flex-start;
+                gap: 20px;
+                border-bottom: 1px solid var(--gray, #efefef);
+                .orderImg {
+                    width: 160px;
+                    height: 110px;
+                    border-radius: 12px;
+                    background: lightgray 50% / cover no-repeat;
+                }
+                .orInfo {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 14px;
+                    .orTitle {
+                        width: 360px;
+                        color: var(--black, #333);
+                        font-family: Open Sans;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                    }
+                    .orDate {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 10px;
+                        .dateImg {
+                            width: 24px;
+                            height: 24px;
+                        }
+                        .date {
+                            width: 270px;
+                            color: var(--black, #333);
+                            font-family: Open Sans;
+                            font-size: 18px;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: normal;
+                        }
+                    }
+                    .orTime {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 10px;
+                    }
+                }
+            }
+            .memo {
+                width: 100%;
+                display: flex;
+                padding: 20px 0px;
+                flex-direction: column;
+                align-items: flex-start;
+                border-bottom: 1px solid var(--gray, #efefef);
+                .memo1 {
+                    width: 100%;
+                    display: flex;
+                    padding: 16px 0px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 126px;
+                    justify-content: space-between;
+                    .memo1Div {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        .memo1Num {
+                            width: 37px;
+                            height: 37px;
+                            .memo1El {
+                                width: 37px;
+                                height: 37px;
+                                flex-shrink: 0;
+                                background: #efefef;
+                                border-radius: 100px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                        }
+                        .memo1Text {
+                            color: var(--black, #333);
+                            text-align: center;
+                            font-family: Open Sans;
+                            font-size: 20px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+                        }
+                    }
+
+                    .memo1Sal {
+                        color: var(--black, #333);
+                        text-align: center;
+                        font-family: Open Sans;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
+                    }
+                }
+                .shipTit {
+                    margin-top: 14px;
+                    color: var(--black, #333);
+                    font-family: "Open Sans";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    opacity: 0.8;
+                }
+                .shipDiv {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 16px 0px 16px 0px;
+                    .address {
+                        display: flex;
+                        width: 313px;
+                        height: 54px;
+                        padding: 0px 12px 0px 12px;
+                        align-items: center;
+                        flex-shrink: 0;
+                        border-radius: 12px;
+                        background: rgba(239, 239, 239, 0.4);
+                        .addressTxt {
+                            color: var(--black, #333);
+                            font-family: "Open Sans";
+                            font-size: 13px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+                            opacity: 0.8;
+                        }
+                    }
+                }
+                .voucherDiv {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 16px 0px 16px 0px;
+                    .priceDiv {
+                        display: flex;
+                        flex-direction: row;
+                        .voucher {
+                            margin-right: 33px;
+                        }
+                    }
+                }
+            }
+            .totalPrice {
+                width: 100%;
+                display: flex;
+                padding: 20px 0px;
+                align-items: center;
+                gap: 271px;
+                justify-content: space-between;
+                .totalPriceTitle {
+                    color: var(--black, #333);
+                    font-family: Open Sans;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    opacity: 0.8;
+                }
+                .totalPriceSal {
+                    color: var(--Orange, #fa8b02);
+                    text-align: right;
+                    font-family: Open Sans;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                }
+            }
+        }
+        .button {
+            display: flex;
+            padding: 16px 24px;
+            align-items: flex-start;
+            gap: 10px;
+            border-radius: 50px;
+            background: var(--Orange, #fa8b02);
+            .buttonText {
+                width: 492px;
+                color: var(--white, #fff);
+                text-align: center;
+                font-family: Open Sans;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+        }
+    }
+}
+.name {
+    color: var(--black, #333);
+    font-family: Open Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.salary {
+    color: var(--Orange, #fa8b02);
+    font-family: Open Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.content {
+    color: var(--black, #333);
+    font-family: Open Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.6;
+}
+
+.price {
+    color: var(--black, #333);
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.customBtn:hover {
+    border-color: white;
+    color: #ff8c00;
 }

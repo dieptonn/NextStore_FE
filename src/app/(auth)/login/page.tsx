@@ -51,7 +51,7 @@ export default function Page() {
                             </div>
 
                             <div className={styles['button']}>
-                                <Link href='/' className={styles['signDiv']}>
+                                <Link href='/home' className={styles['signDiv']}>
                                     <div className={styles['signText']}>
                                         Sign In
                                     </div>

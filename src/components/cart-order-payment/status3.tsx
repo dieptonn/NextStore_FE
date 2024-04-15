@@ -1,10 +1,10 @@
 'use client'
-import styles from './status.module.scss';
+import styles from './status3.module.scss';
 import Link from 'next/link'
 // import React, { useEffect, useState } from "react";
 
 
-export default function Status() {
+export default function Status3() {
 
     return (
         <div className={styles['main']}>
@@ -20,7 +20,7 @@ export default function Status() {
             </Link>
             <div className={styles['line1']}>
             </div>
-            <div className={styles['order']}>
+            <Link href='/home/don_hang' className={styles['order']}>
                 <div className={styles['orNum']}>
                     <div className={styles['orText']}>
                         2
@@ -29,19 +29,19 @@ export default function Status() {
                 <div className={styles['orTitle']}>
                     Đơn hàng
                 </div>
-            </div>
+            </Link>
             <div className={styles['line2']}>
             </div>
-            <div className={styles['order']}>
-                <div className={styles['orNum']}>
-                    <div className={styles['orText']}>
+            <Link href='/home/thanh_toan' className={styles['order2']}>
+                <div className={styles['orNum2']}>
+                    <div className={styles['orText2']}>
                         3
                     </div>
                 </div>
-                <div className={styles['orTitle']}>
+                <div className={styles['orTitle2']}>
                     Thanh toán
                 </div>
-            </div>
+            </Link>
         </div>
     )
 }

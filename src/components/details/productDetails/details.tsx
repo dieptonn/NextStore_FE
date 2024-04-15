@@ -109,14 +109,14 @@ export const Details: React.FC<DetailsProps> = ({ apiData }) => {
                                 Mua ngay
                             </div>
                         </button>
-                        <button className={styles['addCart']}>
+                        <Link href='/home/gio_hang' className={styles['addCart']}>
                             <div className={styles['smallImg']}>
                                 <Image width={24} height={24} src="/image/details/cart-plus.png" alt="" />
                             </div>
-                            <Link href='/gio_hang' className={styles['addText']}>
+                            <div className={styles['addText']}>
                                 Thêm vào giỏ
-                            </Link>
-                        </button>
+                            </div>
+                        </Link>
                     </div>
                     <div className={styles['more']}>
                         <Image width={512} height={36} src="/image/details/1.png" alt="" />

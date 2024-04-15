@@ -50,7 +50,7 @@ export default function Products() {
             <Filter />
             <div className={styles['list']}>
                 {data.map((product) => (
-                    <Link key={product._id} href="/may_giat/[productName]" as={`/may_giat/${encodeURIComponent(product.slug)}`} className={styles['product']}>
+                    <Link key={product._id} href="/home/tivi/[productName]" as={`/home/tivi/${encodeURIComponent(product.slug)}`} className={styles['product']}>
                         <div className={styles['productImg']}>
                             <Image width={512} height={747} src={product.product_img} alt={product.name} />
                         </div>

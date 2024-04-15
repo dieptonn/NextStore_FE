@@ -157,21 +157,48 @@ export default function Payment() {
                                 €0.00
                             </div>
                         </div>
+                        <div className={styles['shipTit']}>
+                            Shipping fee:
+                        </div>
+                        <div className={styles['shipDiv']}>
+                            <div className={styles['address']}>
+                                <div className={styles['addressTxt']}>
+                                    3c, 288 alley, Hoang Mai street, Hoang Mai, Ha Noi
+                                </div>
+                            </div>
+                            <div className={styles['price']}>
+                                €8.00
+                            </div>
+                        </div>
+                        <div className={styles['shipTit']}>
+                            Voucher:
+                        </div>
+                        <div className={styles['voucherDiv']}>
+                            <div className={styles['priceDiv']}>
+                                <Image className={styles['voucher']} width={116} height={54} src="/image/cart/voucher1.png" alt="" />
+                                <Image className={styles['voucher']} width={116} height={54} src="/image/cart/voucher2.png" alt="" />
+                            </div>
+                            <div className={styles['price']}>
+                                - €26.00
+                            </div>
+
+                        </div>
+
                     </div>
                     <div className={styles['totalPrice']}>
                         <div className={styles['totalPriceTitle']}>
                             Total Price
                         </div>
                         <div className={styles['totalPriceSal']}>
-                            €86.00
+                            €68.00
                         </div>
                     </div>
                 </div>
-                <div className={styles['button']}>
+                {/* <Link href='/home/don_hang' className={styles['button']}>
                     <div className={styles['buttonText']}>
-                        Go to the Next Step
+                        Back to the Pre Step
                     </div>
-                </div>
+                </Link> */}
             </div>
 
         </div>

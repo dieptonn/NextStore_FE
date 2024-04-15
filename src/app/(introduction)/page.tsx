@@ -1,5 +1,6 @@
 import styles from './styles.module.scss'
 import Image from 'next/image'
+import Link from 'next/link'
 
 
 export default function introPage() {
@@ -28,10 +29,10 @@ export default function introPage() {
                                 </div>
 
                             </div>
-                            <div className={styles['welcomeBtn']}>
+                            <Link href='/home' className={styles['welcomeBtn']}>
                                 <div className={styles['welcomeBtnText']}>SEE OUT PRODUCTS</div>
 
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -1,18 +1,21 @@
-.content{
+.content {
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     padding-top: 50px;
     padding-bottom: 50px;
-    
-    .list{
+    gap: 80px;
+
+    .list {
         display: flex;
         width: 1075px;
         flex-wrap: wrap;
         // justify-content: space-between;
-        .product{
-            flex-basis: calc(25% - 40px); /* 20px là khoảng cách giữa các sản phẩm và 20px là margin bên trái và bên phải của mỗi sản phẩm */
+        .product {
+            flex-basis: calc(
+                25% - 40px
+            ); /* 20px là khoảng cách giữa các sản phẩm và 20px là margin bên trái và bên phải của mỗi sản phẩm */
             box-sizing: border-box;
             position: relative;
             display: flex;
@@ -23,26 +26,26 @@
             gap: 10px;
             flex-shrink: 0;
             border-radius: 10px;
-            background: var(--background-white, #FFF);
+            background: var(--background-white, #fff);
             margin: 20px;
-            
+
             overflow: hidden;
             transition: transform 0.2s ease-in-out;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-            .heart{
+            .heart {
                 width: 24px;
                 height: 24px;
                 flex-shrink: 0;
                 position: relative;
                 right: 5px;
             }
-            .productImg{
+            .productImg {
                 margin-left: 30px;
                 margin-top: 20px;
             }
-            .price{
-                color: var(--background-main-color, #FF8C00);
-        
+            .price {
+                color: var(--background-main-color, #ff8c00);
+
                 /* medium 18 */
                 font-family: Arial;
                 font-size: 18px;
@@ -53,8 +56,8 @@
                 left: 20px;
                 top: 200px;
             }
-            .detail{
-                color: var(--text-main, #1E1E1E);
+            .detail {
+                color: var(--text-main, #1e1e1e);
                 font-family: Arial;
                 font-size: 14px;
                 font-style: normal;
@@ -65,8 +68,8 @@
                 top: 230px;
                 padding-right: 10px;
             }
-            .quantity{
-                color: var(--text-secondary, #6C757D);
+            .quantity {
+                color: var(--text-secondary, #6c757d);
                 font-family: Arial;
                 font-size: 14px;
                 font-style: normal;
@@ -76,7 +79,7 @@
                 left: 20px;
                 top: 280px;
             }
-            .cart-button{
+            .cart-button {
                 display: flex;
                 width: 130px;
                 height: 40px;
@@ -86,15 +89,15 @@
                 gap: 10px;
                 flex-shrink: 0;
                 border-radius: 8px;
-                background: var(--background-main-color, #FF8C00); 
+                background: var(--background-main-color, #ff8c00);
                 position: absolute;
                 left: 20px;
                 top: 330px;
-                &:hover{
+                &:hover {
                     background-color: #333333;
                 }
-                .cart-text{
-                    color: var(--background-white, #FFF);
+                .cart-text {
+                    color: var(--background-white, #fff);
                     font-family: Arial;
                     font-size: 16px;
                     font-style: normal;
@@ -102,21 +105,20 @@
                     line-height: normal;
                     letter-spacing: 0.16px;
                 }
-                
             }
-            .shopping-cart{
-                    width: 40px;
-                    height: 40px;
-                    flex-shrink: 0;
-                    position: absolute;
-                    right: 20px;
-                    top: 330px;
-                }
+            .shopping-cart {
+                width: 40px;
+                height: 40px;
+                flex-shrink: 0;
+                position: absolute;
+                right: 20px;
+                top: 330px;
+            }
         }
     }
 }
 
-
-.product:hover, .product:hover .child {
+.product:hover,
+.product:hover .child {
     transform: scale(1.05);
-  }
+}

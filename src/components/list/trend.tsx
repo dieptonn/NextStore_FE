@@ -11,7 +11,7 @@ export default function Trend() {
                 <div className={styles['list']}>
                     <div className={styles['list1']}>
                         <div className={styles['product']}>
-                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/monitor.png" alt="" />
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
@@ -29,7 +29,7 @@ export default function Trend() {
 
                         </div>
                         <div className={styles['product']}>
-                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/cam.png" alt="" />
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
@@ -47,7 +47,7 @@ export default function Trend() {
 
                         </div>
                         <div className={styles['product']}>
-                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/mslap.png" alt="" />
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
@@ -65,7 +65,7 @@ export default function Trend() {
 
                         </div>
                         <div className={styles['product']}>
-                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/robot.png" alt="" />
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
@@ -83,7 +83,7 @@ export default function Trend() {
 
                         </div>
                         <div className={styles['product']}>
-                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/case.png" alt="" />
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
@@ -103,7 +103,7 @@ export default function Trend() {
                     </div>
                     <div className={styles['list1']}>
                         <div className={styles['product']}>
-                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/mouse.png" alt="" />
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
@@ -121,7 +121,7 @@ export default function Trend() {
 
                         </div>
                         <div className={styles['product']}>
-                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/watch.png" alt="" />
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
@@ -139,7 +139,7 @@ export default function Trend() {
 
                         </div>
                         <div className={styles['product']}>
-                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/vga.png" alt="" />
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
@@ -157,7 +157,7 @@ export default function Trend() {
 
                         </div>
                         <div className={styles['product']}>
-                            <Image width={228.297} height={390} src="/image/sale/product2.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/board.png" alt="" />
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>

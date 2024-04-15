@@ -184,11 +184,11 @@ export default function Cart() {
                         </div>
                     </div>
                 </div>
-                <div className={styles['button']}>
+                <Link href='/home/don_hang' className={styles['button']}>
                     <div className={styles['buttonText']}>
                         Go to the Next Step
                     </div>
-                </div>
+                </Link>
             </div>
         </div>
     )
