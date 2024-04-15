@@ -3,12 +3,51 @@ import styles from './header.module.scss';
 import Link from 'next/link'
 import React, { useEffect, useState } from "react";
 import Image from 'next/image'
+import search from './search';
+import { useRouter, usePathname } from 'next/navigation';
+
 
 export default function Header() {
     const [menu, setMenu] = useState(false);
     const [menu_details, setMenu_details] = useState(false);
-
+    const [searchValue, setSearchValue] = useState('');
     const [scrollPosition, setScrollPosition] = useState(0);
+
+    const router = useRouter();
+
+    const handleSearch = () => {
+
+        // Tạo URL mới từ giá trị của input
+        const inputValue = searchValue.replace(/ /g, '?');
+        const url = `/home/${encodeURIComponent(inputValue)}`;
+
+        // Điều hướng đến URL mới
+        router.push(url);
+    };
+
+
+    // Màu nền sẽ thay đổi khi vị trí cuộn lớn hơn 100px
+    const backgroundColor = scrollPosition > 110 ? 'rgba(51, 51, 51, 1)' : 'transparent';
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchValue(event.target.value);
+    };
+
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            handleSearch();
+        }
+    };
+
+    const recommendationSearch = () => {
+        // Tạo URL mới từ giá trị của input
+        const inputValue = searchValue.replace(/ /g, '?');
+
+        const url = `${encodeURIComponent(inputValue)}`;
+
+        // Điều hướng đến URL mới
+        router.push(url);
+    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,11 +64,6 @@ export default function Header() {
         };
     }, []);
 
-    // Màu nền sẽ thay đổi khi vị trí cuộn lớn hơn 100px
-    const backgroundColor = scrollPosition > 110 ? 'rgba(51, 51, 51, 1)' : 'transparent';
-
-
-
 
     return (
         <div className={styles['headerZ']}>
@@ -40,13 +74,21 @@ export default function Header() {
                     </Link>
                     <div className={styles['search']}>
                         <div className={styles['searchInput']}>
-                            <input placeholder='Search ...' className={styles['Input']} type="text" />
+                            <input
+                                placeholder='Search ...'
+                                className={styles['Input']}
+                                type="text"
+                                value={searchValue} // Giá trị của thẻ input
+                                onChange={handleInputChange} // Xử lý sự kiện onChange
+                                // onKeyDown={recommendationSearch}
+                                onKeyDown={handleKeyDown}
+                            />
                         </div>
-                        <div className={styles['search-button']}>
+                        <button className={styles['search-button']} onClick={handleSearch}>
                             <div className={styles['search-icon']}>
                                 <Image width={24} height={24} src="/image/search.png" alt="" />
                             </div>
-                        </div>
+                        </button>
                     </div>
                     <div className={styles['like']}>
                         <Image width={105} height={105} src="/image/Sevimlilar.png" alt="" />

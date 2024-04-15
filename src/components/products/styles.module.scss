@@ -11,7 +11,33 @@
         display: flex;
         width: 1075px;
         flex-wrap: wrap;
+        // justify-content: center;
         // justify-content: space-between;
+        .loadMoreDiv {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            .loadMore {
+                margin-top: 30px;
+                color: var(--black, #ff8c00);
+                font-family: "Open Sans";
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 800;
+                line-height: normal;
+                opacity: 0.8;
+            }
+            .showLess {
+                margin-top: 30px;
+                color: var(--black, #ff8c00);
+                font-family: "Open Sans";
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 800;
+                line-height: normal;
+                opacity: 0.8;
+            }
+        }
         .product {
             flex-basis: calc(
                 25% - 40px

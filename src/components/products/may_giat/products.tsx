@@ -18,6 +18,8 @@ interface Product {
 
 export default function Products() {
     const [data, setData] = useState<Product[]>([]);
+    const [visibleProducts, setVisibleProducts] = useState(12);
+    const [showLessButton, setShowLessButton] = useState(false);
 
     const formatNumber = (number?: number | null) => {
         if (number || number === 0) {
@@ -45,11 +47,20 @@ export default function Products() {
         fetchData();
     }, []);
 
+    useEffect(() => {
+        if (visibleProducts >= data.length) {
+            setShowLessButton(true);
+        } else {
+            setShowLessButton(false);
+        }
+    }, [visibleProducts, data.length]);
+
+
     return (
         <div className={styles['content']}>
             <Filter />
             <div className={styles['list']}>
-                {data.map((product) => (
+                {data.slice(0, visibleProducts).map((product) => (
                     <Link key={product._id} href="/home/may_giat/[productName]" as={`/home/may_giat/${encodeURIComponent(product.slug)}`} className={styles['product']}>
                         <div className={styles['productImg']}>
                             <Image width={512} height={747} src={product.product_img} alt={product.name} />
@@ -68,6 +79,17 @@ export default function Products() {
                         </div>
                     </Link>
                 ))}
+                <button className={styles['loadMoreDiv']}>
+                    {showLessButton ? (
+                        <div className={styles['showLess']} onClick={() => setVisibleProducts(12)}>
+                            <Image src='/image/less.png' alt='' width={52} height={39} />
+                        </div>
+                    ) : (
+                        <div className={styles['loadMore']} onClick={() => setVisibleProducts(prev => prev + 12)}>
+                            <Image src='/image/more.png' alt='' width={52} height={39} />
+                        </div>
+                    )}
+                </button>
             </div>
 
         </div>
