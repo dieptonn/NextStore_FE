@@ -3,7 +3,6 @@ import styles from './header.module.scss';
 import Link from 'next/link'
 import React, { useEffect, useState } from "react";
 import Image from 'next/image'
-import search from './search';
 import { useRouter, usePathname } from 'next/navigation';
 
 
