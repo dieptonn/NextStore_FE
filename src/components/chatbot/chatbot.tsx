@@ -1,7 +1,6 @@
 'use client'
 import styles from './styles.module.scss';
 import React, { useEffect, useState } from "react";
-import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 
 declare global {
@@ -14,9 +13,19 @@ declare global {
 
 export default function Chatbot() {
 
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = "https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1";
+        script.async = true;
+        document.body.appendChild(script);
+
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
+
     return (
         <div className={styles['chatbot']}>
-            <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
             <df-messenger
                 intent="WELCOME"
                 chat-title="NextChat"

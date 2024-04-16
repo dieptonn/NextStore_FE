@@ -10,7 +10,7 @@ export default function Slider3() {
                         Get Special Offers for <br />Organizations
                     </div>
                     <div className={styles['contactTxt']}>
-                        Lorem Ipsum is simply dummy text of the printing and <br />typesetting industry. Lorem Ipsum has been the <br />industry's standard dummy text ever since the 1500s.
+                        Lorem Ipsum is simply dummy text of the printing and <br />typesetting industry. Lorem Ipsum has been the <br />industry&apos;s standard dummy text ever since the 1500s.
                     </div>
                     <div className={styles['contactBtn']}>
                         Contact Us
