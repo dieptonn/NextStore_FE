@@ -11,7 +11,7 @@ export default function Header() {
     const [menu_details, setMenu_details] = useState(false);
     const [searchValue, setSearchValue] = useState('');
     const [scrollPosition, setScrollPosition] = useState(0);
-
+    const pathname = usePathname();
     const router = useRouter();
 
     const handleSearch = () => {
@@ -26,7 +26,8 @@ export default function Header() {
 
 
     // Màu nền sẽ thay đổi khi vị trí cuộn lớn hơn 100px
-    const backgroundColor = scrollPosition > 110 ? 'rgba(51, 51, 51, 1)' : 'transparent';
+    const backgroundColor = scrollPosition === 0 && pathname === '/home' ? 'rgba(51, 51, 51, 0.0)' : 'rgba(51, 51, 51, 1)';
+
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchValue(event.target.value);
@@ -50,14 +51,11 @@ export default function Header() {
 
     useEffect(() => {
         const handleScroll = () => {
-            // Cập nhật vị trí cuộn
             setScrollPosition(window.scrollY);
         };
 
-        // Lắng nghe sự kiện cuộn
         window.addEventListener('scroll', handleScroll);
 
-        // Hủy đăng ký lắng nghe khi component unmount
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -67,11 +65,12 @@ export default function Header() {
         setScrollPosition(window.scrollY);
     }, []);
 
-
     return (
         <div className={styles['headerZ']}>
+            {/* <div className={styles['header']} style={{ backgroundColor }}> */}
             <div className={styles['header']} style={{ backgroundColor }}>
-                <Link href='/' className={styles['intro']}>
+
+                <Link href='/' className={styles['intro']} >
                     <Image width={512} height={459} src="/image/intro.png" alt="" />
                 </Link>
                 <div className={styles['header-1']}>
@@ -99,11 +98,12 @@ export default function Header() {
                             </div>
                         </button>
                     </div>
-                    <div className={styles['like']}>
-                        <Image width={105} height={105} src="/image/Sevimlilar.png" alt="" />
-                    </div>
+
                     <Link href='/home/gio_hang' className={styles['like']}>
                         <Image width={105} height={105} src="/image/Korzina.png" alt="" />
+                    </Link>
+                    <Link href='/home/my_profile' className={styles['like']}>
+                        <Image width={105} height={105} src="/image/user.png" alt="" />
                     </Link>
                     <Link href='/login' className={styles['avatar']}>
                         <div className={styles['text-logo']}>Sign in</div>
@@ -574,13 +574,13 @@ export default function Header() {
                     </div>
                 </div>
             </div>
-            <div className={styles['backGround-title']}>
+            {/* <div className={styles['backGround-title']}>
                 <div className={styles['title1']}>Enjoy in the best way!</div>
                 <div className={styles['title2']}>Enjoy our services anytime</div>
-            </div>
-            <div className={styles['backGround']}>
+            </div> */}
+            {/* <div className={styles['backGround']}>
                 <Image width={1920} height={679} src="/image/poster1.png" alt="" />
-            </div>
+            </div> */}
         </div>
     )
 }

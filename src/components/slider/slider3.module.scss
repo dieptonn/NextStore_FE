@@ -1,0 +1,69 @@
+.slider3 {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80%; /* Chiều cao của phần màu đỏ, có thể điều chỉnh tùy ý */
+        background: linear-gradient(to top, #ffbf8c 70%, transparent 50%);
+        display: flex;
+        flex-direction: row;
+        gap: 27%;
+        .contactDiv {
+            transition: transform 0.2s ease-in-out;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            margin-left: 12%;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.3);
+            display: flex;
+            padding: 20px;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            height: 300px;
+            margin-top: 162px;
+            .contactTit {
+                width: 509px;
+                color: var(--black, #333);
+                text-align: center;
+                font-family: "Open Sans";
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 800;
+                line-height: normal;
+            }
+            .contactTxt {
+                color: #000;
+                text-align: center;
+                font-family: "Open Sans";
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 26px; /* 144.444% */
+                width: 483.76px;
+                height: 71px;
+            }
+            .contactBtn {
+                display: flex;
+                text-align: center;
+                border-radius: 50px;
+                background: var(--Orange, #fa8b02);
+                color: var(--white, #fff);
+                text-align: center;
+                font-family: "Open Sans";
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                padding: 10px 24px;
+            }
+        }
+        .img {
+            width: 412.63px;
+            height: 600px;
+        }
+    }
+}

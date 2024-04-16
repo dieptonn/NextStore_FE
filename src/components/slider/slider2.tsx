@@ -1,7 +1,7 @@
 import styles from './slider2.module.scss'
 import Image from 'next/image'
 
-export default function Slider1() {
+export default function Slider2() {
     return (
         <div className={styles['slider2']}>
             <div className={styles['slider']}>

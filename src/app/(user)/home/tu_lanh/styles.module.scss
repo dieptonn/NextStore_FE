@@ -1,4 +1,4 @@
-.main{
+.main {
     width: 100%;
     display: flex;
     height: auto;
@@ -8,22 +8,5 @@
     background: #ffffff;
     // margin-top: 380px;
     display: block;
-    .zalo{
-        display: flex;
-        width: 46px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 16px;
-        background: #FFF;
-        position: fixed;
-        left: 1800px;
-        bottom: 58px;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-        // border: 0.025px solid #333333;
-        &:hover{
-            transition: transform 0.2s ease-in-out;
-            transform: scale(1.5);
-        }
-    }
-    
+    padding-top: 180px;
 }
