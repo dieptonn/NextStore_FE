@@ -63,14 +63,24 @@ export default function Header() {
         };
     }, []);
 
+    useEffect(() => {
+        setScrollPosition(window.scrollY);
+    }, []);
+
 
     return (
         <div className={styles['headerZ']}>
             <div className={styles['header']} style={{ backgroundColor }}>
+                <Link href='/' className={styles['intro']}>
+                    <Image width={512} height={459} src="/image/intro.png" alt="" />
+                </Link>
                 <div className={styles['header-1']}>
+
                     <Link href="/home" className={styles['logo-img']}>
                         <Image width={512} height={197} src="/image/Logo.jpg" alt="" />
                     </Link>
+
+
                     <div className={styles['search']}>
                         <div className={styles['searchInput']}>
                             <input

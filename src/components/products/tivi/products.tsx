@@ -82,11 +82,11 @@ export default function Products() {
                 <button className={styles['loadMoreDiv']}>
                     {showLessButton ? (
                         <div className={styles['showLess']} onClick={() => setVisibleProducts(12)}>
-                            <Image src='/image/less.png' alt='' width={52} height={39} />
+                            <Image src='/image/less.png' alt='' width={52} height={52} />
                         </div>
                     ) : (
                         <div className={styles['loadMore']} onClick={() => setVisibleProducts(prev => prev + 12)}>
-                            <Image src='/image/more.png' alt='' width={52} height={39} />
+                            <Image src='/image/more.png' alt='' width={52} height={52} />
                         </div>
                     )}
                 </button>

@@ -34,11 +34,11 @@ export default function Order() {
                 </div>
                 <div className={styles['voucherList']}>
                     <div className={styles['voucher1']}>
-                        <Image className={styles['voucherImg']} width={176} height={82} src="/image/cart/voucher1.png" alt="" />
+                        <Image className={styles['voucherImg']} width={513} height={253} src="/image/cart/voucher1.png" alt="" />
                         {/* <div className={styles['voucherStick']}>
 
                         </div> */}
-                        <Image className={styles['voucherTime']} width={153} height={108} src="/image/cart/stamp1.png" alt="" />
+                        <Image className={styles['voucherTime']} width={512} height={362} src="/image/cart/stamp1.png" alt="" />
 
                         <div className={styles['voucherBtn']}>
                             <div className={styles['voucherBtnTxt']}>
@@ -47,11 +47,11 @@ export default function Order() {
                         </div>
                     </div>
                     <div className={styles['voucher1']}>
-                        <Image className={styles['voucherImg']} width={176} height={82} src="/image/cart/voucher2.png" alt="" />
+                        <Image className={styles['voucherImg']} width={513} height={253} src="/image/cart/voucher2.png" alt="" />
                         {/* <div className={styles['voucherStick']}>
 
                         </div> */}
-                        <Image className={styles['voucherTime']} width={153} height={108} src="/image/cart/stamp1.png" alt="" />
+                        <Image className={styles['voucherTime']} width={512} height={362} src="/image/cart/stamp1.png" alt="" />
 
                         <div className={styles['voucherBtn2']}>
                             <div className={styles['voucherBtnTxt2']}>
@@ -60,11 +60,11 @@ export default function Order() {
                         </div>
                     </div>
                     <div className={styles['voucher1']}>
-                        <Image className={styles['voucherImg']} width={176} height={82} src="/image/cart/voucher3.png" alt="" />
+                        <Image className={styles['voucherImg']} width={513} height={253} src="/image/cart/voucher3.png" alt="" />
                         {/* <div className={styles['voucherStick']}>
 
                         </div> */}
-                        <Image className={styles['voucherTime']} width={153} height={108} src="/image/cart/stamp2.png" alt="" />
+                        <Image className={styles['voucherTime']} width={512} height={362} src="/image/cart/stamp2.png" alt="" />
 
                         <div className={styles['voucherBtn3']}>
                             <div className={styles['voucherBtnTxt3']}>
@@ -204,8 +204,8 @@ export default function Order() {
                         </div>
                         <div className={styles['voucherDiv']}>
                             <div className={styles['priceDiv']}>
-                                <Image className={styles['voucher']} width={116} height={54} src="/image/cart/voucher1.png" alt="" />
-                                <Image className={styles['voucher']} width={116} height={54} src="/image/cart/voucher2.png" alt="" />
+                                <Image className={styles['voucher']} width={513} height={253} src="/image/cart/voucher1.png" alt="" />
+                                <Image className={styles['voucher']} width={513} height={253} src="/image/cart/voucher2.png" alt="" />
                             </div>
                             <div className={styles['price']}>
                                 - €26.00

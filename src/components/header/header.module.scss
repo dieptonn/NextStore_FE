@@ -20,16 +20,26 @@
         // background: #e27d02;
         box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
         transition: background-color 0.3s ease;
+        justify-content: center;
+        .intro {
+            position: absolute;
+            width: 48px;
+            height: 43px;
+            left: 30px;
+        }
         .header-1 {
             width: 1542px;
             height: 43px;
             display: flex;
+            align-items: center;
             .logo-img {
                 margin-top: 8px;
+                // margin-left: 80px;
                 width: 90.999px;
                 height: 35px;
                 flex-shrink: 0;
             }
+
             .search {
                 width: 566px;
                 height: 46px;
@@ -38,7 +48,7 @@
                 // border: 1px solid var(--stroke-primary, #e27d02);
                 background: var(--background-white, #fff);
                 position: relative;
-                margin-left: 658.001px;
+                margin-left: 600.001px;
                 display: flex;
                 flex-direction: row;
                 .searchInput {
