@@ -6,7 +6,7 @@ export default function Slider2() {
         <div className={styles['slider2']}>
             <div className={styles['slider']}>
                 <div className={styles['about']}>
-                    <Image width={355} height={512} src="/image/about.png" alt="" />
+                    <Image className={styles['aboutImg']} width={1500} height={2400} src="/image/runner.png" alt="" />
                 </div>
                 <div className={styles['content']}>
                     <div className={styles['title']}>
@@ -15,7 +15,7 @@ export default function Slider2() {
                             for your visit</div>
                     </div>
                     <div className={styles['text']}>
-                        After decades of experience, and a whole life in Lucca, we offer you the most<br /> complete tourism service in the city. In addition to having bikes and rickshaws to<br /> have as much fun as you want, you have the choice of tour guides with whom to<br /> tour and drivers for your every need! We offer packages in the way that you get the<br /> most at the lowest price. Book with us and we will always be available for you!
+                        We offer packages in the way that you get the most at the lowest price. <br />Book with us and we will always be available for you!
                     </div>
                     <div className={styles['more']}>
                         <div className={styles['moreDiv']}>

@@ -4,32 +4,43 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    display: block;
+    // display: block;
     background: #ffffff;
-    display: flex;
-    position: relative;
-    margin-top: 40px;
     margin-bottom: 40px;
 
     .slider {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 325px;
-
+        gap: 355px;
+        flex-direction: row;
+        background: linear-gradient(to top, #ffbf8c 60%, transparent 50%);
+        width: 100%;
         .about {
+            margin-left: 0px;
             width: 450px;
             // height: 650px;
+            .aboutImg {
+                width: 375px;
+                height: 600px;
+            }
         }
         .content {
+            margin-top: 240px;
+            background: rgba(255, 255, 255, 0.3);
+            transition: transform 0.2s ease-in-out;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 24px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
+            justify-content: center;
             gap: 32px;
             .title {
                 display: flex;
                 flex-direction: column;
-                align-items: flex-start;
+                // align-items: flex-start;
                 gap: 6px;
                 .title1 {
                     color: var(--black, #333);
@@ -40,7 +51,7 @@
                     line-height: normal;
                 }
                 .title2 {
-                    width: 700px;
+                    // width: 700px;
                     color: var(--black, #333);
                     font-family: Open Sans;
                     font-size: 32px;
@@ -50,14 +61,13 @@
                 }
             }
             .text {
-                width: 700px;
-                height: 164px;
-                color: var(--black, #333);
-                font-family: Open Sans;
+                color: #000;
+                // text-align: center;s
+                font-family: "Open Sans";
                 font-size: 18px;
                 font-style: normal;
                 font-weight: 400;
-                line-height: 32px; /* 177.778% */
+                line-height: 26px;
             }
             .more {
                 display: flex;
@@ -83,7 +93,7 @@
                         font-style: normal;
                         font-weight: 400;
                         line-height: 26px; /* 162.5% */
-                        opacity: 0.6;
+                        opacity: 0.8;
                     }
                 }
             }

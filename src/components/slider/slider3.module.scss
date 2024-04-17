@@ -11,11 +11,12 @@
         background: linear-gradient(to top, #ffbf8c 70%, transparent 50%);
         display: flex;
         flex-direction: row;
-        gap: 27%;
+        gap: 515px;
+        justify-content: center;
         .contactDiv {
             transition: transform 0.2s ease-in-out;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-            margin-left: 12%;
+            // margin-left: 12%;
             border-radius: 24px;
             background: rgba(255, 255, 255, 0.3);
             display: flex;
@@ -43,8 +44,8 @@
                 font-style: normal;
                 font-weight: 400;
                 line-height: 26px; /* 144.444% */
-                width: 483.76px;
-                height: 71px;
+                // width: 483.76px;
+                // height: 71px;
             }
             .contactBtn {
                 display: flex;

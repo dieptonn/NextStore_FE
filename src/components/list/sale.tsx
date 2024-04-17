@@ -83,7 +83,7 @@ export default function Sale() {
 
                         </div>
                         <div className={styles['product']}>
-                            <Image width={228.297} height={390} src="/image/sale/pic4.png" alt="" />
+                            <Image width={228.297} height={390} src="/image/sale/vga.png" alt="" />
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
