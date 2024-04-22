@@ -67,6 +67,13 @@ export default function UserSidebar() {
                     <Image className={styles['img']} src='/image/profile/rArrow.png' width={9.333} height={16} alt='' />
                 </div>
             </div>
+            <div className={styles['logout']}>
+                <div className={styles['logoutTxt']}>
+                    Sign out
+                </div>
+                <Image className={styles['img']} src='/image/profile/out.png' width={21.5} height={21.5} alt='' />
+
+            </div>
         </div>
     )
 }

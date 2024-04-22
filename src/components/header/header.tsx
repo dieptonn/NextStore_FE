@@ -100,7 +100,7 @@ export default function Header() {
                     </div>
 
                     <Link href='/home/gio_hang' className={styles['like']}>
-                        <Image width={105} height={105} src="/image/Korzina.png" alt="" />
+                        <Image width={20} height={20} src="/image/Korzina.png" alt="" />
                     </Link>
                     <Link href='/home/my_profile' className={styles['like']}>
                         <Image width={105} height={105} src="/image/user.png" alt="" />

@@ -1,4 +1,334 @@
 .dashboard {
     height: auto;
     background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    .content {
+        display: flex;
+        padding: 157px 90px;
+        width: 100%;
+        flex-direction: column;
+        gap: 170px;
+        .contentDiv {
+            display: inline-flex;
+            flex-direction: column;
+            // align-items: center;
+            gap: 93px;
+            width: 100%;
+            .profile {
+                padding: 0px 20px;
+                display: flex;
+                flex-direction: column;
+                // gap: 81.95px;
+                width: 100%;
+                .profileTit {
+                    color: var(--Text-Main, rgba(51, 51, 51, 0.8));
+                    // text-align: center;
+                    font-family: Lato;
+                    font-size: 32px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 26.667px; /* 83.333% */
+                }
+                .profileLine {
+                    width: 190.671px;
+                    height: 1px;
+                    background-color: #d0d0d0;
+                    flex-shrink: 0;
+                    stroke-width: 1.333px;
+                    stroke: #d0d0d0;
+                    margin-top: 21.32px;
+                }
+                .profileAvaDiv {
+                    margin-top: 81.95px;
+                    width: 100%;
+                    height: 139.46px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .profileAvaDiv1 {
+                        width: 40%;
+                        display: flex;
+                        flex-direction: row;
+                        gap: 23.56px;
+                        height: 100%;
+                        justify-content: center;
+                        align-items: center;
+                        .name {
+                            display: flex;
+                            flex-direction: column;
+                            padding: 10px 0px;
+                            gap: 10px;
+                            .name1 {
+                                color: var(--Text-Main, rgba(51, 51, 51, 0.8));
+                                font-family: Montserrat;
+                                font-size: 26.667px;
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: normal;
+                            }
+                            .name2 {
+                                color: var(--Text-Main, rgba(51, 51, 51, 0.8));
+                                font-family: Montserrat;
+                                font-size: 26.667px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;
+                            }
+                            .name3 {
+                                color: #6b7280;
+                                font-family: Montserrat;
+                                font-size: 21.333px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;
+                            }
+                        }
+                    }
+                    .profileAvaDiv2 {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: auto;
+                        height: auto;
+                        gap: 74.67px;
+                        .upload {
+                            display: flex;
+                            width: 234.667px;
+                            height: 74.667px;
+                            padding: 8px 2.667px;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 5.333px;
+                            flex-shrink: 0;
+                            border-radius: 10.667px;
+                            // border: 1.333px solid var(--Text-Main, rgba(51, 51, 51, 0.8));
+                            background: var(--primary-color-Main, #ff8c00);
+                            .uploadTxt {
+                                color: var(--white, #fff);
+                                text-align: center;
+                                font-family: Montserrat;
+                                font-size: 18.667px;
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: 150%; /* 28px */
+                            }
+                        }
+                        .delete {
+                            display: flex;
+                            width: 234.667px;
+                            height: 74.667px;
+                            padding: 10.667px 0px;
+                            justify-content: center;
+                            align-items: center;
+                            flex-shrink: 0;
+                            border-radius: 10.667px;
+                            border: 1.333px solid var(--primary-color-Main, #b3b3b3);
+                            background: #fff;
+                            .deleteTxt {
+                                color: var(--Text-Main, rgba(51, 51, 51, 0.8));
+                                text-align: center;
+                                font-family: Montserrat;
+                                font-size: 18.667px;
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: 150%; /* 28px */
+                            }
+                        }
+                    }
+                }
+            }
+
+            .profileLine1 {
+                width: 100%;
+                height: 1px;
+                background-color: #d0d0d0;
+                flex-shrink: 0;
+                stroke-width: 1.333px;
+                stroke: #d0d0d0;
+                margin-top: 21.32px;
+            }
+            .Name {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 256px;
+                gap: 20px;
+                .fullName {
+                    width: 100%;
+                    height: 50%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .firstName {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 22px;
+                        .firstNameTxt {
+                            color: var(--Text-Main, rgba(51, 51, 51, 0.8));
+                            font-family: Montserrat;
+                            font-size: 21.333px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: normal;
+                        }
+                        .firstNameDiv {
+                            width: 662.667px;
+                            height: 69.333px;
+                            flex-shrink: 0;
+                            border-radius: 10.667px;
+                            border: 1.333px solid #d1d5db;
+                            background: #fff;
+                            padding: 20px;
+                            outline: none;
+                        }
+                    }
+                }
+                .userName {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 22px;
+                    .userNameTxt {
+                        color: var(--Text-Main, rgba(51, 51, 51, 0.8));
+                        font-family: Montserrat;
+                        font-size: 21.333px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                    }
+                    .userNameDiv {
+                        width: 100%;
+                        height: 69.333px;
+                        flex-shrink: 0;
+                        border-radius: 10.667px;
+                        border: 1.333px solid #d1d5db;
+                        background: #fff;
+                        padding: 20px;
+                        outline: none;
+                    }
+                }
+            }
+            .contact {
+                width: 100%;
+                // height: 50%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .email {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 22px;
+                    .emailTxt {
+                        color: var(--Text-Main, rgba(51, 51, 51, 0.8));
+                        font-family: Montserrat;
+                        font-size: 21.333px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                    }
+                    .emailDiv {
+                        width: 662.667px;
+                        height: 69.333px;
+                        flex-shrink: 0;
+                        border-radius: 10.667px;
+                        border: 1.333px solid #d1d5db;
+                        background: #fff;
+                        padding: 20px;
+                        // outline: none;
+                        display: flex;
+                        gap: 20px;
+                        align-items: center;
+                        .emailInput {
+                            outline: none;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            .location {
+                display: flex;
+                flex-direction: column;
+                gap: 22px;
+                .locationTxt {
+                    color: var(--Text-Main, rgba(51, 51, 51, 0.8));
+                    font-family: Montserrat;
+                    font-size: 21.333px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                }
+                .locationDiv {
+                    width: 100%;
+                    height: 69.333px;
+                    flex-shrink: 0;
+                    border-radius: 10.667px;
+                    border: 1.333px solid #d1d5db;
+                    background: #fff;
+                    padding: 20px;
+                    // outline: none;
+                    display: flex;
+                    gap: 20px;
+                    align-items: center;
+                    .locationInput {
+                        outline: none;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .confirm {
+            justify-content: flex-end;
+            display: flex;
+            // justify-content: space-between;
+            align-items: center;
+            width: auto;
+            height: auto;
+            gap: 66px;
+            .cancel {
+                display: flex;
+                width: 234.667px;
+                height: 74.667px;
+                padding: 8px 2.667px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 5.333px;
+                flex-shrink: 0;
+                border-radius: 10.667px;
+                // border: 1.333px solid var(--Text-Main, rgba(51, 51, 51, 0.8));
+                background: var(--primary-color-Main, #ff8c00);
+                .cancelTxt {
+                    color: var(--white, #fff);
+                    text-align: center;
+                    font-family: Montserrat;
+                    font-size: 18.667px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 150%; /* 28px */
+                }
+            }
+            .save {
+                display: flex;
+                width: 234.667px;
+                height: 74.667px;
+                padding: 10.667px 0px;
+                justify-content: center;
+                align-items: center;
+                flex-shrink: 0;
+                border-radius: 10.667px;
+                border: 1.333px solid var(--primary-color-Main, #b3b3b3);
+                background: #fff;
+                .saveTxt {
+                    color: var(--Text-Main, rgba(51, 51, 51, 0.8));
+                    text-align: center;
+                    font-family: Montserrat;
+                    font-size: 18.667px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 150%; /* 28px */
+                }
+            }
+        }
+    }
 }
