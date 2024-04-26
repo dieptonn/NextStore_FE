@@ -1,12 +1,43 @@
 import Link from 'next/link';
 import styles from './styles.module.scss'
 import Image from 'next/image'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Button, Modal } from 'antd';
 
 interface DetailsProps {
     apiData: any[];
 }
 
-export const Details: React.FC<DetailsProps> = ({ apiData }) => {
+interface cart {
+    data: {
+        userId: number,
+        items: [
+            PD_id: number,
+            quantity: number
+        ],
+        total_price: string
+        status: string,
+    }
+}
+
+export const Details = ({ apiData }: DetailsProps) => {
+
+    const [qty, setQty] = useState(0)
+
+    const [open, setOpen] = useState(false);
+
+    const showModal = () => {
+        setOpen(true);
+    };
+
+    const handleOk = () => {
+        setOpen(false);
+    };
+
+    const handleCancel = () => {
+        setOpen(false);
+    };
 
     // console.log(apiData)
     const formatNumber = (number?: number | null) => {
@@ -15,6 +46,35 @@ export const Details: React.FC<DetailsProps> = ({ apiData }) => {
         }
         return "0";
     };
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.post<{ data: cart }>('http://localhost:8000/api/v1/cartPayment/addToCart', {
+                    userId: 2,
+                    Pd_id: apiData[0]?.PD_id,
+                    quantity: 1,
+                    name: apiData[0]?.name,
+                    price: apiData[0]?.offers.price,
+                    other_details: {
+                        brand: apiData[0]?.brand.name[0],
+                        type: apiData[0]?.additionalProperty[0].value
+                    }
+                });
+                console.log({
+                    Response: response.data.data
+                });
+
+
+            } catch (error) {
+                console.error('Error:', error);
+                // Xử lý các lỗi
+            }
+        };
+        fetchData();
+    }, [qty]);
+
     return (
 
         <div className={styles['details']}>
@@ -109,14 +169,41 @@ export const Details: React.FC<DetailsProps> = ({ apiData }) => {
                                 Mua ngay
                             </div>
                         </button>
-                        <Link href='/home/gio_hang' className={styles['addCart']}>
+                        <button className={styles['addCart']}
+                            onClick={() => {
+                                setQty(qty + 1)
+                                showModal()
+                            }}
+                        >
                             <div className={styles['smallImg']}>
                                 <Image width={24} height={24} src="/image/details/cart-plus.png" alt="" />
                             </div>
                             <div className={styles['addText']}>
                                 Thêm vào giỏ
                             </div>
-                        </Link>
+                        </button>
+                        <Modal className={styles['customBtnDiv']} title="Thông báo!" open={open} onOk={() => { handleOk() }} onCancel={handleCancel}
+                            footer={[
+                                <Link href='/home/gio_hang' className={styles['customBtn']} key="back" style={{ backgroundColor: '#fff', color: '#333333' }} onClick={handleCancel}>
+                                    Đi đến giỏ hàng
+                                </Link>,
+                                <button className={styles['customBtn2']} key="submit" onClick={handleOk}>
+                                    Xem tiếp
+                                </button>,
+                                // <Button
+                                //     key="link"
+                                //     href="https://google.com"
+                                //     type="dashed"
+                                //     onClick={handleOk}
+                                // >
+                                //     Search on Google
+                                // </Button>,
+                            ]}
+                        >
+                            <p className={styles['content']}>Đã thêm sản phẩm vào giỏ </p>
+                            {/* <p>Some contents...</p>
+                            <p>Some contents...</p> */}
+                        </Modal>
                     </div>
                     <div className={styles['more']}>
                         <Image width={512} height={36} src="/image/details/1.png" alt="" />
