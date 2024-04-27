@@ -46,7 +46,7 @@ export default function Cart() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.post<{ data: CartData }>('http://localhost:8000/api/v1/cartPayment/getCart', {
+                const response = await axios.post<{ data: CartData }>('https://nextstore-be.onrender.com/api/v1/cartPayment/getCart', {
                     userId: 2
                 });
                 // console.log({
@@ -64,43 +64,43 @@ export default function Cart() {
     }, []);
 
 
-    useEffect(() => {
-        const updateCartData = async () => {
-            try {
-                if (cartData) {
-                    const updatedItems = cartData.items.map((item) => ({
-                        userId: 2,
-                        PD_id: item._id,
-                        quantity: item.quantity,
-                        name: item.name,
-                        price: item.price,
-                        other_details: {
-                            brand: item.other_details?.brand,
-                            type: item.other_details?.type,
-                        },
-                    }));
+    // useEffect(() => {
+    //     const updateCartData = async () => {
+    //         try {
+    //             if (cartData) {
+    //                 const updatedItems = cartData.items.map((item) => ({
+    //                     userId: 2,
+    //                     PD_id: item._id,
+    //                     quantity: item.quantity,
+    //                     name: item.name,
+    //                     price: item.price,
+    //                     other_details: {
+    //                         brand: item.other_details?.brand,
+    //                         type: item.other_details?.type,
+    //                     },
+    //                 }));
 
-                    const response = await axios.post<{ data: cart }>(
-                        "http://localhost:8000/api/v1/cartPayment/addToCart",
-                        {
-                            updatedItems,
-                        }
-                    );
+    //                 const response = await axios.post<{ data: cart }>(
+    //                     "http://localhost:8000/api/v1/cartPayment/addToCart",
+    //                     {
+    //                         updatedItems,
+    //                     }
+    //                 );
 
-                    console.log({
-                        Response: response.data.data,
-                    });
-                }
-            } catch (error) {
-                console.error("Error:", error);
-                // Xử lý các lỗi
-            }
-        };
+    //                 console.log({
+    //                     Response: response.data.data,
+    //                 });
+    //             }
+    //         } catch (error) {
+    //             console.error("Error:", error);
+    //             // Xử lý các lỗi
+    //         }
+    //     };
 
-        if (cartData && cartData.items) {
-            updateCartData();
-        }
-    }, [cartData?.items]);
+    //     if (cartData && cartData.items) {
+    //         updateCartData();
+    //     }
+    // }, [cartData?.items]);
 
     const formatDate = (dateString: string) => {
         const dateObj = new Date(dateString);
@@ -162,7 +162,7 @@ export default function Cart() {
                     </div>
                 </div>
                 {cartData && cartData.items.map((item: CartItem) => (
-                    <div className={styles['cart1']}>
+                    <div className={styles['cart1']} key={item._id}>
                         <div className={styles['nameDiv']}>
                             <div className={styles['name']}>
                                 {item.name}
@@ -226,7 +226,7 @@ export default function Cart() {
                         </div>
                     )}
                     {cartData && cartData.items.map((item: CartItem) => (
-                        <div className={styles['memo']}>
+                        <div className={styles['memo']} key={item._id}>
                             <div className={styles['memo1']}>
                                 <div className={styles['memo1Div']}>
                                     <div className={styles['memo1Num']}>

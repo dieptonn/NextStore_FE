@@ -46,7 +46,7 @@ export default function Products({ searchData }: ProductsProps) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.post<{ data: HitsData }>('http://localhost:8000/api/v1/home/search', {
+                const response = await axios.post<{ data: HitsData }>('https://nextstore-be.onrender.com/api/v1/home/search', {
                     query: searchData,
                 });
                 console.log({

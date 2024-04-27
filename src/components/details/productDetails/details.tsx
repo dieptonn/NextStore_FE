@@ -62,7 +62,7 @@ export const Details = ({ apiData }: DetailsProps) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.post<{ data: cart }>('http://localhost:8000/api/v1/cartPayment/addToCart', {
+                const response = await axios.post<{ data: cart }>('https://nextstore-be.onrender.com/api/v1/cartPayment/addToCart', {
                     userId: 2,
                     Pd_id: apiData[0]?.PD_id,
                     quantity: 1,
@@ -84,7 +84,7 @@ export const Details = ({ apiData }: DetailsProps) => {
             }
         };
         fetchData();
-    }, [qty]);
+    }, [apiData, qty]);
 
     return (
 
