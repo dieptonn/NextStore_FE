@@ -26,6 +26,7 @@ export const Details = ({ apiData }: DetailsProps) => {
     const [qty, setQty] = useState(0)
 
     const [open, setOpen] = useState(false);
+    const [show, setShow] = useState(false);
 
     const showModal = () => {
         setOpen(true);
@@ -45,6 +46,16 @@ export const Details = ({ apiData }: DetailsProps) => {
             return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         }
         return "0";
+    };
+
+    const addToCart = () => {
+        setShow(true);
+        // Thêm logic xử lý thêm vào giỏ hàng ở đây
+
+        // Sau khi xử lý xong, có thể sử dụng setTimeout để ẩn biểu tượng giỏ hàng sau một khoảng thời gian
+        setTimeout(() => {
+            setShow(false);
+        }, 1000); // Thời gian delay, tính bằng mili giây
     };
 
 
@@ -164,7 +175,11 @@ export const Details = ({ apiData }: DetailsProps) => {
                         </div>
                     </div>
                     <div className={styles['shopping']}>
-                        <button className={styles['buy']}>
+                        <button className={styles['buy']}
+                            onClick={() => {
+                                showModal()
+                            }}
+                        >
                             <div className={styles['buyText']}>
                                 Mua ngay
                             </div>
@@ -172,24 +187,27 @@ export const Details = ({ apiData }: DetailsProps) => {
                         <button className={styles['addCart']}
                             onClick={() => {
                                 setQty(qty + 1)
-                                showModal()
+                                // showModal()
+                                addToCart()
                             }}
                         >
-                            <div className={styles['smallImg']}>
-                                <Image width={24} height={24} src="/image/details/cart-plus.png" alt="" />
-                            </div>
+
                             <div className={styles['addText']}>
                                 Thêm vào giỏ
                             </div>
+                            <div className={styles['smallImg']}>
+                                <Image className={`${styles.cartIcon} ${show && styles.slide_up}`} width={24} height={24} src="/image/details/cart-plus.png" alt="" />
+                            </div>
                         </button>
+
                         <Modal className={styles['customBtnDiv']} title="Thông báo!" open={open} onOk={() => { handleOk() }} onCancel={handleCancel}
                             footer={[
-                                <Link href='/home/gio_hang' className={styles['customBtn']} key="back" style={{ backgroundColor: '#fff', color: '#333333' }} onClick={handleCancel}>
-                                    Đi đến giỏ hàng
-                                </Link>,
-                                <button className={styles['customBtn2']} key="submit" onClick={handleOk}>
-                                    Xem tiếp
+                                <button className={styles['customBtn']} key="back" style={{ backgroundColor: '#fff', color: '#333333' }} onClick={handleCancel}>
+                                    Cancel
                                 </button>,
+                                <Link href='/home/gio_hang' className={styles['customBtn2']} key="submit" onClick={handleOk}>
+                                    Next step
+                                </Link>,
                                 // <Button
                                 //     key="link"
                                 //     href="https://google.com"
@@ -200,7 +218,7 @@ export const Details = ({ apiData }: DetailsProps) => {
                                 // </Button>,
                             ]}
                         >
-                            <p className={styles['content']}>Đã thêm sản phẩm vào giỏ </p>
+                            {/* <p className={styles['content']}>Đã thêm sản phẩm vào giỏ </p> */}
                             {/* <p>Some contents...</p>
                             <p>Some contents...</p> */}
                         </Modal>
