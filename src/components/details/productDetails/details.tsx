@@ -83,7 +83,9 @@ export const Details = ({ apiData }: DetailsProps) => {
                 // Xử lý các lỗi
             }
         };
-        fetchData();
+        if (qty > 0) {
+            fetchData();
+        }
     }, [apiData, qty]);
 
     return (
