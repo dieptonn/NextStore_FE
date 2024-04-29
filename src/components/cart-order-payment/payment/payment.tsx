@@ -11,7 +11,7 @@ import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 export default function Payment() {
 
     function createOrder() {
-        return fetch("http://localhost:8000/api/v1/cartPayment/orders", {
+        return fetch("https://nextstore-be.onrender.com/api/v1/cartPayment/orders", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -45,7 +45,7 @@ export default function Payment() {
             .then((order) => order.id);
     }
     function onApprove(data: any) {
-        return fetch(`http://localhost:8000/api/v1/cartPayment/orders/${data.orderID}/capture`, {
+        return fetch(`https://nextstore-be.onrender.com/api/v1/cartPayment/orders/${data.orderID}/capture`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
