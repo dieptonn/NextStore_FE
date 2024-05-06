@@ -1,10 +1,44 @@
-// app/login/page.tsx
-
+'use client'
 import styles from './styles.module.scss'
 import Link from 'next/link';
 import Image from 'next/image'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
+
+// interface user {
+//     _id: number,
+//     name: string,
+//     email: string,
+//     authType: string,
+//     image: string,
+//     role: string,
+// }
 
 export default function Page() {
+
+    const [userData, setUserData] = useState()
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.post('http://localhost:8000/api/v1/auth/google');
+                console.log({
+                    Response: response.data
+                });
+                setUserData(response.data);
+
+            } catch (error) {
+                console.error('Error:', error);
+                // Xử lý các lỗi
+            }
+        };
+        // if (qty > 0) {
+        fetchData();
+        // }
+    }, []);
+
+
     return (
         <div className={styles['login']}>
             <div className={styles['loginDiv']}>
@@ -59,7 +93,7 @@ export default function Page() {
                                 <div className={styles['or']}>
                                     or
                                 </div>
-                                <Link href="https://nextstore-be.onrender.com/api/v1/auth/google" className={styles['gg']}>
+                                <Link href="http://localhost:8000/api/v1/auth/google" className={styles['gg']}>
                                     <div className={styles['ggImg']}>
                                         <Image width={24} height={25} src="/image/login/gg.png" alt="" />
                                     </div>

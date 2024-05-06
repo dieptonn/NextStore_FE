@@ -1,21 +1,19 @@
-
-
-.login{
+.login {
     width: 100%;
     height: 986px;
     background: #333;
     display: flex;
     flex-direction: row;
     position: relative;
-    .loginDiv{
+    .loginDiv {
         display: inline-flex;
         padding: 94px 313px 186.324px 244px;
         align-items: center;
-        background: #FFF;
-        .mask{
+        background: #fff;
+        .mask {
             width: 598px;
             height: 705.676px;
-            .signin{
+            .signin {
                 display: flex;
                 width: 598px;
                 height: 705.676px;
@@ -26,18 +24,18 @@
                 gap: 39px;
                 flex-shrink: 0;
                 border-radius: 20px;
-                background: #FFF;
+                background: #fff;
                 box-shadow: 0px 19px 40px 0px rgba(0, 0, 0, 0.25);
-                .logo{
+                .logo {
                     width: 112px;
                     height: 44px;
                     flex-shrink: 0;
                 }
-                .wellcome{
+                .wellcome {
                     width: 185.341px;
                     height: 28.169px;
                     flex-shrink: 0;
-                    color: rgba(0, 0, 0, 0.50);
+                    color: rgba(0, 0, 0, 0.5);
                     font-family: Poppins;
                     font-size: 16px;
                     font-style: normal;
@@ -45,7 +43,7 @@
                     line-height: 22px; /* 137.5% */
                     letter-spacing: 0.48px;
                 }
-                .loginText{
+                .loginText {
                     width: 244.139px;
                     height: 107.554px;
                     flex-shrink: 0;
@@ -56,14 +54,14 @@
                     font-weight: 600;
                     line-height: normal;
                 }
-                .signup{
-                    width: 360.457px;
+                .signup {
                     height: 28.169px;
                     flex-shrink: 0;
                     display: flex;
-                    padding-left: 125px;
-                    .dontHave{
-                        color: rgba(0, 0, 0, 0.20);
+                    justify-content: center;
+                    align-items: center;
+                    .dontHave {
+                        color: rgba(0, 0, 0, 0.2);
                         font-family: Poppins;
                         font-size: 16px;
                         font-style: normal;
@@ -71,8 +69,8 @@
                         line-height: 22px; /* 137.5% */
                         letter-spacing: 0.48px;
                     }
-                    .signupText{
-                        color: #F90;
+                    .signupText {
+                        color: #f90;
                         font-family: Poppins;
                         font-size: 16px;
                         font-style: normal;
@@ -82,16 +80,16 @@
                         text-decoration-line: underline;
                     }
                 }
-                .email{
+                .email {
                     width: 478px;
                     height: 82.541px;
                     flex-shrink: 0;
                     margin-bottom: 10px;
-                    .emailDiv{
+                    .emailDiv {
                         width: 478px;
                         height: 82.541px;
                         flex-shrink: 0;
-                        .emailText{
+                        .emailText {
                             width: 478px;
                             height: 25.727px;
                             flex-shrink: 0;
@@ -103,21 +101,19 @@
                             line-height: normal;
                             display: flex;
                             justify-content: space-between;
-                            
                         }
-                        .div{
+                        .div {
                             width: 478px;
                             height: 49.31px;
                             flex-shrink: 0;
                             border-radius: 4px;
-                            background: #EEE;
+                            background: #eee;
                             outline: none;
                             padding-left: 12px;
                         }
-                        
                     }
                 }
-                .button{
+                .button {
                     padding-left: 47px;
                     margin-top: 40px;
                     margin-bottom: 30px;
@@ -127,16 +123,16 @@
                     align-items: center;
                     gap: 6px;
                     flex-shrink: 0;
-                    .signDiv{
+                    .signDiv {
                         display: flex;
                         padding: 10px 24px;
                         align-items: flex-start;
                         gap: 10px;
                         border-radius: 50px;
-                        background: #FA8B02;
-                        .signText{
+                        background: #fa8b02;
+                        .signText {
                             width: 320px;
-                            color: var(--white, #FFF);
+                            color: var(--white, #fff);
                             text-align: center;
                             font-family: Open Sans;
                             font-size: 20px;
@@ -145,7 +141,7 @@
                             line-height: normal;
                         }
                     }
-                    .or{
+                    .or {
                         color: var(--black, #333);
                         text-align: center;
                         font-family: Open Sans;
@@ -155,18 +151,18 @@
                         line-height: normal;
                         opacity: 0.4;
                     }
-                    .gg{
+                    .gg {
                         display: flex;
                         padding: 10px 24px;
                         align-items: center;
                         gap: 10px;
                         border-radius: 50px;
-                        border: 1px solid rgba(51, 51, 51, 0.20);
-                        .ggImg{
+                        border: 1px solid rgba(51, 51, 51, 0.2);
+                        .ggImg {
                             width: 24px;
                             height: 24px;
                         }
-                        .ggText{
+                        .ggText {
                             width: 286px;
                             color: var(--black, #4949498d);
                             text-align: center;
@@ -181,7 +177,7 @@
             }
         }
     }
-    .img{
+    .img {
         position: absolute;
         width: 729px;
         height: 739px;
@@ -190,7 +186,7 @@
         left: 1007px;
     }
 }
-.pass{
+.pass {
     width: 77px;
     height: 25.727px;
     flex-shrink: 0;
@@ -201,7 +197,7 @@
     font-weight: 300;
     line-height: normal;
 }
-.forgot{
+.forgot {
     width: 126px;
     height: 22.511px;
     flex-shrink: 0;
