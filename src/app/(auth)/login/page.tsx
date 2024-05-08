@@ -22,7 +22,7 @@ export default function Page() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.post('http://localhost:8000/api/v1/auth/google');
+                const response = await axios.post('https://nextstore-be.onrender.com/api/v1/auth/google');
                 console.log({
                     Response: response.data
                 });
@@ -93,7 +93,7 @@ export default function Page() {
                                 <div className={styles['or']}>
                                     or
                                 </div>
-                                <Link href="http://localhost:8000/api/v1/auth/google" className={styles['gg']}>
+                                <Link href="https://nextstore-be.onrender.com/api/v1/auth/google" className={styles['gg']}>
                                     <div className={styles['ggImg']}>
                                         <Image width={24} height={25} src="/image/login/gg.png" alt="" />
                                     </div>

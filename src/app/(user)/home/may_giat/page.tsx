@@ -7,7 +7,6 @@ export default function ProductsPage() {
     return (
         <main className={styles['main']}>
             <Products />
-            {/* <Chatbot /> */}
         </main>
     )
 }
