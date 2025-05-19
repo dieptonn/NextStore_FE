@@ -5,6 +5,10 @@ import React, { useEffect, useState } from "react";
 import Image from 'next/image'
 import { useRouter, usePathname } from 'next/navigation';
 
+interface User {
+    image: string;
+}
+
 
 export default function Header() {
     const [menu, setMenu] = useState(false);
@@ -13,6 +17,7 @@ export default function Header() {
     const [scrollPosition, setScrollPosition] = useState(0);
     const pathname = usePathname();
     const router = useRouter();
+    const [user, setUser] = useState<User | null>(null);
 
     const handleSearch = () => {
 
@@ -65,6 +70,34 @@ export default function Header() {
         setScrollPosition(window.scrollY);
     }, []);
 
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            // Gọi API lấy user info
+            fetch('http://localhost:8000/api/v1/user/profile', {
+                method: 'GET',
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+                .then(res => {
+                    if (!res.ok) throw new Error('Token invalid');
+                    return res.json();
+                })
+                .then(data => {
+                    setUser({
+                        image: data.data.image,
+                    });
+                })
+                .catch(err => {
+                    console.error('Lỗi lấy thông tin người dùng:', err);
+                    setUser(null); // Xóa thông tin nếu token sai
+                });
+            console.log(user);
+        }
+    }, []);
+
+
     return (
         <div className={styles['headerZ']}>
             {/* <div className={styles['header']} style={{ backgroundColor }}> */}
@@ -102,12 +135,28 @@ export default function Header() {
                     <Link href='/home/gio_hang' className={styles['like']}>
                         <Image width={20} height={20} src="/image/Korzina.png" alt="" />
                     </Link>
-                    <Link href='/home/my_profile' className={styles['like']}>
+                    {/* <Link href='/home/my_profile' className={styles['like']}>
                         <Image width={105} height={105} src="/image/user.png" alt="" />
-                    </Link>
-                    <Link href='/login' className={styles['avatar']}>
+                    </Link> */}
+                    {/* <Link href='/login' className={styles['avatar']}>
                         <div className={styles['text-logo']}>Sign in</div>
-                    </Link>
+                    </Link> */}
+                    {user ? (
+                        <Link href="/home/my_profile" className={styles['like']}>
+                            <Image
+                                alt=""
+                                width={205}
+                                height={205}
+                                src={user.image || "/image/user.png"}
+                                className={styles['user-avatar']}
+                            />
+                        </Link>
+                    ) : (
+                        <Link href='/login' className={styles['avatar']}>
+                            <div className={styles['text-logo']}>Sign in</div>
+                        </Link>
+                    )}
+
                 </div>
                 <div className={styles['header-2']}>
                     <button className={styles['danh-muc']}
@@ -571,6 +620,7 @@ export default function Header() {
                         <Link href='/home/may_cu' className={styles['header-text']}>Máy cũ</Link>
                         <Link href='/home/lap_top' className={styles['header-text']}>Laptop</Link>
                         <Link href='/home/tu_dong' className={styles['header-text']}>Tủ đông</Link>
+
                     </div>
                 </div>
             </div>

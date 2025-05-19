@@ -32,8 +32,8 @@ export default function Products() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get<{ data: Product[] }>('https://nextstore-be.onrender.com/api/v1/fridges/showProduct');
-                // const response = await axios.get<{ data: Product[] }>('http://localhost:8000/api/v1/fridges/showProduct');
+                // const response = await axios.get<{ data: Product[] }>('https://nextstore-be.onrender.com/api/v1/fridges/showProduct');
+                const response = await axios.get<{ data: Product[] }>('http://localhost:8000/api/v1/fridges/showProduct');
                 console.log({
                     Response: response.data.data,
                 });
@@ -72,7 +72,7 @@ export default function Products() {
                         <div className={styles['detail']}>{product.name}</div>
                         <div className={styles['quantity']}>{formatNumber(product.rating_number)} Lượt đánh giá</div>
                         <div className={styles['cart-button']}>
-                            <div className={styles['cart-text']}>Sotib olish</div>
+                            <div className={styles['cart-text']}>Mua Ngay</div>
                         </div>
                         <div className={styles['shopping-cart']}>
                             <Image width={40} height={40} src="/image/sale/shopping_cart.png" alt="" />

@@ -9,9 +9,22 @@ import Sale from '@/components/list/sale'
 import Trend from '@/components/list/trend'
 import Dev from '@/components/list/dev'
 import Chatbot from '@/components/chatbot/chatbot'
-
+import { useSearchParams } from 'next/navigation'
+import { useEffect } from 'react'
 
 export default function Home() {
+
+  const searchParams = useSearchParams()
+  const paymentStatus = searchParams.get('payment')
+
+  useEffect(() => {
+    if (paymentStatus === 'success') {
+      alert('✅ Thanh toán thành công!')
+      // Optionally: remove the query from URL
+      window.history.replaceState(null, '', '/home')
+    }
+  }, [paymentStatus])
+
   return (
     <main className={styles['main']}>
       <div className={styles['backGround']}>

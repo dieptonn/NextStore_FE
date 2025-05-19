@@ -21,7 +21,7 @@ export default function Trend() {
                             <div className={styles['quantity']}>1230 ta buyurtma</div>
 
                             <div className={styles['cart-button']}>
-                                <div className={styles['cart-text']}>Sotib olish</div>
+                                <div className={styles['cart-text']}>Mua Ngay</div>
                             </div>
                             <div className={styles['shopping-cart']}>
                                 <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
@@ -39,7 +39,7 @@ export default function Trend() {
                             <div className={styles['quantity']}>1230 ta buyurtma</div>
 
                             <div className={styles['cart-button']}>
-                                <div className={styles['cart-text']}>Sotib olish</div>
+                                <div className={styles['cart-text']}>Mua Ngay</div>
                             </div>
                             <div className={styles['shopping-cart']}>
                                 <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
@@ -57,7 +57,7 @@ export default function Trend() {
                             <div className={styles['quantity']}>1230 ta buyurtma</div>
 
                             <div className={styles['cart-button']}>
-                                <div className={styles['cart-text']}>Sotib olish</div>
+                                <div className={styles['cart-text']}>Mua Ngay</div>
                             </div>
                             <div className={styles['shopping-cart']}>
                                 <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
@@ -75,7 +75,7 @@ export default function Trend() {
                             <div className={styles['quantity']}>1230 ta buyurtma</div>
 
                             <div className={styles['cart-button']}>
-                                <div className={styles['cart-text']}>Sotib olish</div>
+                                <div className={styles['cart-text']}>Mua Ngay</div>
                             </div>
                             <div className={styles['shopping-cart']}>
                                 <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
@@ -93,7 +93,7 @@ export default function Trend() {
                             <div className={styles['quantity']}>1230 ta buyurtma</div>
 
                             <div className={styles['cart-button']}>
-                                <div className={styles['cart-text']}>Sotib olish</div>
+                                <div className={styles['cart-text']}>Mua Ngay</div>
                             </div>
                             <div className={styles['shopping-cart']}>
                                 <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
@@ -113,7 +113,7 @@ export default function Trend() {
                             <div className={styles['quantity']}>1230 ta buyurtma</div>
 
                             <div className={styles['cart-button']}>
-                                <div className={styles['cart-text']}>Sotib olish</div>
+                                <div className={styles['cart-text']}>Mua Ngay</div>
                             </div>
                             <div className={styles['shopping-cart']}>
                                 <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
@@ -131,7 +131,7 @@ export default function Trend() {
                             <div className={styles['quantity']}>1230 ta buyurtma</div>
 
                             <div className={styles['cart-button']}>
-                                <div className={styles['cart-text']}>Sotib olish</div>
+                                <div className={styles['cart-text']}>Mua Ngay</div>
                             </div>
                             <div className={styles['shopping-cart']}>
                                 <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
@@ -149,7 +149,7 @@ export default function Trend() {
                             <div className={styles['quantity']}>1230 ta buyurtma</div>
 
                             <div className={styles['cart-button']}>
-                                <div className={styles['cart-text']}>Sotib olish</div>
+                                <div className={styles['cart-text']}>Mua Ngay</div>
                             </div>
                             <div className={styles['shopping-cart']}>
                                 <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
@@ -167,7 +167,7 @@ export default function Trend() {
                             <div className={styles['quantity']}>1230 ta buyurtma</div>
 
                             <div className={styles['cart-button']}>
-                                <div className={styles['cart-text']}>Sotib olish</div>
+                                <div className={styles['cart-text']}>Mua Ngay</div>
                             </div>
                             <div className={styles['shopping-cart']}>
                                 <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />
@@ -185,7 +185,7 @@ export default function Trend() {
                             <div className={styles['quantity']}>1230 ta buyurtma</div>
 
                             <div className={styles['cart-button']}>
-                                <div className={styles['cart-text']}>Sotib olish</div>
+                                <div className={styles['cart-text']}>Mua Ngay</div>
                             </div>
                             <div className={styles['shopping-cart']}>
                                 <Image width={228.297} height={390} src="/image/sale/shopping_cart.png" alt="" />

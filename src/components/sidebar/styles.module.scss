@@ -1,6 +1,4 @@
-
-
-.sidebar{
+.sidebar {
     display: flex;
     width: 260px;
     height: 2252px;
@@ -9,28 +7,28 @@
     align-items: center;
     flex-shrink: 0;
     background: var(--neutral-800, #262626);
-    .sidebarDiv{
+    .sidebarDiv {
         display: flex;
         width: 260px;
         flex-direction: column;
         align-items: flex-start;
-        .new{
+        .new {
             display: flex;
             padding: 15px 30px;
             flex-direction: column;
             align-items: flex-start;
             gap: 10px;
             align-self: stretch;
-            .newDiv{
+            .newDiv {
                 display: flex;
                 padding: 10px;
                 align-items: center;
                 gap: 5px;
-                align-self: stretch;    
+                align-self: stretch;
                 border-radius: 5px;
-                background: var(--neutral-200, #E5E5E5);
+                background: var(--neutral-200, #e5e5e5);
                 gap: 30px;
-                .newText{
+                .newText {
                     color: var(--neutral-900, #171717);
                     font-family: Poppins;
                     font-size: 18px;
@@ -40,7 +38,7 @@
                 }
             }
         }
-        .dashboard{
+        .dashboard {
             display: flex;
             padding: 15px 30px;
             width: 100%;
@@ -50,18 +48,18 @@
             align-self: stretch;
             border-top: 1px solid var(--neutral-900, #171717);
             flex-direction: column;
-            
-            .dashboardSon{
+
+            .dashboardSon {
                 display: flex;
                 flex-direction: row;
                 width: 100%;
                 justify-content: space-between;
-                .dashboardDiv{
+                .dashboardDiv {
                     display: flex;
                     align-items: center;
                     gap: 10px;
-                    .dashboardText{
-                        color: var(--white, #FFF);
+                    .dashboardText {
+                        color: var(--white, #fff);
                         font-family: Poppins;
                         font-size: 16px;
                         font-style: normal;
@@ -70,7 +68,7 @@
                     }
                 }
             }
-            .dropdown{
+            .dropdown {
                 margin-left: -24px;
                 display: none;
                 width: 100%;
@@ -80,7 +78,7 @@
                     // display: block;
                     display: flex;
                     z-index: 1000;
-                    transition: max-height  0.3s ease;
+                    transition: max-height 0.3s ease;
                     flex-direction: row;
                 }
 
@@ -91,12 +89,12 @@
                 gap: 10px;
                 align-self: stretch;
                 gap: 10px;
-                .drop{
+                .drop {
                     width: 100%;
                     height: auto;
                     // gap: 10px;
-                    .dashboardText{
-                        color: var(--white, #FFF);
+                    .dashboardText {
+                        color: var(--white, #fff);
                         font-family: Poppins;
                         font-size: 16px;
                         font-style: normal;

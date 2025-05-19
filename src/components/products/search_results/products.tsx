@@ -46,7 +46,7 @@ export default function Products({ searchData }: ProductsProps) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.post<{ data: HitsData }>('https://nextstore-be.onrender.com/api/v1/home/search', {
+                const response = await axios.post<{ data: HitsData }>('http://localhost:8000/api/v1/home/search', {
                     query: searchData,
                 });
                 console.log({
@@ -130,7 +130,7 @@ export default function Products({ searchData }: ProductsProps) {
                             <div className={styles['detail']}>{product._source.name}</div>
                             <div className={styles['quantity']}>{formatNumber(product._source.rating_number)} Lượt đánh giá</div>
                             <div className={styles['cart-button']}>
-                                <div className={styles['cart-text']}>Sotib olish</div>
+                                <div className={styles['cart-text']}>Mua Ngay</div>
                             </div>
                             <div className={styles['shopping-cart']}>
                                 <Image width={40} height={40} src="/image/sale/shopping_cart.png" alt="" />

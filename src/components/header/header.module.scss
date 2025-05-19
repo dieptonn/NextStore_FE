@@ -88,7 +88,7 @@
                 display: flex;
                 width: 46px;
                 height: 46px;
-                padding: 11px;
+                // padding: 11px;
                 justify-content: center;
                 align-items: center;
                 flex-shrink: 0;
@@ -507,5 +507,9 @@
         font-weight: 700;
         line-height: normal;
         white-space: nowrap;
+    }
+    .user-avatar {
+        border-radius: 7px;
+        // object-fit: cover;
     }
 }

@@ -32,7 +32,7 @@ export default function DetailsPage() {
             try {
                 if (productName) {
                     // Gọi API với productName
-                    const response = await axios.post(`https://nextstore-be.onrender.com/api/v1/washingMachines/showProductDetail?productName=${productName}`);
+                    const response = await axios.post(`http://localhost:8000/api/v1/washingMachines/showProductDetail?productName=${productName}`);
                     // Xử lý dữ liệu từ API
 
                     setApiData(response.data.data)

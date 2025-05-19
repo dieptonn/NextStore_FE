@@ -29,7 +29,7 @@ export default function Recommended() {
                             <div className={styles['quantity']}>1230 ta buyurtma</div>
 
                             <div className={styles['cart-button']}>
-                                <div className={styles['cart-text']}>Sotib olish</div>
+                                <div className={styles['cart-text']}>Mua Ngay</div>
                             </div>
                             <div className={styles['shopping-cart']}>
                                 <Image width={40} height={40} src="/image/sale/shopping_cart.png" alt="" />
@@ -49,7 +49,7 @@ export default function Recommended() {
                             <div className={styles['quantity']}>1230 ta buyurtma</div>
 
                             <div className={styles['cart-button']}>
-                                <div className={styles['cart-text']}>Sotib olish</div>
+                                <div className={styles['cart-text']}>Mua Ngay</div>
                             </div>
                             <div className={styles['shopping-cart']}>
                                 <Image width={40} height={40} src="/image/sale/shopping_cart.png" alt="" />
@@ -69,7 +69,7 @@ export default function Recommended() {
                             <div className={styles['quantity']}>1230 ta buyurtma</div>
 
                             <div className={styles['cart-button']}>
-                                <div className={styles['cart-text']}>Sotib olish</div>
+                                <div className={styles['cart-text']}>Mua Ngay</div>
                             </div>
                             <div className={styles['shopping-cart']}>
                                 <Image width={40} height={40} src="/image/sale/shopping_cart.png" alt="" />
@@ -89,7 +89,7 @@ export default function Recommended() {
                             <div className={styles['quantity']}>1230 ta buyurtma</div>
 
                             <div className={styles['cart-button']}>
-                                <div className={styles['cart-text']}>Sotib olish</div>
+                                <div className={styles['cart-text']}>Mua Ngay</div>
                             </div>
                             <div className={styles['shopping-cart']}>
                                 <Image width={40} height={40} src="/image/sale/shopping_cart.png" alt="" />
@@ -109,7 +109,7 @@ export default function Recommended() {
                             <div className={styles['quantity']}>1230 ta buyurtma</div>
 
                             <div className={styles['cart-button']}>
-                                <div className={styles['cart-text']}>Sotib olish</div>
+                                <div className={styles['cart-text']}>Mua Ngay</div>
                             </div>
                             <div className={styles['shopping-cart']}>
                                 <Image width={40} height={40} src="/image/sale/shopping_cart.png" alt="" />

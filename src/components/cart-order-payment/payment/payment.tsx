@@ -2,16 +2,72 @@
 import styles from './styles.module.scss';
 import Link from 'next/link'
 import Image from 'next/image'
-// import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import axios from 'axios';
 
+interface CartItem {
+    other_details: {
+        brand: string;
+        type: string;
+    };
+    _id: string;
+    PD_id: number;
+    name: string;
+    quantity: number;
+    price: string;
+}
 
+interface CartData {
+    _id: string;
+    userId: number;
+    items: CartItem[];
+    total_price: string;
+    status: string;
+    updatedAt: string;
+}
 
 
 export default function Payment() {
 
+    const [cartData, setCartData] = useState<CartData>();
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.post<{ data: CartData }>('http://localhost:8000/api/v1/cartPayment/getCart', {
+                    userId: 2
+                });
+                console.log({
+                    Response: response.data.data
+                });
+
+                setCartData(response.data.data);
+
+            } catch (error) {
+                console.error('Error:', error);
+                // Xử lý các lỗi
+            }
+        };
+        fetchData();
+    }, []);
+
+    const formatDate = (dateString: string) => {
+        const dateObj = new Date(dateString);
+        const daysOfWeek = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+        const monthsOfYear = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+        return `${daysOfWeek[dateObj.getUTCDay()]}, ${dateObj.getUTCDate()} ${monthsOfYear[dateObj.getUTCMonth()]} ${dateObj.getUTCFullYear()}`;
+    };
+
+    const formatTime = (dateString: string) => {
+        const dateObj = new Date(dateString);
+        return `${dateObj.getUTCHours().toString().padStart(2, "0")}:${dateObj.getUTCMinutes().toString().padStart(2, "0")}`;
+    };
+
+
     function createOrder() {
-        return fetch("https://nextstore-be.onrender.com/api/v1/cartPayment/orders", {
+
+        return fetch("http://localhost:8000/api/v1/cartPayment/orders", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -21,31 +77,29 @@ export default function Payment() {
             body: JSON.stringify({
                 cart: [
                     {
-                        "userId": 3,
-                        "items": [
-                            {
-                                "PD_id": 2,
-                                "name": "Toshiba 7 Kg AW-L805AV (SG)",
-                                "quantity": 3,
-                                "price": "519000",
-                                "other_details": {
-                                    "brand": "Toshiba",
-                                    "type": "Cửa trước"
-                                }
-                            }
-                        ],
-                        "total_price": "1567000",
-                        "shipping_fee": "10000",
+                        "userId": cartData?.userId,
+                        "total_price": cartData?.total_price,
+                        "shipping_fee": "0",
                         "payment_method": "paypal"
                     },
                 ],
+                // cart: [
+                //     {
+                //         "userId": 2,
+                //         "total_price": "1",
+                //         "shipping_fee": "0",
+                //         "payment_method": "paypal"
+                //     },
+                // ],
             }),
         })
             .then((response) => response.json())
             .then((order) => order.id);
     }
+
     function onApprove(data: any) {
-        return fetch(`https://nextstore-be.onrender.com/api/v1/cartPayment/orders/${data.orderID}/capture`, {
+
+        return fetch(`http://localhost:8000/api/v1/cartPayment/orders/${data.orderID}/capture`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -57,11 +111,19 @@ export default function Payment() {
             .then((response) => response.json())
             .then((orderData) => {
                 const name = orderData.payer.name.given_name;
-                console.log(orderData)
-                alert(`Transaction completed by ${name}`);
-            });
+                const status = orderData.status;
 
+                console.log("PayPal response:", orderData);
+
+                if (status === "COMPLETED") {
+                    alert(`Transaction completed by ${name}`);
+                    window.location.href = "http://localhost:3000/home?payment=success";
+                } else {
+                    alert("Payment was not completed. Please try again.");
+                }
+            });
     }
+
     return (
         <div className={styles['paymentDiv']}>
             <div className={styles['payment']}>
@@ -70,135 +132,103 @@ export default function Payment() {
                 </div>
 
                 <PayPalScriptProvider options={{ clientId: "AemERRNaHhdvO7lr7dZveF_z14T1hiDQs_KX0Kje2okpQ6ZjJM-K4ancHvhW70qGvLTPjmirgfH5XzLG" }}>
-                    <PayPalButtons className={styles['paypalBtn']}
-                        createOrder={createOrder}
-                        onApprove={onApprove}
-                    />
+                    {cartData && (
+                        <PayPalButtons className={styles['paypalBtn']}
+                            createOrder={createOrder}
+                            onApprove={onApprove}
+                        />
+                    )}
                 </PayPalScriptProvider>
 
             </div>
-
 
             <div className={styles['totalOrder']}>
                 <div className={styles['title']}>
                     Your Cart Overview
                 </div>
                 <div className={styles['div']}>
-                    <div className={styles['order']}>
-                        <div className={styles['orderImg']}>
-                            <Image width={512} height={352} src="/image/cart/pic.png" alt="" />
-                        </div>
-                        <div className={styles['orInfo']}>
-                            <div className={styles['orTitle']}>
-                                You order
-                            </div>
-                            <div className={styles['orDate']}>
-                                <div className={styles['dateImg']}>
-                                    <Image width={24} height={24} src="/image/cart/date.png" alt="" />
+                    {cartData && (
+                        <>
+                            {/* Order info */}
+                            <div className={styles['order']}>
+                                <div className={styles['orderImg']}>
+                                    <Image width={512} height={352} src="/image/cart/pic.png" alt="Order image" />
                                 </div>
-                                <div className={styles['date']}>
-                                    FRI, 23 DEC 2022
-                                </div>
-                            </div>
-                            <div className={styles['orTime']}>
-                                <div className={styles['dateImg']}>
-                                    <Image width={24} height={24} src="/image/cart/time.png" alt="" />
-                                </div>
-                                <div className={styles['date']}>
-                                    15:00
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles['memo']}>
-                        <div className={styles['memo1']}>
-                            <div className={styles['memo1Div']}>
-                                <div className={styles['memo1Num']}>
-                                    <div className={styles['memo1El']}>
-                                        2
+                                <div className={styles['orInfo']}>
+                                    <div className={styles['orTitle']}>Your order</div>
+
+                                    <div className={styles['orDate']}>
+                                        <div className={styles['dateImg']}>
+                                            <Image width={24} height={24} src="/image/cart/date.png" alt="Date icon" />
+                                        </div>
+                                        <div className={styles['date']}>{formatDate(cartData.updatedAt)}</div>
+                                    </div>
+
+                                    <div className={styles['orTime']}>
+                                        <div className={styles['dateImg']}>
+                                            <Image width={24} height={24} src="/image/cart/time.png" alt="Time icon" />
+                                        </div>
+                                        <div className={styles['date']}>{formatTime(cartData.updatedAt)}</div>
                                     </div>
                                 </div>
-                                <div className={styles['memo1Text']}>
+                            </div>
 
-                                    Máy lọc nước Kangaroo (€32.00)
-                                </div>
-                            </div>
-                            <div className={styles['memo1Sal']}>
-                                €64.00
-                            </div>
-                        </div>
-                        <div className={styles['memo1']}>
-                            <div className={styles['memo1Div']}>
-                                <div className={styles['memo1Num']}>
-                                    <div className={styles['memo1El']}>
-                                        1
+                            {/* List of items */}
+                            {cartData.items.map((item) => (
+                                <div className={styles['memo']} key={item._id}>
+                                    <div className={styles['memo1']}>
+                                        <div className={styles['memo1Div']}>
+                                            <div className={styles['memo1Num']}>
+                                                <div className={styles['memo1El']}>{item.quantity}</div>
+                                            </div>
+                                            <div className={styles['memo1Text']}>
+                                                {item.name} ({item.other_details.brand})
+                                            </div>
+                                        </div>
+                                        <div className={styles['memo1Sal']}>
+                                            {(parseInt(item.price) * item.quantity).toLocaleString()} VND
+                                        </div>
+                                    </div>
+                                    <div className={styles['shipTit']}>
+                                        Shipping fee:
+                                    </div>
+                                    <div className={styles['shipDiv']}>
+                                        <div className={styles['address']}>
+                                            <div className={styles['addressTxt']}>
+                                                3c, 288 alley, Hoang Mai street, Hoang Mai, Ha Noi
+                                            </div>
+                                        </div>
+                                        <div className={styles['price']}>
+                                            8,000 VND
+                                        </div>
+                                    </div>
+                                    <div className={styles['shipTit']}>
+                                        Voucher:
+                                    </div>
+                                    <div className={styles['voucherDiv']}>
+                                        <div className={styles['priceDiv']}>
+                                            <Image className={styles['voucher']} width={513} height={253} src="/image/cart/voucher1.png" alt="" />
+                                            <Image className={styles['voucher']} width={513} height={253} src="/image/cart/voucher2.png" alt="" />
+                                        </div>
+                                        <div className={styles['price']}>
+                                            - 18,000 VND
+                                        </div>
+
                                     </div>
                                 </div>
-                                <div className={styles['memo1Text']}>
-                                    Laptop ASUS TUF gaming
-                                </div>
-                            </div>
-                            <div className={styles['memo1Sal']}>
-                                €22.00
-                            </div>
-                        </div>
-                        <div className={styles['memo1']}>
-                            <div className={styles['memo1Div']}>
-                                <div className={styles['memo1Num']}>
-                                    <div className={styles['memo1El']}>
-                                        1
-                                    </div>
-                                </div>
-                                <div className={styles['memo1Text']}>
-                                    Tủ lạnh
-                                </div>
-                            </div>
-                            <div className={styles['memo1Sal']}>
-                                €0.00
-                            </div>
-                        </div>
-                        <div className={styles['shipTit']}>
-                            Shipping fee:
-                        </div>
-                        <div className={styles['shipDiv']}>
-                            <div className={styles['address']}>
-                                <div className={styles['addressTxt']}>
-                                    3c, 288 alley, Hoang Mai street, Hoang Mai, Ha Noi
-                                </div>
-                            </div>
-                            <div className={styles['price']}>
-                                €8.00
-                            </div>
-                        </div>
-                        <div className={styles['shipTit']}>
-                            Voucher:
-                        </div>
-                        <div className={styles['voucherDiv']}>
-                            <div className={styles['priceDiv']}>
-                                <Image className={styles['voucher']} width={116} height={54} src="/image/cart/voucher1.png" alt="" />
-                                <Image className={styles['voucher']} width={116} height={54} src="/image/cart/voucher2.png" alt="" />
-                            </div>
-                            <div className={styles['price']}>
-                                - €26.00
-                            </div>
+                            ))}
 
-                        </div>
+                            {/* Total Price */}
+                            <div className={styles['totalPrice']}>
+                                <div className={styles['totalPriceTitle']}>Total Price</div>
+                                <div className={styles['totalPriceSal']}>
+                                    {(parseInt(cartData.total_price) - 10000).toLocaleString()} VND
+                                </div>
+                            </div>
+                        </>
+                    )}
 
-                    </div>
-                    <div className={styles['totalPrice']}>
-                        <div className={styles['totalPriceTitle']}>
-                            Total Price
-                        </div>
-                        <div className={styles['totalPriceSal']}>
-                            €68.00
-                        </div>
-                    </div>
                 </div>
-                {/* <Link href='/home/don_hang' className={styles['button']}>
-                    <div className={styles['buttonText']}>
-                        Back to the Pre Step
-                    </div>
-                </Link> */}
             </div>
 
         </div>

@@ -27,15 +27,8 @@ interface CartData {
 }
 
 interface cart {
-    data: {
-        userId: number,
-        items: [
-            PD_id: number,
-            quantity: number
-        ],
-        total_price: string
-        status: string,
-    }
+    status: string,
+    data: CartData
 }
 
 export default function Cart() {
@@ -46,12 +39,12 @@ export default function Cart() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.post<{ data: CartData }>('https://nextstore-be.onrender.com/api/v1/cartPayment/getCart', {
+                const response = await axios.post<{ data: CartData }>('http://localhost:8000/api/v1/cartPayment/getCart', {
                     userId: 2
                 });
-                // console.log({
-                //     Response: response.data.data
-                // });
+                console.log({
+                    Response: response.data.data
+                });
 
                 setCartData(response.data.data);
 
@@ -62,45 +55,6 @@ export default function Cart() {
         };
         fetchData();
     }, []);
-
-
-    // useEffect(() => {
-    //     const updateCartData = async () => {
-    //         try {
-    //             if (cartData) {
-    //                 const updatedItems = cartData.items.map((item) => ({
-    //                     userId: 2,
-    //                     PD_id: item._id,
-    //                     quantity: item.quantity,
-    //                     name: item.name,
-    //                     price: item.price,
-    //                     other_details: {
-    //                         brand: item.other_details?.brand,
-    //                         type: item.other_details?.type,
-    //                     },
-    //                 }));
-
-    //                 const response = await axios.post<{ data: cart }>(
-    //                     "http://localhost:8000/api/v1/cartPayment/addToCart",
-    //                     {
-    //                         updatedItems,
-    //                     }
-    //                 );
-
-    //                 console.log({
-    //                     Response: response.data.data,
-    //                 });
-    //             }
-    //         } catch (error) {
-    //             console.error("Error:", error);
-    //             // Xử lý các lỗi
-    //         }
-    //     };
-
-    //     if (cartData && cartData.items) {
-    //         updateCartData();
-    //     }
-    // }, [cartData?.items]);
 
     const formatDate = (dateString: string) => {
         const dateObj = new Date(dateString);
@@ -127,26 +81,55 @@ export default function Cart() {
     };
 
     const handleQuantityChange = (itemId: string, action: string) => {
+
         const updatedItems = cartData?.items.map((item) => {
             if (item._id === itemId) {
-                const updatedQuantity = action === "add" ? item.quantity + 1 : item.quantity - 1;
+                const updatedQuantity = action === "add" ? item.quantity + 1 : Math.max(1, item.quantity - 1);
                 return {
                     ...item,
                     quantity: updatedQuantity,
                 };
             }
-            console.log(item)
-
             return item;
         });
 
         if (updatedItems) {
+            // Tính toán lại total_price
+            const newTotalPrice = updatedItems.reduce((total, item) => {
+                return total + item.quantity * parseInt(item.price);
+            }, 0);
+
             setCartData((prevCartData) => ({
                 ...(prevCartData as CartData), // Ép kiểu prevCartData thành CartData
                 items: updatedItems,
+                total_price: newTotalPrice.toString(), // Chuyển thành string để đồng nhất kiểu dữ liệu
             }));
         }
     };
+
+    const handleProceedToNextStep = async () => {
+        if (!cartData || cartData.items.length === 0) return;
+
+        const firstItem = cartData.items[0];
+
+        const payload = {
+            userId: cartData.userId,
+            PD_id: firstItem.PD_id,
+            name: firstItem.name,
+            quantity: firstItem.quantity,
+            price: firstItem.price,
+            other_details: firstItem.other_details
+        };
+
+        try {
+            await axios.post('http://localhost:8000/api/v1/cartPayment/update-cart', payload);
+            console.log("Cart updated successfully!", payload);
+        } catch (error) {
+            console.error("Error updating cart:", error);
+        }
+    };
+
+
 
     return (
         <div className={styles['cartDiv']}>
@@ -258,12 +241,13 @@ export default function Cart() {
                     )}
                 </div>
                 <div className={styles['buttonDiv']}>
-                    <Link href='/home/don_hang' className={styles['button']}>
+                    <Link href='/home/don_hang' className={styles['button']} onClick={handleProceedToNextStep}>
                         <div className={styles['buttonText']}>
                             Go to the Next Step
                         </div>
                     </Link>
                 </div>
+
             </div>
         </div>
     )
