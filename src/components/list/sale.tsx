@@ -15,10 +15,10 @@ export default function Sale() {
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
-                            <div className={styles['price']}>299 000 so’m</div>
+                            <div className={styles['price']}>2.299.000 VND</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
-                                simsiz quloqchin , Oq rangda   </div>
-                            <div className={styles['quantity']}>1230 ta buyurtma</div>
+                                Sản phẩm chính hãng   </div>
+                            <div className={styles['quantity']}>1230 lượt mua</div>
 
                             <div className={styles['cart-button']}>
                                 <div className={styles['cart-text']}>Mua Ngay</div>
@@ -33,10 +33,10 @@ export default function Sale() {
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
-                            <div className={styles['price']}>299 000 so’m</div>
+                            <div className={styles['price']}>2.299.000 VND</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
-                                simsiz quloqchin , Oq rangda   </div>
-                            <div className={styles['quantity']}>1230 ta buyurtma</div>
+                                Sản phẩm chính hãng   </div>
+                            <div className={styles['quantity']}>1230 lượt mua</div>
 
                             <div className={styles['cart-button']}>
                                 <div className={styles['cart-text']}>Mua Ngay</div>
@@ -51,10 +51,10 @@ export default function Sale() {
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
-                            <div className={styles['price']}>299 000 so’m</div>
+                            <div className={styles['price']}>2.299.000 VND</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
-                                simsiz quloqchin , Oq rangda   </div>
-                            <div className={styles['quantity']}>1230 ta buyurtma</div>
+                                Sản phẩm chính hãng   </div>
+                            <div className={styles['quantity']}>1230 lượt mua</div>
 
                             <div className={styles['cart-button']}>
                                 <div className={styles['cart-text']}>Mua Ngay</div>
@@ -69,10 +69,10 @@ export default function Sale() {
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
-                            <div className={styles['price']}>299 000 so’m</div>
+                            <div className={styles['price']}>2.299.000 VND</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
-                                simsiz quloqchin , Oq rangda   </div>
-                            <div className={styles['quantity']}>1230 ta buyurtma</div>
+                                Sản phẩm chính hãng   </div>
+                            <div className={styles['quantity']}>1230 lượt mua</div>
 
                             <div className={styles['cart-button']}>
                                 <div className={styles['cart-text']}>Mua Ngay</div>
@@ -87,10 +87,10 @@ export default function Sale() {
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
-                            <div className={styles['price']}>299 000 so’m</div>
+                            <div className={styles['price']}>2.299.000 VND</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
-                                simsiz quloqchin , Oq rangda   </div>
-                            <div className={styles['quantity']}>1230 ta buyurtma</div>
+                                Sản phẩm chính hãng   </div>
+                            <div className={styles['quantity']}>1230 lượt mua</div>
 
                             <div className={styles['cart-button']}>
                                 <div className={styles['cart-text']}>Mua Ngay</div>
@@ -107,10 +107,10 @@ export default function Sale() {
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
-                            <div className={styles['price']}>299 000 so’m</div>
+                            <div className={styles['price']}>2.299.000 VND</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
-                                simsiz quloqchin , Oq rangda   </div>
-                            <div className={styles['quantity']}>1230 ta buyurtma</div>
+                                Sản phẩm chính hãng   </div>
+                            <div className={styles['quantity']}>1230 lượt mua</div>
 
                             <div className={styles['cart-button']}>
                                 <div className={styles['cart-text']}>Mua Ngay</div>
@@ -125,10 +125,10 @@ export default function Sale() {
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
-                            <div className={styles['price']}>299 000 so’m</div>
+                            <div className={styles['price']}>2.299.000 VND</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
-                                simsiz quloqchin , Oq rangda   </div>
-                            <div className={styles['quantity']}>1230 ta buyurtma</div>
+                                Sản phẩm chính hãng   </div>
+                            <div className={styles['quantity']}>1230 lượt mua</div>
 
                             <div className={styles['cart-button']}>
                                 <div className={styles['cart-text']}>Mua Ngay</div>
@@ -143,10 +143,10 @@ export default function Sale() {
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
-                            <div className={styles['price']}>299 000 so’m</div>
+                            <div className={styles['price']}>2.299.000 VND</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
-                                simsiz quloqchin , Oq rangda   </div>
-                            <div className={styles['quantity']}>1230 ta buyurtma</div>
+                                Sản phẩm chính hãng   </div>
+                            <div className={styles['quantity']}>1230 lượt mua</div>
 
                             <div className={styles['cart-button']}>
                                 <div className={styles['cart-text']}>Mua Ngay</div>
@@ -161,10 +161,10 @@ export default function Sale() {
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
-                            <div className={styles['price']}>299 000 so’m</div>
+                            <div className={styles['price']}>2.299.000 VND</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
-                                simsiz quloqchin , Oq rangda   </div>
-                            <div className={styles['quantity']}>1230 ta buyurtma</div>
+                                Sản phẩm chính hãng   </div>
+                            <div className={styles['quantity']}>1230 lượt mua</div>
 
                             <div className={styles['cart-button']}>
                                 <div className={styles['cart-text']}>Mua Ngay</div>
@@ -179,10 +179,10 @@ export default function Sale() {
                             <div className={styles['heart']}>
                                 <Image width={228.297} height={390} src="/image/sale/Sevimli.png" alt="" />
                             </div>
-                            <div className={styles['price']}>299 000 so’m</div>
+                            <div className={styles['price']}>2.299.000 VND</div>
                             <div className={styles['detail']}>Apple Airpods Pro <br />
-                                simsiz quloqchin , Oq rangda   </div>
-                            <div className={styles['quantity']}>1230 ta buyurtma</div>
+                                Sản phẩm chính hãng   </div>
+                            <div className={styles['quantity']}>1230 lượt mua</div>
 
                             <div className={styles['cart-button']}>
                                 <div className={styles['cart-text']}>Mua Ngay</div>

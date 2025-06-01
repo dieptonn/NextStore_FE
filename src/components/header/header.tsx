@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from "react";
 import Image from 'next/image'
 import { useRouter, usePathname } from 'next/navigation';
+import UserProfilePopup from '@/app/(user)/home/my_profile/page'
 
 interface User {
     image: string;
@@ -18,6 +19,15 @@ export default function Header() {
     const pathname = usePathname();
     const router = useRouter();
     const [user, setUser] = useState<User | null>(null);
+    const [isProfilePopupOpen, setIsProfilePopupOpen] = useState(false);
+
+    const handleOpenProfilePopup = () => {
+        setIsProfilePopupOpen(true);
+    };
+
+    const handleCloseProfilePopup = () => {
+        setIsProfilePopupOpen(false);
+    };
 
     const handleSearch = () => {
 
@@ -88,6 +98,7 @@ export default function Header() {
                     setUser({
                         image: data.data.image,
                     });
+                    localStorage.setItem('user', JSON.stringify(data.data));
                 })
                 .catch(err => {
                     console.error('Lỗi lấy thông tin người dùng:', err);
@@ -135,22 +146,25 @@ export default function Header() {
                     <Link href='/home/gio_hang' className={styles['like']}>
                         <Image width={20} height={20} src="/image/Korzina.png" alt="" />
                     </Link>
-                    {/* <Link href='/home/my_profile' className={styles['like']}>
-                        <Image width={105} height={105} src="/image/user.png" alt="" />
-                    </Link> */}
-                    {/* <Link href='/login' className={styles['avatar']}>
-                        <div className={styles['text-logo']}>Sign in</div>
-                    </Link> */}
                     {user ? (
-                        <Link href="/home/my_profile" className={styles['like']}>
+                        <div
+                            className={styles['ava']}
+                            onClick={handleOpenProfilePopup}
+                            style={{ cursor: 'pointer' }}
+                            role="button"
+                            tabIndex={0}
+                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleOpenProfilePopup(); }}
+                            aria-label="Open user profile" // Thêm aria-label cho accessibility
+                        >
                             <Image
-                                alt=""
-                                width={205}
-                                height={205}
-                                src={user.image || "/image/user.png"}
-                                className={styles['user-avatar']}
+                                alt="User Avatar"
+                                width={40} // Kích thước avatar phù hợp cho header
+                                height={40} // Kích thước avatar phù hợp cho header
+                                src={user.image || "/image/user.png"} // Fallback nếu user.image null
+                                className={styles['user-avatar']} // Class này nên làm avatar tròn
+                                priority // Cân nhắc thêm priority nếu avatar là LCP
                             />
-                        </Link>
+                        </div>
                     ) : (
                         <Link href='/login' className={styles['avatar']}>
                             <div className={styles['text-logo']}>Sign in</div>
@@ -624,13 +638,12 @@ export default function Header() {
                     </div>
                 </div>
             </div>
-            {/* <div className={styles['backGround-title']}>
-                <div className={styles['title1']}>Enjoy in the best way!</div>
-                <div className={styles['title2']}>Enjoy our services anytime</div>
-            </div> */}
-            {/* <div className={styles['backGround']}>
-                <Image width={1920} height={679} src="/image/poster1.png" alt="" />
-            </div> */}
+            {isProfilePopupOpen && (
+                <UserProfilePopup
+                    isOpen={isProfilePopupOpen}
+                    onClose={handleCloseProfilePopup}
+                />
+            )}
         </div>
     )
 }

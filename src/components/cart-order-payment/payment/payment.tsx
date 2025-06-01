@@ -31,6 +31,13 @@ interface CartData {
 export default function Payment() {
 
     const [cartData, setCartData] = useState<CartData>();
+    const [showCODForm, setShowCODForm] = useState(false);
+    const [userInfo, setUserInfo] = useState({
+        name: '',
+        phoneNumber: '',
+        address: '',
+    });
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -78,7 +85,7 @@ export default function Payment() {
                 cart: [
                     {
                         "userId": cartData?.userId,
-                        "total_price": cartData?.total_price,
+                        "total_price": cartData ? (parseInt(cartData.total_price) / 24000).toFixed(2) : "0.00",
                         "shipping_fee": "0",
                         "payment_method": "paypal"
                     },
@@ -124,6 +131,44 @@ export default function Payment() {
             });
     }
 
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            const user = JSON.parse(storedUser);
+            setUserInfo({
+                name: user.name || '',
+                phoneNumber: user.phoneNumber || '',
+                address: user.address || '',
+            });
+        }
+    }, []);
+
+    const handleCODSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        try {
+            const response = await axios.post('http://localhost:8000/api/v1/cartPayment/orders/cod', {
+                userId: cartData?.userId,
+                total_price: cartData?.total_price,
+                payment_method: 'cod',
+                shipping_fee: '8000',
+                userInfo: userInfo
+            });
+
+            if (response.status === 200) {
+                alert("Đơn hàng của bạn đã được tạo thành công và sẽ được giao đến địa chỉ bạn cung cấp.");
+                window.location.href = "http://localhost:3000/home?payment=success";
+            } else {
+                alert("Đã xảy ra lỗi khi tạo đơn hàng. Vui lòng thử lại.");
+            }
+        } catch (error) {
+            console.error("COD Payment Error:", error);
+            alert("Có lỗi xảy ra trong quá trình xử lý thanh toán.");
+        }
+    };
+
+
+
     return (
         <div className={styles['paymentDiv']}>
             <div className={styles['payment']}>
@@ -139,6 +184,47 @@ export default function Payment() {
                         />
                     )}
                 </PayPalScriptProvider>
+
+                <div className={styles['codPayment']}>
+                    <button
+                        className={styles['codBtn']}
+                        onClick={() => setShowCODForm(!showCODForm)}
+                    >
+                        Thanh toán khi nhận hàng
+                    </button>
+
+                    {showCODForm && (
+                        <form className={styles['codForm']} onSubmit={handleCODSubmit}>
+                            <div>
+                                <label>Họ tên:</label>
+                                <input
+                                    type="text"
+                                    value={userInfo.name}
+                                    onChange={(e) => setUserInfo({ ...userInfo, name: e.target.value })}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label>Số điện thoại:</label>
+                                <input
+                                    type="text"
+                                    value={userInfo.phoneNumber}
+                                    onChange={(e) => setUserInfo({ ...userInfo, phoneNumber: e.target.value })}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label>Địa chỉ:</label>
+                                <textarea
+                                    value={userInfo.address}
+                                    onChange={(e) => setUserInfo({ ...userInfo, address: e.target.value })}
+                                    required
+                                />
+                            </div>
+                            <button className={styles['confirm']} type="submit">Xác nhận thanh toán</button>
+                        </form>
+                    )}
+                </div>
 
             </div>
 

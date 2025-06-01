@@ -1,52 +1,51 @@
+'use client'
+
 import styles from './hot.module.scss'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+
+interface HotProduct {
+    _id: string;
+    name: string;
+    product_img: string;
+}
 
 export default function Hot() {
+    const [hotProducts, setHotProducts] = useState<HotProduct[]>([])
+
+    useEffect(() => {
+        const fetchHotProducts = async () => {
+            try {
+                const res = await axios.get('http://localhost:8000/api/v1/product/hot-products')
+                setHotProducts(res.data.data)
+            } catch (error) {
+                console.error('Failed to fetch hot products:', error)
+            }
+        }
+
+        fetchHotProducts()
+    }, [])
+
     return (
         <div className={styles['hot']}>
             <div className={styles['hot-list']}>
                 <div className={styles['title']}>
-                    Các danh mục sản phẩm hot 🔥🔥🔥
+                    Các sản phẩm đang hot 🔥🔥🔥
                 </div>
                 <div className={styles['list']}>
-                    <div className={styles['product']}>
-                        <Image width={512} height={274} src="/image/hot/product.png" alt="" />
-                        <div>Smart Phone</div>
-                    </div>
-                    <div className={styles['product']}>
-                        <Image width={512} height={274} src="/image/hot/product2.png" alt="" />
-                        <div>Macbook</div>
-                    </div>
-                    <div className={styles['product']}>
-                        <Image width={512} height={274} src="/image/hot/product3.png" alt="" />
-                        <div>Smart TV</div>
-                    </div>
-                    <div className={styles['product']}>
-                        <Image width={512} height={274} src="/image/hot/product4.png" alt="" />
-                        <div>Smart Watch</div>
-                    </div>
-                    <div className={styles['product']}>
-                        <Image width={512} height={274} src="/image/hot/product5.png" alt="" />
-                        <div>Ipod</div>
-                    </div>
-                    <div className={styles['product']}>
-                        <Image width={512} height={274} src="/image/hot/product6.png" alt="" />
-                        <div>Air Con</div>
-                    </div>
-                    <div className={styles['product']}>
-                        <Image width={512} height={274} src="/image/hot/product7.png" alt="" />
-                        <div>Fridge</div>
-                    </div>
-                    <div className={styles['product']}>
-                        <Image width={512} height={274} src="/image/hot/product8.png" alt="" />
-                        <div>Washing Mc</div>
-                    </div>
+                    {hotProducts.map(product => (
+                        <div className={styles['product']} key={product._id}>
+                            <Image
+                                width={512}
+                                height={274}
+                                src={product.product_img}
+                                alt={product.name}
+                            />
+                            {/* <div className={styles['item']}>{product.name}</div> */}
+                        </div>
+                    ))}
                 </div>
-                {/* <div className={styles['moreDiv']}>
-                    <div className={styles['more']}>
-                        <div className={styles['more-text']}>More</div>
-                    </div>
-                </div> */}
             </div>
         </div>
     )

@@ -18,6 +18,10 @@ import axios from 'axios';
 export default function Page() {
 
     const [userData, setUserData] = useState()
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -37,6 +41,24 @@ export default function Page() {
         fetchData();
         // }
     }, []);
+
+    const handleLogin = async () => {
+        try {
+            const response = await axios.post('http://localhost:8000/api/v1/auth/login', {
+                username: email,
+                password: password
+            });
+
+            const { token } = response.data.data;
+            console.log("Login success, token:", token);
+
+            window.location.href = `/home/oauth-success?token=${token}`;
+        } catch (error) {
+            console.error('Login error:', error);
+            setErrorMessage('Invalid email or password');
+        }
+    };
+
 
 
     return (
@@ -60,9 +82,12 @@ export default function Page() {
                                     <div className={styles['emailText']}>
                                         Email
                                     </div>
-                                    <input placeholder='test1@gmail.com' className={styles['div']}>
-
-                                    </input>
+                                    <input
+                                        placeholder='test1@gmail.com'
+                                        className={styles['div']}
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
 
                                 </div>
                             </div>
@@ -77,19 +102,31 @@ export default function Page() {
                                         </div>
                                     </div>
 
-                                    <input placeholder='**************' className={styles['div']}>
-
-                                    </input>
+                                    <input
+                                        placeholder='**************'
+                                        className={styles['div']}
+                                        type="password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                    />
 
                                 </div>
                             </div>
 
+                            <div style={{ height: '20px', marginBottom: '8px' }}>
+                                {errorMessage && <p style={{ color: 'red', margin: 0 }}>{errorMessage}</p>}
+                            </div>
+
+
                             <div className={styles['button']}>
-                                <Link href='/home' className={styles['signDiv']}>
+                                {/* <Link href='/home' className={styles['signDiv']}>
                                     <div className={styles['signText']}>
                                         Sign In
                                     </div>
-                                </Link>
+                                </Link> */}
+                                <button onClick={handleLogin} className={styles['signDiv']}>
+                                    <div className={styles['signText']}>Sign In</div>
+                                </button>
                                 <div className={styles['or']}>
                                     or
                                 </div>

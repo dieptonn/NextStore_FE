@@ -1,0 +1,350 @@
+// UserProfilePopup.module.scss
+
+// --- Popup Frame Styles (Từ popupStyles.module.scss cũ) ---
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65); // Tăng độ mờ một chút
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px; // Đệm cho màn hình nhỏ
+}
+
+.popupContent {
+    background-color: #fff;
+    padding: 0; // Bỏ padding ở đây, sẽ chuyển vào .contentWrapper
+    border-radius: 12px; // Giữ bo tròn ở đây
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    max-height: 90vh;
+    display: flex; // Giữ flex để .contentWrapper có thể chiếm toàn bộ không gian
+    flex-direction: column; // Giữ flex-direction
+    // overflow: hidden; // QUAN TRỌNG: Thêm dòng này để đảm bảo bo tròn không bị cắt bởi nội dung bên trong
+    // Nếu không có overflow: hidden, nội dung bên trong có thể tràn ra và che mất bo góc.
+}
+
+.popupContentWrapper {
+    // Class mới cho wrapper nội dung
+    flex-grow: 1; // Cho phép wrapper này chiếm không gian còn lại trong .popupContent
+    padding: 25px 35px; // Chuyển padding từ .popupContent vào đây
+    overflow-y: auto; // THANH CUỘN SẼ NẰM Ở ĐÂY
+    display: flex;
+    flex-direction: column;
+    gap: 25px; // Khoảng cách giữa các section chính (nếu contentDiv không xử lý)
+}
+
+.popupCloseButton {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    background: transparent;
+    border: none;
+    font-size: 28px; // To hơn chút
+    cursor: pointer;
+    color: #aaa;
+    line-height: 1;
+    padding: 5px;
+    &:hover {
+        color: #555;
+    }
+}
+
+// --- Profile Content Styles (Từ styles.module.scss cũ, đã được điều chỉnh) ---
+.contentDiv {
+    display: flex; // Đã là flex trong popupContent, có thể không cần nếu popupContent xử lý
+    flex-direction: column;
+    gap: 30px; // Khoảng cách giữa các section (profile, name, contact, ...)
+    width: 100%;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; // Khoảng cách giữa title và avatar div
+    width: 100%;
+}
+
+.profileTit {
+    color: rgba(51, 51, 51, 0.85);
+    font-family: "Lato", sans-serif; // Nên có fallback font
+    font-size: 22px; // Giảm kích thước
+    font-weight: 700;
+    padding-bottom: 8px; // Khoảng cách với line
+    border-bottom: 2px solid #ff8c00; // Line nổi bật hơn
+    display: inline-block; // Để border-bottom chỉ chiếm chiều rộng của text
+    margin-bottom: 15px;
+}
+
+// .profileLine không cần nữa nếu dùng border-bottom cho .profileTit
+
+.profileAvaDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: row; // Giữ nguyên
+    justify-content: space-between;
+    align-items: center; // Căn giữa theo chiều dọc
+    gap: 20px; // Khoảng cách giữa avatar info và nút upload/delete
+    flex-wrap: wrap; // Cho phép xuống dòng trên màn hình nhỏ
+}
+
+.profileAvaDiv1 {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    flex-grow: 1; // Cho phép phần này chiếm không gian còn lại
+
+    .avatarImage {
+        // Class mới cho Image component để style dễ hơn
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .name {
+        display: flex;
+        flex-direction: column;
+        gap: 5px; // Giảm gap
+        .name1 {
+            color: rgba(51, 51, 51, 0.9);
+            font-family: "Montserrat", sans-serif;
+            font-size: 20px; // Giảm
+            font-weight: 700;
+        }
+        .name2,
+        .name3 {
+            color: #555; // Đồng nhất màu
+            font-family: "Montserrat", sans-serif;
+            font-size: 14px; // Giảm
+            font-weight: 400;
+        }
+    }
+}
+
+.profileAvaDiv2 {
+    display: flex;
+    align-items: center;
+    gap: 15px; // Giảm gap
+    flex-shrink: 0; // Không cho co lại khi không đủ chỗ
+    button,
+    .uploadButtonLabel {
+        // Style chung cho nút
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition:
+            background-color 0.2s ease,
+            box-shadow 0.2s ease;
+        text-align: center;
+        min-width: 150px; // Chiều rộng tối thiểu
+    }
+
+    .uploadButtonLabel {
+        // Style cho label của upload
+        background-color: #ff8c00;
+        color: white;
+        display: inline-block; // Để hoạt động như button
+        &:hover {
+            background-color: #e67e00;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .deleteButton {
+        // Class mới cho nút delete
+        background-color: #fff;
+        color: #555;
+        border: 1px solid #ccc;
+        &:hover {
+            background-color: #f8f8f8;
+            border-color: #bbb;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+    }
+}
+
+// Không dùng .upload, .uploadTxt, .delete, .deleteTxt nữa, dùng class mới ở trên
+
+.profileLine1 {
+    // Đường kẻ ngang phân cách các section
+    width: 100%;
+    height: 1px;
+    background-color: #e0e0e0; // Màu nhạt hơn
+}
+
+.formSection {
+    // Class chung cho các section form (Name, Contact, Location, Password)
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px; // Khoảng cách giữa label và input group, hoặc giữa các input group
+}
+
+.formRow {
+    // Dùng cho các hàng có 2 input (First Name & Last Name, Passwords)
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    > .formField {
+        // Áp dụng cho mỗi .formField trong .formRow
+        flex: 1; // Chia đều không gian
+    }
+    @media (max-width: 600px) {
+        // Xuống dòng trên màn hình nhỏ
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+.formField {
+    // Class chung cho một cặp label + input
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%; // Mặc định chiếm toàn bộ chiều rộng của parent
+
+    label {
+        color: rgba(51, 51, 51, 0.8);
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 600; // Đậm hơn chút
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"] {
+        width: 100%;
+        height: 44px; // Chiều cao input
+        padding: 0 15px; // Padding ngang
+        border-radius: 8px;
+        border: 1px solid #d1d5db;
+        background: #fff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 15px;
+        outline: none;
+        box-sizing: border-box; // Để padding và border không làm tăng kích thước
+        transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+        &:focus {
+            border-color: #ff8c00;
+            box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.2);
+        }
+        &::placeholder {
+            color: #aaa;
+        }
+        &:read-only {
+            background-color: #f8f8f8;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.inputWithIcon {
+    // Cho Email và Phone Number có icon
+    position: relative; // Để icon có thể absolute bên trong
+    display: flex; // Sửa lại để icon và input nằm trong một hàng
+    align-items: center;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    padding-left: 12px; // Khoảng cách cho icon
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+    &:focus-within {
+        // Khi input bên trong focus
+        border-color: #ff8c00;
+        box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.2);
+    }
+
+    .icon {
+        // Style cho Image component chứa icon
+        flex-shrink: 0; // Không cho icon co lại
+        margin-right: 8px; // Khoảng cách giữa icon và input
+        // Kích thước icon nên nhỏ hơn
+        img {
+            // Nhắm vào thẻ img bên trong Next/Image
+            display: block; // Loại bỏ khoảng trắng thừa dưới ảnh
+        }
+    }
+
+    input {
+        // Input bên trong .inputWithIcon
+        border: none !important; // Bỏ border của input riêng lẻ
+        box-shadow: none !important; // Bỏ shadow của input riêng lẻ
+        flex-grow: 1; // Cho input chiếm hết không gian còn lại
+        height: 42px; // Điều chỉnh để vừa với .inputWithIcon
+        padding: 0 15px 0 0; // Bỏ padding trái của input
+        &:focus {
+            border: none !important;
+            box-shadow: none !important;
+        }
+    }
+}
+
+// Loại bỏ các class cũ không cần thiết như:
+// .Name, .fullName, .firstName, .firstNameTxt, .firstNameDiv,
+// .userName, .userNameTxt, .userNameDiv, .contact, .email, .emailTxt, .emailDiv,
+// .emailInput, .location, .locationTxt, .locationDiv, .locationInput
+// Thay vào đó sử dụng .formSection, .formRow, .formField, .inputWithIcon
+
+.confirmActions {
+    // Class cho khu vực nút Cancel/Save Changes
+    display: flex;
+    justify-content: flex-end; // Đẩy nút về bên phải
+    align-items: center;
+    gap: 15px; // Khoảng cách giữa các nút
+    width: 100%;
+    margin-top: 20px; // Khoảng cách với form phía trên
+
+    button {
+        // Style chung cho các nút action
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition:
+            background-color 0.2s ease,
+            opacity 0.2s ease;
+        min-width: 120px;
+    }
+
+    .cancelButton {
+        // Nút Cancel
+        background-color: #fff;
+        color: #555;
+        border: 1px solid #ccc;
+        &:hover {
+            background-color: #f8f8f8;
+        }
+    }
+
+    .saveButton {
+        // Nút Save Changes
+        background-color: #ff8c00;
+        color: white;
+        &:hover {
+            background-color: #e67e00;
+        }
+    }
+}
+// Loại bỏ .confirm, .save, .saveTxt, .cancel, .cancelTxt
+// Thay bằng .confirmActions, .cancelButton, .saveButton

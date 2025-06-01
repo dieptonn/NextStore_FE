@@ -5,7 +5,7 @@
     align-items: flex-start;
     gap: 103px;
     .cart {
-        width: 733px;
+        width: 633px;
         height: 701px;
         .cartTit {
             color: var(--black, #333);
@@ -300,5 +300,39 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    opacity: 0.6;
+}
+
+.emptyCart {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.emptyText {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+    color: #333;
+}
+
+.shopNowButton {
+    padding: 12px 24px;
+    background-color: #0070f3;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    display: inline-block;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.shopNowButton:hover {
+    background-color: #fa8b02;
+}
+
+.button.disabled {
+    background-color: #ccc;
+    pointer-events: none;
+    cursor: not-allowed;
     opacity: 0.6;
 }

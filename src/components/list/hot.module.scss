@@ -44,9 +44,11 @@
             .product {
                 position: relative;
                 display: flex;
+                align-items: center;
+                justify-content: center;
                 width: 134.882px;
                 height: 200px;
-                padding: 9px 0px;
+                padding: 9px 5px;
                 flex-direction: column;
                 align-items: center;
                 gap: 3px;
@@ -58,6 +60,17 @@
                 box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
                 &:hover {
                     transform: scale(1.1);
+                }
+                .item {
+                    color: var(--black, #333);
+                    font-family: "Open Sans";
+                    text-align: center;
+                    /* medium 18 */
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    opacity: 0.8;
                 }
             }
         }

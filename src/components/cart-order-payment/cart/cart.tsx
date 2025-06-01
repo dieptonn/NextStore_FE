@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 interface CartItem {
     other_details: {
@@ -33,8 +34,16 @@ interface cart {
 
 export default function Cart() {
 
-    const [cartData, setCartData] = useState<CartData>()
+    const [cartData, setCartData] = useState<CartData>({
+        _id: '',
+        userId: 0,
+        items: [],
+        total_price: '0',
+        status: '',
+        updatedAt: ''
+    });
 
+    const router = useRouter();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -80,40 +89,46 @@ export default function Cart() {
         return `${hours}:${minutes}`;
     };
 
-    const handleQuantityChange = (itemId: string, action: string) => {
+    const handleQuantityChange = async (itemId: string, action: string) => {
+        if (!cartData) return;
 
-        const updatedItems = cartData?.items.map((item) => {
-            if (item._id === itemId) {
-                const updatedQuantity = action === "add" ? item.quantity + 1 : Math.max(1, item.quantity - 1);
-                return {
-                    ...item,
-                    quantity: updatedQuantity,
-                };
-            }
-            return item;
-        });
+        const item = cartData.items.find(item => item._id === itemId);
+        if (!item) return;
 
-        if (updatedItems) {
-            // Tính toán lại total_price
-            const newTotalPrice = updatedItems.reduce((total, item) => {
-                return total + item.quantity * parseInt(item.price);
-            }, 0);
+        const updatedQuantity = action === "add" ? item.quantity + 1 : item.quantity - 1;
 
-            setCartData((prevCartData) => ({
-                ...(prevCartData as CartData), // Ép kiểu prevCartData thành CartData
-                items: updatedItems,
-                total_price: newTotalPrice.toString(), // Chuyển thành string để đồng nhất kiểu dữ liệu
-            }));
+        try {
+            const payload = {
+                userId: cartData.userId,
+                PD_id: item.PD_id,
+                quantity: updatedQuantity,
+            };
+
+            await axios.post('http://localhost:8000/api/v1/cartPayment/update-cart', payload);
+
+            // Gọi lại fetch để cập nhật giỏ hàng từ DB
+            const response = await axios.post<{ data: CartData }>('http://localhost:8000/api/v1/cartPayment/getCart', {
+                userId: cartData.userId
+            });
+
+            setCartData(response.data.data);
+
+        } catch (error) {
+            console.error("Error updating item quantity:", error);
         }
     };
 
-    const handleProceedToNextStep = async () => {
-        if (!cartData || cartData.items.length === 0) return;
 
-        const firstItem = cartData.items[0];
+    const isCartEmpty = !Array.isArray(cartData?.items) || cartData.items.every(item => item.quantity === 0);
+
+
+    const handleProceedToNextStep = async () => {
+        if (isCartEmpty) return;
+
+        const firstItem = cartData!.items.find(item => item.quantity > 0)!;
 
         const payload = {
-            userId: cartData.userId,
+            userId: cartData!.userId,
             PD_id: firstItem.PD_id,
             name: firstItem.name,
             quantity: firstItem.quantity,
@@ -124,11 +139,11 @@ export default function Cart() {
         try {
             await axios.post('http://localhost:8000/api/v1/cartPayment/update-cart', payload);
             console.log("Cart updated successfully!", payload);
+            router.push('/home/don_hang'); // ✅ Điều hướng sau khi cập nhật
         } catch (error) {
             console.error("Error updating cart:", error);
         }
     };
-
 
 
     return (
@@ -144,35 +159,49 @@ export default function Cart() {
                         • Please contact us if you need assistance with payment, orders, products, <br /> manufacturers, unit prices,.
                     </div>
                 </div>
-                {cartData && cartData.items.map((item: CartItem) => (
-                    <div className={styles['cart1']} key={item._id}>
-                        <div className={styles['nameDiv']}>
-                            <div className={styles['name']}>
-                                {item.name}
-                            </div>
-                            <div className={styles['content']}>
-                                • {item.other_details.brand}<br />
-                                • {item.other_details.type}
-                            </div>
-                            <div className={styles['salary']}>
-                                {parseInt(item.price).toLocaleString()} VND
-                            </div>
-                        </div>
-                        <div className={styles['qtyDiv']}>
-                            <div className={styles['sub']} onClick={() => handleQuantityChange(item._id, "sub")}>
-                                <Image width={24} height={24} src="/image/cart/sub.png" alt="" />
-                            </div>
-                            <div className={styles['qty']}>
-                                <div className={styles['qtyText']}>
-                                    {item.quantity}
+
+
+                {isCartEmpty ? (
+                    <div className={styles['emptyCart']}>
+                        <div className={styles['emptyText']}>Bạn chưa thêm sản phẩm nào vào giỏ.</div>
+                        <Link href="/home" className={styles['shopNowButton']}>
+                            Mua sắm ngay
+                        </Link>
+                    </div>
+                ) : (
+                    <>
+                        {Array.isArray(cartData?.items) && cartData.items.map((item: CartItem) => (
+                            <div className={styles['cart1']} key={item._id}>
+                                <div className={styles['nameDiv']}>
+                                    <div className={styles['name']}>
+                                        {item.name}
+                                    </div>
+                                    <div className={styles['content']}>
+                                        • {item.other_details.brand}<br />
+                                        • {item.other_details.type}
+                                    </div>
+                                    <div className={styles['salary']}>
+                                        {parseInt(item.price).toLocaleString()} VND
+                                    </div>
+                                </div>
+                                <div className={styles['qtyDiv']}>
+                                    <div className={styles['sub']} onClick={() => handleQuantityChange(item._id, "sub")}>
+                                        <Image width={24} height={24} src="/image/cart/sub.png" alt="" />
+                                    </div>
+                                    <div className={styles['qty']}>
+                                        <div className={styles['qtyText']}>
+                                            {item.quantity}
+                                        </div>
+                                    </div>
+                                    <div className={styles['add']} onClick={() => handleQuantityChange(item._id, "add")}>
+                                        <Image width={24} height={24} src="/image/cart/add.png" alt="" />
+                                    </div>
                                 </div>
                             </div>
-                            <div className={styles['add']} onClick={() => handleQuantityChange(item._id, "add")}>
-                                <Image width={24} height={24} src="/image/cart/add.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                ))}
+                        ))}
+                    </>
+                )}
+
 
             </div>
             <div className={styles['totalOrder']}>
@@ -194,7 +223,7 @@ export default function Cart() {
                                         <Image width={24} height={24} src="/image/cart/date.png" alt="" />
                                     </div>
                                     <div className={styles['date']}>
-                                        {cartData && formatDate(cartData.updatedAt)}
+                                        {formatDate((cartData?.updatedAt || new Date().toISOString()))}
                                     </div>
                                 </div>
                                 <div className={styles['orTime']}>
@@ -202,13 +231,13 @@ export default function Cart() {
                                         <Image width={24} height={24} src="/image/cart/time.png" alt="" />
                                     </div>
                                     <div className={styles['date']}>
-                                        {cartData && formatTime(cartData.updatedAt)}
+                                        {formatTime((cartData?.updatedAt || new Date().toISOString()))}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     )}
-                    {cartData && cartData.items.map((item: CartItem) => (
+                    {Array.isArray(cartData?.items) && cartData.items.map((item: CartItem) => (
                         <div className={styles['memo']} key={item._id}>
                             <div className={styles['memo1']}>
                                 <div className={styles['memo1Div']}>
@@ -235,19 +264,22 @@ export default function Cart() {
                                 Total Price
                             </div>
                             <div className={styles['totalPriceSal']}>
-                                {parseInt(cartData.total_price).toLocaleString()} VND
+                                {(Number(cartData.total_price) || 0).toLocaleString()} VND
                             </div>
                         </div>
                     )}
                 </div>
                 <div className={styles['buttonDiv']}>
-                    <Link href='/home/don_hang' className={styles['button']} onClick={handleProceedToNextStep}>
+                    <button
+                        onClick={handleProceedToNextStep}
+                        className={`${styles['button']} ${isCartEmpty ? styles['disabled'] : ''}`}
+                        disabled={isCartEmpty}
+                    >
                         <div className={styles['buttonText']}>
                             Go to the Next Step
                         </div>
-                    </Link>
+                    </button>
                 </div>
-
             </div>
         </div>
     )
