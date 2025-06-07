@@ -68,6 +68,7 @@ export const Details = ({ apiData }: DetailsProps) => {
                     quantity: 1,
                     name: apiData[0]?.name,
                     price: apiData[0]?.offers.price,
+                    image: apiData[0]?.image[0][0],
                     other_details: {
                         brand: apiData[0]?.brand.name[0],
                         type: apiData[0]?.additionalProperty[0].value
@@ -97,7 +98,7 @@ export const Details = ({ apiData }: DetailsProps) => {
                 <div key={data._id} className={styles['details-image']}>
                     <div className={styles['details-img']}>
                         <div className={styles['img']}>
-                            <Image width={512} height={512} src={data.image[0][0]} alt="" />
+                            <Image priority width={512} height={512} src={data.image[0][0]} alt="" />
                         </div>
                         <div className={styles['like']}>
                             <Image width={32} height={32} src="/image/details/like.png" alt="" />

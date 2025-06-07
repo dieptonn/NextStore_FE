@@ -15,7 +15,8 @@ interface CartItem {
     PD_id: number,
     name: string,
     quantity: number,
-    price: string
+    price: string,
+    product_img: string
 }
 
 interface CartData {
@@ -172,6 +173,20 @@ export default function Cart() {
                     <>
                         {Array.isArray(cartData?.items) && cartData.items.map((item: CartItem) => (
                             <div className={styles['cart1']} key={item._id}>
+                                <div className={styles['productImgWrapper']}>
+                                    <Image
+                                        priority
+                                        width={100}
+                                        height={100}
+                                        src={
+                                            item.product_img && item.product_img.startsWith('http')
+                                                ? item.product_img
+                                                : `/image/products/${item.product_img || 'default.png'}`
+                                        }
+                                        alt={item.name}
+                                        className={styles['productImg']}
+                                    />
+                                </div>
                                 <div className={styles['nameDiv']}>
                                     <div className={styles['name']}>
                                         {item.name}

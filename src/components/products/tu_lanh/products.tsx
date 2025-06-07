@@ -11,6 +11,7 @@ interface Product {
     product_img: string;
     name: string;
     price_old: number;
+    price_sale: number;
     rating_number: number;
     slug: string;
     // ... các trường khác
@@ -18,6 +19,7 @@ interface Product {
 
 export default function Products() {
     const [data, setData] = useState<Product[]>([]);
+    const [allProducts, setAllProducts] = useState<Product[]>([]);
     const [visibleProducts, setVisibleProducts] = useState(12);
     const [showLessButton, setShowLessButton] = useState(false);
 
@@ -28,15 +30,17 @@ export default function Products() {
         return "0";
     };
 
+    const handleFilterChange = (filteredData: Product[]) => {
+        setData(filteredData); // Cập nhật danh sách sản phẩm khi có kết quả lọc
+    };
+
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 // const response = await axios.get<{ data: Product[] }>('https://nextstore-be.onrender.com/api/v1/fridges/showProduct');
                 const response = await axios.get<{ data: Product[] }>('http://localhost:8000/api/v1/fridges/showProduct');
-                console.log({
-                    Response: response.data.data,
-                });
+                setAllProducts(response.data.data);
                 setData(response.data.data);
             } catch (error) {
                 console.error('Error:', error);
@@ -58,7 +62,7 @@ export default function Products() {
 
     return (
         <div className={styles['content']}>
-            <Filter />
+            <Filter category="Fridge" onFilterChange={handleFilterChange} />
             <div className={styles['list']}>
                 {data.slice(0, visibleProducts).map((product) => (
                     <Link key={product._id} href="/home/tu_lanh/[productName]" as={`/home/tu_lanh/${encodeURIComponent(product.slug)}`} className={styles['product']}>
@@ -68,7 +72,7 @@ export default function Products() {
                         <div className={styles['heart']}>
                             <Image width={24} height={24} src="/image/sale/Sevimli.png" alt="" />
                         </div>
-                        <div className={styles['price']}>{formatNumber(product.price_old)} VND</div>
+                        <div className={styles['price']}>{formatNumber(product.price_sale)} VND</div>
                         <div className={styles['detail']}>{product.name}</div>
                         <div className={styles['quantity']}>{formatNumber(product.rating_number)} Lượt đánh giá</div>
                         <div className={styles['cart-button']}>
