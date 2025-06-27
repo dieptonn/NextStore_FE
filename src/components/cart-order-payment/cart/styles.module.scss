@@ -5,7 +5,7 @@
     align-items: flex-start;
     gap: 103px;
     .cart {
-        width: 633px;
+        width: 653px;
         height: 701px;
         .cartTit {
             color: var(--black, #333);
@@ -45,7 +45,7 @@
             display: flex;
             padding: 16px 24px;
             align-items: center;
-            // gap: 258px;
+            gap: 25px;
             border-radius: 12px;
             border: 1px solid rgba(51, 51, 51, 0.2);
             .nameDiv {
@@ -283,7 +283,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    width: 100%;
+    width: 250px;
 }
 .salary {
     color: var(--Orange, #fa8b02);
@@ -350,4 +350,45 @@
     width: 100%;
     height: 100%;
     border-radius: 8px;
+}
+
+.productList {
+    max-height: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 40px;
+    margin-bottom: 1rem;
+}
+.productListInner {
+    padding-right: 55px;
+}
+.memoList {
+    max-height: 250px; // Chiều cao tối đa cho danh sách tóm tắt (nhỏ hơn)
+    overflow-y: auto; // Bật cuộn dọc khi cần
+    overflow-x: hidden; // Luôn ẩn cuộn ngang
+    padding-right: 10px; // Đệm nhỏ hơn một chút
+
+    // Thêm khoảng cách với các phần tử xung quanh
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.productList,
+.memoList {
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
+    }
 }

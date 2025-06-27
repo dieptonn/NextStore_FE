@@ -32,6 +32,9 @@ export default function Payment() {
 
     const [cartData, setCartData] = useState<CartData>();
     const [showCODForm, setShowCODForm] = useState(false);
+
+    const shippingFee = 28000;
+    const voucherDiscount = 18000;
     const [userInfo, setUserInfo] = useState({
         name: '',
         phoneNumber: '',
@@ -41,15 +44,29 @@ export default function Payment() {
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const response = await axios.post<{ data: CartData }>('http://localhost:8000/api/v1/cartPayment/getCart', {
-                    userId: 2
-                });
-                console.log({
-                    Response: response.data.data
-                });
 
-                setCartData(response.data.data);
+            try {
+                const storedUserData = localStorage.getItem('user');
+                if (storedUserData) {
+                    try {
+                        const userData: any = JSON.parse(storedUserData);
+                        console.log("User ID:", userData._id);
+
+                        const response = await axios.post<{ data: CartData }>('http://localhost:8000/api/v1/cartPayment/getCart', {
+                            userId: userData._id
+                        });
+                        console.log({
+                            userId: userData._id,
+                            Response: response.data.data
+                        });
+
+                        setCartData(response.data.data);
+                    } catch (error) {
+                        console.error("Lỗi parse dữ liệu người dùng từ localStorage:", error);
+                        // Có thể xử lý chuyển hướng về trang login ở đây nếu cần
+                    }
+                }
+
 
             } catch (error) {
                 console.error('Error:', error);
@@ -105,7 +122,6 @@ export default function Payment() {
     }
 
     function onApprove(data: any) {
-
         return fetch(`http://localhost:8000/api/v1/cartPayment/orders/${data.orderID}/capture`, {
             method: "POST",
             headers: {
@@ -116,17 +132,48 @@ export default function Payment() {
             })
         })
             .then((response) => response.json())
-            .then((orderData) => {
+            .then(async (orderData) => { // <-- Thêm async ở đây
                 const name = orderData.payer.name.given_name;
                 const status = orderData.status;
 
                 console.log("PayPal response:", orderData);
 
                 if (status === "COMPLETED") {
-                    alert(`Transaction completed by ${name}`);
-                    window.location.href = "http://localhost:3000/home?payment=success";
+                    // ▼▼▼ PHẦN LOGIC MỚI ▼▼▼
+                    try {
+                        // Lấy userId từ đâu đó, ví dụ localStorage
+                        const storedUser = localStorage.getItem('user');
+                        if (!storedUser) {
+                            alert("Lỗi: Không tìm thấy thông tin người dùng. Vui lòng đăng nhập lại.");
+                            return;
+                        }
+                        const user = JSON.parse(storedUser);
+                        const userId = user._id;
+                        console.log("User ID:", userId);
+
+                        // Gọi API mới để tạo đơn hàng và xóa giỏ hàng
+                        const backendResponse = await axios.post('http://localhost:8000/api/v1/cartPayment/create-order-after-payment', {
+                            userId: userId,
+                            paymentDetails: orderData // Gửi toàn bộ chi tiết thanh toán từ PayPal
+                        });
+
+                        if (backendResponse.status === 201) {
+                            console.log("BE Response:", backendResponse.data.message);
+                            alert(`Thanh toán thành công bởi ${name}! Đơn hàng của bạn đã được ghi nhận.`);
+                            // Chuyển hướng về trang chủ với thông báo thành công
+                            window.location.href = "http://localhost:3000/home?payment=success";
+                        } else {
+                            // Xử lý trường hợp backend trả về lỗi
+                            alert("Thanh toán PayPal thành công nhưng có lỗi khi ghi nhận đơn hàng. Vui lòng liên hệ hỗ trợ.");
+                        }
+                    } catch (error) {
+                        console.error("Lỗi khi gọi API backend sau thanh toán:", error);
+                        alert("Đã xảy ra lỗi hệ thống sau khi thanh toán. Vui lòng liên hệ hỗ trợ.");
+                    }
+                    // ▲▲▲ KẾT THÚC LOGIC MỚI ▲▲▲
+
                 } else {
-                    alert("Payment was not completed. Please try again.");
+                    alert("Thanh toán không hoàn tất. Vui lòng thử lại.");
                 }
             });
     }
@@ -151,7 +198,7 @@ export default function Payment() {
                 userId: cartData?.userId,
                 total_price: cartData?.total_price,
                 payment_method: 'cod',
-                shipping_fee: '8000',
+                shipping_fee: shippingFee,
                 userInfo: userInfo
             });
 
@@ -167,7 +214,11 @@ export default function Payment() {
         }
     };
 
-
+    const calculateFinalPrice = () => {
+        if (!cartData) return 0;
+        const subtotal = parseInt(cartData.total_price) || 0;
+        return subtotal + shippingFee - voucherDiscount;
+    }
 
     return (
         <div className={styles['paymentDiv']}>
@@ -235,21 +286,19 @@ export default function Payment() {
                 <div className={styles['div']}>
                     {cartData && (
                         <>
-                            {/* Order info */}
+                            {/* 1. Order info - Hiển thị 1 lần */}
                             <div className={styles['order']}>
                                 <div className={styles['orderImg']}>
                                     <Image width={512} height={352} src="/image/cart/pic.png" alt="Order image" />
                                 </div>
                                 <div className={styles['orInfo']}>
                                     <div className={styles['orTitle']}>Your order</div>
-
                                     <div className={styles['orDate']}>
                                         <div className={styles['dateImg']}>
                                             <Image width={24} height={24} src="/image/cart/date.png" alt="Date icon" />
                                         </div>
                                         <div className={styles['date']}>{formatDate(cartData.updatedAt)}</div>
                                     </div>
-
                                     <div className={styles['orTime']}>
                                         <div className={styles['dateImg']}>
                                             <Image width={24} height={24} src="/image/cart/time.png" alt="Time icon" />
@@ -259,56 +308,63 @@ export default function Payment() {
                                 </div>
                             </div>
 
-                            {/* List of items */}
-                            {cartData.items.map((item) => (
-                                <div className={styles['memo']} key={item._id}>
-                                    <div className={styles['memo1']}>
-                                        <div className={styles['memo1Div']}>
-                                            <div className={styles['memo1Num']}>
-                                                <div className={styles['memo1El']}>{item.quantity}</div>
-                                            </div>
-                                            <div className={styles['memo1Text']}>
-                                                {item.name} ({item.other_details.brand})
-                                            </div>
-                                        </div>
-                                        <div className={styles['memo1Sal']}>
-                                            {(parseInt(item.price) * item.quantity).toLocaleString()} VND
-                                        </div>
-                                    </div>
-                                    <div className={styles['shipTit']}>
-                                        Shipping fee:
-                                    </div>
-                                    <div className={styles['shipDiv']}>
-                                        <div className={styles['address']}>
-                                            <div className={styles['addressTxt']}>
-                                                3c, 288 alley, Hoang Mai street, Hoang Mai, Ha Noi
+                            {/* 2. List of items - Bên trong vùng cuộn */}
+                            <div className={styles['memoList']}>
+                                <div className={styles['memoListInner']}>
+                                    {cartData.items.map((item) => (
+                                        <div className={styles['memo']} key={item._id}>
+                                            <div className={styles['memo1']}>
+                                                <div className={styles['memo1Div']}>
+                                                    <div className={styles['memo1Num']}>
+                                                        <div className={styles['memo1El']}>{item.quantity}</div>
+                                                    </div>
+                                                    <div className={styles['memo1Text']}>
+                                                        {item.name} ({item.other_details.brand})
+                                                    </div>
+                                                </div>
+                                                <div className={styles['memo1Sal']}>
+                                                    {(parseInt(item.price) * item.quantity).toLocaleString()} VND
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className={styles['price']}>
-                                            8,000 VND
-                                        </div>
-                                    </div>
-                                    <div className={styles['shipTit']}>
-                                        Voucher:
-                                    </div>
-                                    <div className={styles['voucherDiv']}>
-                                        <div className={styles['priceDiv']}>
-                                            <Image className={styles['voucher']} width={513} height={253} src="/image/cart/voucher1.png" alt="" />
-                                            <Image className={styles['voucher']} width={513} height={253} src="/image/cart/voucher2.png" alt="" />
-                                        </div>
-                                        <div className={styles['price']}>
-                                            - 18,000 VND
-                                        </div>
+                                    ))}
+                                </div>
+                            </div>
 
+                            {/* 3. Shipping fee - Hiển thị 1 lần sau danh sách */}
+                            <div className={styles['shipTit']}>
+                                Shipping fee:
+                            </div>
+                            <div className={styles['shipDiv']}>
+                                <div className={styles['address']}>
+                                    <div className={styles['addressTxt']}>
+                                        3c, 288 alley, Hoang Mai street, Hoang Mai, Ha Noi
                                     </div>
                                 </div>
-                            ))}
+                                <div className={styles['price']}>
+                                    {shippingFee.toLocaleString()} VND
+                                </div>
+                            </div>
 
-                            {/* Total Price */}
+                            {/* 4. Voucher - Hiển thị 1 lần sau phí ship */}
+                            <div className={styles['shipTit']}>
+                                Voucher:
+                            </div>
+                            <div className={styles['voucherDiv']}>
+                                <div className={styles['priceDiv']}>
+                                    <Image className={styles['voucher']} width={513} height={253} src="/image/cart/voucher1.png" alt="" />
+                                    {/* Bạn có thể thêm voucher thứ 2 nếu cần, nhưng chỉ là để hiển thị */}
+                                </div>
+                                <div className={styles['price']}>
+                                    - {voucherDiscount.toLocaleString()} VND
+                                </div>
+                            </div>
+
+                            {/* 5. Total Price - Tính toán lại */}
                             <div className={styles['totalPrice']}>
                                 <div className={styles['totalPriceTitle']}>Total Price</div>
                                 <div className={styles['totalPriceSal']}>
-                                    {(parseInt(cartData.total_price) - 10000).toLocaleString()} VND
+                                    {calculateFinalPrice().toLocaleString()} VND
                                 </div>
                             </div>
                         </>

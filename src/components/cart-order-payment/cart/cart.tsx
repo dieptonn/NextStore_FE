@@ -35,28 +35,36 @@ interface cart {
 
 export default function Cart() {
 
-    const [cartData, setCartData] = useState<CartData>({
-        _id: '',
-        userId: 0,
-        items: [],
-        total_price: '0',
-        status: '',
-        updatedAt: ''
-    });
-
+    const [cartData, setCartData] = useState<CartData | null>(null);
     const router = useRouter();
+
+
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const response = await axios.post<{ data: CartData }>('http://localhost:8000/api/v1/cartPayment/getCart', {
-                    userId: 2
-                });
-                console.log({
-                    Response: response.data.data
-                });
 
-                setCartData(response.data.data);
+            try {
+                const storedUserData = localStorage.getItem('user');
+                if (storedUserData) {
+                    try {
+                        const userData: any = JSON.parse(storedUserData);
+                        console.log("User ID:", userData._id);
+
+                        const response = await axios.post<{ data: CartData }>('http://localhost:8000/api/v1/cartPayment/getCart', {
+                            userId: userData._id
+                        });
+                        console.log({
+                            userId: userData._id,
+                            Response: response.data.data
+                        });
+
+                        setCartData(response.data.data);
+                    } catch (error) {
+                        console.error("Lỗi parse dữ liệu người dùng từ localStorage:", error);
+                        // Có thể xử lý chuyển hướng về trang login ở đây nếu cần
+                    }
+                }
+
 
             } catch (error) {
                 console.error('Error:', error);
@@ -170,51 +178,54 @@ export default function Cart() {
                         </Link>
                     </div>
                 ) : (
-                    <>
-                        {Array.isArray(cartData?.items) && cartData.items.map((item: CartItem) => (
-                            <div className={styles['cart1']} key={item._id}>
-                                <div className={styles['productImgWrapper']}>
-                                    <Image
-                                        priority
-                                        width={100}
-                                        height={100}
-                                        src={
-                                            item.product_img && item.product_img.startsWith('http')
-                                                ? item.product_img
-                                                : `/image/products/${item.product_img || 'default.png'}`
-                                        }
-                                        alt={item.name}
-                                        className={styles['productImg']}
-                                    />
-                                </div>
-                                <div className={styles['nameDiv']}>
-                                    <div className={styles['name']}>
-                                        {item.name}
+                    // ▼▼▼ THAY ĐỔI 1: WRAPPER DIV CHO DANH SÁCH SẢN PHẨM CHÍNH ▼▼▼
+                    <div className={styles['productList']}>
+                        <div className={styles['productListInner']}>
+                            {Array.isArray(cartData?.items) && cartData.items.map((item: CartItem) => (
+                                <div className={styles['cart1']} key={item._id}>
+                                    <div className={styles['productImgWrapper']}>
+                                        <Image
+                                            priority
+                                            width={100}
+                                            height={100}
+                                            src={
+                                                item.product_img && item.product_img.startsWith('http')
+                                                    ? item.product_img
+                                                    : `/image/products/${item.product_img || 'default.png'}`
+                                            }
+                                            alt={item.name}
+                                            className={styles['productImg']}
+                                        />
                                     </div>
-                                    <div className={styles['content']}>
-                                        • {item.other_details.brand}<br />
-                                        • {item.other_details.type}
-                                    </div>
-                                    <div className={styles['salary']}>
-                                        {parseInt(item.price).toLocaleString()} VND
-                                    </div>
-                                </div>
-                                <div className={styles['qtyDiv']}>
-                                    <div className={styles['sub']} onClick={() => handleQuantityChange(item._id, "sub")}>
-                                        <Image width={24} height={24} src="/image/cart/sub.png" alt="" />
-                                    </div>
-                                    <div className={styles['qty']}>
-                                        <div className={styles['qtyText']}>
-                                            {item.quantity}
+                                    <div className={styles['nameDiv']}>
+                                        <div className={styles['name']}>
+                                            {item.name}
+                                        </div>
+                                        <div className={styles['content']}>
+                                            • {item.other_details.brand}<br />
+                                            • {item.other_details.type}
+                                        </div>
+                                        <div className={styles['salary']}>
+                                            {parseInt(item.price).toLocaleString()} VND
                                         </div>
                                     </div>
-                                    <div className={styles['add']} onClick={() => handleQuantityChange(item._id, "add")}>
-                                        <Image width={24} height={24} src="/image/cart/add.png" alt="" />
+                                    <div className={styles['qtyDiv']}>
+                                        <div className={styles['sub']} onClick={() => handleQuantityChange(item._id, "sub")}>
+                                            <Image width={24} height={24} src="/image/cart/sub.png" alt="" />
+                                        </div>
+                                        <div className={styles['qty']}>
+                                            <div className={styles['qtyText']}>
+                                                {item.quantity}
+                                            </div>
+                                        </div>
+                                        <div className={styles['add']} onClick={() => handleQuantityChange(item._id, "add")}>
+                                            <Image width={24} height={24} src="/image/cart/add.png" alt="" />
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </>
+                            ))}
+                        </div>
+                    </div>
                 )}
 
 
@@ -252,26 +263,28 @@ export default function Cart() {
                             </div>
                         </div>
                     )}
-                    {Array.isArray(cartData?.items) && cartData.items.map((item: CartItem) => (
-                        <div className={styles['memo']} key={item._id}>
-                            <div className={styles['memo1']}>
-                                <div className={styles['memo1Div']}>
-                                    <div className={styles['memo1Num']}>
-                                        <div className={styles['memo1El']}>
-                                            {item.quantity}
+                    {/* ▼▼▼ THAY ĐỔI 2: WRAPPER DIV CHO DANH SÁCH SẢN PHẨM TÓM TẮT ▼▼▼ */}
+                    <div className={styles['memoList']}>
+                        {Array.isArray(cartData?.items) && cartData.items.map((item: CartItem) => (
+                            <div className={styles['memo']} key={item._id}>
+                                <div className={styles['memo1']}>
+                                    <div className={styles['memo1Div']}>
+                                        <div className={styles['memo1Num']}>
+                                            <div className={styles['memo1El']}>
+                                                {item.quantity}
+                                            </div>
+                                        </div>
+                                        <div className={styles['memo1Text']}>
+                                            {item.name} ({item.other_details.brand})
                                         </div>
                                     </div>
-                                    <div className={styles['memo1Text']}>
-
-                                        {item.name} ({item.other_details.brand})
+                                    <div className={styles['memo1Sal']}>
+                                        {(parseInt(item.price) * item.quantity).toLocaleString()} VND
                                     </div>
                                 </div>
-                                <div className={styles['memo1Sal']}>
-                                    {parseInt(item.price).toLocaleString()} VND
-                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
 
                     {cartData && (
                         <div className={styles['totalPrice']}>

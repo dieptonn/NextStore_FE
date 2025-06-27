@@ -27,6 +27,7 @@ export const Details = ({ apiData }: DetailsProps) => {
 
     const [open, setOpen] = useState(false);
     const [show, setShow] = useState(false);
+    const [userId, setUserId] = useState<number | null>(null);
 
     const showModal = () => {
         setOpen(true);
@@ -58,12 +59,26 @@ export const Details = ({ apiData }: DetailsProps) => {
         }, 1000); // Thời gian delay, tính bằng mili giây
     };
 
+    useEffect(() => {
+        const storedUserData = localStorage.getItem('user');
+        if (storedUserData) {
+            try {
+                const userData: any = JSON.parse(storedUserData);
+                setUserId(userData._id); // Lưu userId vào state
+                console.log("User ID:", userData._id);
+            } catch (error) {
+                console.error("Lỗi parse dữ liệu người dùng từ localStorage:", error);
+                // Có thể xử lý chuyển hướng về trang login ở đây nếu cần
+            }
+        }
+    }, []);
+
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.post<{ data: cart }>('http://localhost:8000/api/v1/cartPayment/addToCart', {
-                    userId: 2,
+                    userId: userId,
                     PD_id: apiData[0]?.PD_id,
                     quantity: 1,
                     name: apiData[0]?.name,

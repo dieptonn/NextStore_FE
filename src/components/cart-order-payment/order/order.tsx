@@ -31,18 +31,34 @@ export default function Order() {
 
     const [open, setOpen] = useState(false);
     const [cartData, setCartData] = useState<CartData>();
+    const shippingFee = 28000;
+    const voucherDiscount = 18000;
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const response = await axios.post<{ data: CartData }>('http://localhost:8000/api/v1/cartPayment/getCart', {
-                    userId: 2
-                });
-                console.log({
-                    Response: response.data.data
-                });
 
-                setCartData(response.data.data);
+            try {
+                const storedUserData = localStorage.getItem('user');
+                if (storedUserData) {
+                    try {
+                        const userData: any = JSON.parse(storedUserData);
+                        console.log("User ID:", userData._id);
+
+                        const response = await axios.post<{ data: CartData }>('http://localhost:8000/api/v1/cartPayment/getCart', {
+                            userId: userData._id
+                        });
+                        console.log({
+                            userId: userData._id,
+                            Response: response.data.data
+                        });
+
+                        setCartData(response.data.data);
+                    } catch (error) {
+                        console.error("Lỗi parse dữ liệu người dùng từ localStorage:", error);
+                        // Có thể xử lý chuyển hướng về trang login ở đây nếu cần
+                    }
+                }
+
 
             } catch (error) {
                 console.error('Error:', error);
@@ -76,6 +92,12 @@ export default function Order() {
     const handleCancel = () => {
         setOpen(false);
     };
+
+    const calculateFinalPrice = () => {
+        if (!cartData) return 0;
+        const subtotal = parseInt(cartData.total_price) || 0;
+        return subtotal + shippingFee - voucherDiscount;
+    }
     return (
         <div className={styles['cartDiv']}>
             <div className={styles['cart']}>
@@ -170,21 +192,19 @@ export default function Order() {
                 <div className={styles['div']}>
                     {cartData && (
                         <>
-                            {/* Order info */}
+                            {/* 1. Order info - Hiển thị 1 lần */}
                             <div className={styles['order']}>
                                 <div className={styles['orderImg']}>
                                     <Image width={512} height={352} src="/image/cart/pic.png" alt="Order image" />
                                 </div>
                                 <div className={styles['orInfo']}>
                                     <div className={styles['orTitle']}>Your order</div>
-
                                     <div className={styles['orDate']}>
                                         <div className={styles['dateImg']}>
                                             <Image width={24} height={24} src="/image/cart/date.png" alt="Date icon" />
                                         </div>
                                         <div className={styles['date']}>{formatDate(cartData.updatedAt)}</div>
                                     </div>
-
                                     <div className={styles['orTime']}>
                                         <div className={styles['dateImg']}>
                                             <Image width={24} height={24} src="/image/cart/time.png" alt="Time icon" />
@@ -194,56 +214,63 @@ export default function Order() {
                                 </div>
                             </div>
 
-                            {/* List of items */}
-                            {cartData.items.map((item) => (
-                                <div className={styles['memo']} key={item._id}>
-                                    <div className={styles['memo1']}>
-                                        <div className={styles['memo1Div']}>
-                                            <div className={styles['memo1Num']}>
-                                                <div className={styles['memo1El']}>{item.quantity}</div>
-                                            </div>
-                                            <div className={styles['memo1Text']}>
-                                                {item.name} ({item.other_details.brand})
-                                            </div>
-                                        </div>
-                                        <div className={styles['memo1Sal']}>
-                                            {(parseInt(item.price) * item.quantity).toLocaleString()} VND
-                                        </div>
-                                    </div>
-                                    <div className={styles['shipTit']}>
-                                        Shipping fee:
-                                    </div>
-                                    <div className={styles['shipDiv']}>
-                                        <div className={styles['address']}>
-                                            <div className={styles['addressTxt']}>
-                                                3c, 288 alley, Hoang Mai street, Hoang Mai, Ha Noi
+                            {/* 2. List of items - Bên trong vùng cuộn */}
+                            <div className={styles['memoList']}>
+                                <div className={styles['memoListInner']}>
+                                    {cartData.items.map((item) => (
+                                        <div className={styles['memo']} key={item._id}>
+                                            <div className={styles['memo1']}>
+                                                <div className={styles['memo1Div']}>
+                                                    <div className={styles['memo1Num']}>
+                                                        <div className={styles['memo1El']}>{item.quantity}</div>
+                                                    </div>
+                                                    <div className={styles['memo1Text']}>
+                                                        {item.name} ({item.other_details.brand})
+                                                    </div>
+                                                </div>
+                                                <div className={styles['memo1Sal']}>
+                                                    {(parseInt(item.price) * item.quantity).toLocaleString()} VND
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className={styles['price']}>
-                                            8,000 VND
-                                        </div>
-                                    </div>
-                                    <div className={styles['shipTit']}>
-                                        Voucher:
-                                    </div>
-                                    <div className={styles['voucherDiv']}>
-                                        <div className={styles['priceDiv']}>
-                                            <Image className={styles['voucher']} width={513} height={253} src="/image/cart/voucher1.png" alt="" />
-                                            <Image className={styles['voucher']} width={513} height={253} src="/image/cart/voucher2.png" alt="" />
-                                        </div>
-                                        <div className={styles['price']}>
-                                            - 18,000 VND
-                                        </div>
+                                    ))}
+                                </div>
+                            </div>
 
+                            {/* 3. Shipping fee - Hiển thị 1 lần sau danh sách */}
+                            <div className={styles['shipTit']}>
+                                Shipping fee:
+                            </div>
+                            <div className={styles['shipDiv']}>
+                                <div className={styles['address']}>
+                                    <div className={styles['addressTxt']}>
+                                        3c, 288 alley, Hoang Mai street, Hoang Mai, Ha Noi
                                     </div>
                                 </div>
-                            ))}
+                                <div className={styles['price']}>
+                                    {shippingFee.toLocaleString()} VND
+                                </div>
+                            </div>
 
-                            {/* Total Price */}
+                            {/* 4. Voucher - Hiển thị 1 lần sau phí ship */}
+                            <div className={styles['shipTit']}>
+                                Voucher:
+                            </div>
+                            <div className={styles['voucherDiv']}>
+                                <div className={styles['priceDiv']}>
+                                    <Image className={styles['voucher']} width={513} height={253} src="/image/cart/voucher1.png" alt="" />
+                                    {/* Bạn có thể thêm voucher thứ 2 nếu cần, nhưng chỉ là để hiển thị */}
+                                </div>
+                                <div className={styles['price']}>
+                                    - {voucherDiscount.toLocaleString()} VND
+                                </div>
+                            </div>
+
+                            {/* 5. Total Price - Tính toán lại */}
                             <div className={styles['totalPrice']}>
                                 <div className={styles['totalPriceTitle']}>Total Price</div>
                                 <div className={styles['totalPriceSal']}>
-                                    {(parseInt(cartData.total_price) - 10000).toLocaleString()} VND
+                                    {calculateFinalPrice().toLocaleString()} VND
                                 </div>
                             </div>
                         </>
